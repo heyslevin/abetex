@@ -11,9 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="fixed flex h-screen w-full flex-col items-center bg-black">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
