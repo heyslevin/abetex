@@ -1,6 +1,9 @@
-"use client";
+import { client } from "../sanity/lib/client";
 
-export default function Home() {
+const DATA_QUERY = `*[_type == "page" && title == "Home"]{heading, caption}[0]`;
+
+export default async function Home() {
+  const page = await client.fetch(DATA_QUERY);
   return (
     <>
       <div className="fixed flex h-screen w-full flex-col items-center bg-black">
@@ -9,18 +12,17 @@ export default function Home() {
             href="https://twitter.com/steventey/status/1613928948915920896"
             target="_blank"
             rel="noreferrer"
-            className="animate-fade-up mx-auto mb-5 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
+            className="mx-auto mb-5 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
           >
             <p className="text-sm font-semibold text-[#1d9bf0]">
               Introducing Precedent
             </p>
           </a>
-          <h1 className="font-display bg-clip-text text-center text-4xl font-bold tracking-[-0.02em] text-white drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]">
-            Building blocks for your Next project
+          <h1 className="font-display text-balance text-center text-4xl font-bold tracking-tight text-white drop-shadow-sm md:text-7xl md:leading-[5rem]">
+            {page.heading}
           </h1>
           <p className="mt-6 text-center text-white [text-wrap:balance] md:text-xl">
-            An opinionated collection of components, hooks, and utilities for
-            your Next.js project.
+            {page.caption}
           </p>
           <div
             className="mx-auto mt-6 flex items-center justify-center space-x-5"

@@ -15,5 +15,13 @@ export const pageType = defineType({
       name: "slug",
       type: "slug",
     }),
+    defineField({
+      name: "heading",
+      type: "string",
+    }),
+    defineField({
+      name: "caption",
+      type: "string",
+    }),
   ],
 });
