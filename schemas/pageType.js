@@ -23,5 +23,22 @@ export const pageType = defineType({
       name: "caption",
       type: "string",
     }),
+    defineField({
+      name: "images",
+      type: "array",
+      of: [
+        {
+          name: "image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative Text",
+            },
+          ],
+        },
+      ],
+    }),
   ],
 });

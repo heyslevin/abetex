@@ -7,11 +7,21 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
-const DATA_QUERY = `*[_type == "page" && title == "Home"]{heading, caption}[0]`;
+const DATA_QUERY = `*[_type == "page" && title == "Home"]
+{
+  heading, 
+  caption,
+      images[]{
+    alt,
+    "imageUrl": asset->url
+  },
+}[0]`;
 
 export default async function Home() {
   const page = await client.fetch(DATA_QUERY);
+  console.log(page.images[0].imageUrl);
   return (
     <>
       <div className="flex h-full w-full flex-col items-center bg-black">
@@ -80,9 +90,11 @@ export default async function Home() {
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-2xl font-semibold">
-                        {index + 1}
-                      </span>
+                      <Image
+                        src={page.images[0].imageUrl}
+                        width={500}
+                        height={500}
+                      />
                     </CardContent>
                   </Card>
                 </div>
