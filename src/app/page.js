@@ -14,8 +14,8 @@ export default async function Home() {
   const page = await client.fetch(DATA_QUERY);
   return (
     <>
-      <div className="fixed flex h-screen w-full flex-col items-center bg-black">
-        <div className="z-10 m-auto w-full max-w-xl px-5 xl:px-0">
+      <div className="flex h-full w-full flex-col items-center bg-black">
+        <div className="z-10 m-auto w-full max-w-xl px-5 py-8 xl:px-0">
           <a
             href="https://twitter.com/steventey/status/1613928948915920896"
             target="_blank"
@@ -69,8 +69,8 @@ export default async function Home() {
             </a>
           </div>
         </div>
-        <div className="animate-fade-up my-10 grid w-full max-w-screen-xl grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0"></div>
-        <Carousel className="w-full max-w-sm">
+
+        <Carousel className="w-full">
           <CarouselContent className="-ml-1">
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem
