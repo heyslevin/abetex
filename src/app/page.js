@@ -82,7 +82,7 @@ export default async function Home() {
 
         <Carousel className="w-full">
           <CarouselContent className="-ml-1">
-            {Array.from({ length: 5 }).map((_, index) => (
+            {page.images.map((image, index) => (
               <CarouselItem
                 key={index}
                 className="pl-1 md:basis-1/2 lg:basis-1/3"
@@ -90,11 +90,7 @@ export default async function Home() {
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <Image
-                        src={page.images[0].imageUrl}
-                        width={500}
-                        height={500}
-                      />
+                      <Image src={image.imageUrl} width={800} height={800} />
                     </CardContent>
                   </Card>
                 </div>
