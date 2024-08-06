@@ -2,7 +2,6 @@
 
 import React from "react";
 import Autoplay from "embla-carousel-autoplay";
-import useEmblaCarousel from "embla-carousel-react";
 import { Carousel } from "@/components/ui/carousel";
 
 function CarouselSSR({ children, ...delegated }) {

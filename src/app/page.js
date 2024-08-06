@@ -79,25 +79,45 @@ export default async function Home() {
             </a>
           </div>
         </div>
-
-        <CarouselSSR className="w-full">
-          <CarouselContent className="-ml-1">
-            {page.images.map((image, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="relative h-[555px] w-auto overflow-hidden rounded-lg bg-yellow-400">
-                  <Image
-                    src={image.imageUrl}
-                    width={1200}
-                    height={1200}
-                    className="h-full object-cover"
-                  />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </CarouselSSR>
+        <div className="w-full">
+          <CarouselSSR>
+            <CarouselContent className="-ml-1">
+              {page.images.map((image, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="relative h-[555px] w-auto overflow-hidden rounded-lg bg-yellow-400">
+                    <Image
+                      src={image.imageUrl}
+                      width={1200}
+                      height={1200}
+                      className="h-full object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </CarouselSSR>
+        </div>
+        <div className="flex h-[500px] w-full justify-center gap-9 bg-white p-10">
+          <div className="flex-column h-full flex-1 content-center align-middle text-black">
+            <h1 className="font-display tracking-tightdrop-shadow-sm text-balance text-center text-xl font-bold md:text-4xl md:leading-[5rem]">
+              So many things happening
+            </h1>
+            <p className="mt-6 text-center [text-wrap:balance] md:text-xl">
+              We have a great philosophy on world building and making homes that
+              really stand out.
+            </p>
+          </div>
+          <div className="flex-column flex-1 overflow-hidden rounded-lg text-black">
+            <Image
+              src={page.images[0].imageUrl}
+              width={1200}
+              height={1200}
+              className="h-full object-cover"
+            />
+          </div>
+        </div>
       </div>
     </>
   );
