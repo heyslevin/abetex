@@ -6,8 +6,8 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import CarouselSSR from "@/components/ui/carouselSSR";
 
 const DATA_QUERY = `*[_type == "page" && title == "Home"]
 {
@@ -80,26 +80,24 @@ export default async function Home() {
           </div>
         </div>
 
-        <Carousel className="w-full">
+        <CarouselSSR className="w-full">
           <CarouselContent className="-ml-1">
             {page.images.map((image, index) => (
-              <CarouselItem
-                key={index}
-                className="pl-1 md:basis-1/2 lg:basis-1/3"
-              >
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <Image src={image.imageUrl} width={800} height={800} />
-                    </CardContent>
-                  </Card>
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="relative h-[555px] w-auto overflow-hidden rounded-lg bg-yellow-400">
+                  <Image
+                    src={image.imageUrl}
+                    width={1200}
+                    height={1200}
+                    className="h-full object-cover"
+                  />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
-        </Carousel>
+        </CarouselSSR>
       </div>
     </>
   );
