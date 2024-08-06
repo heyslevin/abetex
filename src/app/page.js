@@ -95,19 +95,46 @@ export default async function Home() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
           </CarouselSSR>
         </div>
-        <div className="flex h-[500px] w-full justify-center gap-9 bg-white p-10">
-          <div className="flex-column h-full flex-1 content-center align-middle text-black">
-            <h1 className="font-display tracking-tightdrop-shadow-sm text-balance text-center text-xl font-bold md:text-4xl md:leading-[5rem]">
-              So many things happening
+
+        <div className="my-6 flex h-[500px] w-full bg-slate-300 px-28">
+          <div className="flex w-full flex-col items-start justify-center gap-y-10 text-black">
+            <p className="inline w-7/12 text-left md:text-2xl">
+              When it comes to the{" "}
+              <a href="" className="border-b border-black hover:border-red-500">
+                {" "}
+                founders we work with
+              </a>
+              , we look for the unexpected. The groundbreakers and game-changers
+              with a fire inside that can’t be dimmed or duplicated. Because at
+              Index, we’re invested in the people behind great ideas.
+            </p>
+
+            <a
+              className="text-md flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black px-5 py-2 text-black transition-colors hover:border-black hover:bg-black hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>See our philosophy</p>
+            </a>
+          </div>
+        </div>
+        <div className="flex h-[500px] w-full justify-center gap-9 bg-white p-10 px-28">
+          <div className="flex h-full flex-1 flex-col content-center justify-center text-black">
+            <h1 className="font-display text-balance text-left text-xl font-bold tracking-tight drop-shadow-sm md:text-6xl md:leading-[4rem]">
+              Ideas don’t build businesses. People do.
             </h1>
-            <p className="mt-6 text-center [text-wrap:balance] md:text-xl">
+            <p className="mt-6 inline w-10/12 text-left md:text-2xl">
               We have a great philosophy on world building and making homes that
               really stand out.
             </p>
+            <a
+              href=""
+              className="mt-6 max-w-fit border-b border-black text-2xl hover:border-red-500"
+            >
+              Learn more
+            </a>
           </div>
           <div className="flex-column flex-1 overflow-hidden rounded-lg text-black">
             <Image
