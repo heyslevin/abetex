@@ -150,12 +150,19 @@ export default async function Home() {
           </div>
         </div>
         <div className="flex h-[750px] w-full flex-row justify-center bg-slate-100 p-10 px-28">
-          <Tabs className="flex w-full gap-9" orientation="vertical">
+          <Tabs
+            className="flex w-full gap-9"
+            orientation="vertical"
+            defaultValue="omnichannel"
+          >
             <div className="flex h-full w-2/5 flex-col justify-between">
-              <div className="mb-auto flex">
+              <div className="mb-auto flex flex-col gap-y-5">
                 <p className="flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
                   For Customers
                 </p>
+                <h1 className="text-left text-5xl font-bold leading-[3rem] tracking-tight">
+                  Instant service, exceptional experiences
+                </h1>
               </div>
               <div className="flex">
                 <TabsList>
@@ -193,11 +200,23 @@ export default async function Home() {
                 </TabsList>
               </div>
             </div>
-            <div className="h-full w-3/5 bg-blue-300">
+            <div className="h-full w-3/5 overflow-hidden rounded-lg bg-blue-300">
               <TabsContent value="omnichannel">
-                Make changes to your account here.
+                <Image
+                  src={page.images[0].imageUrl}
+                  width={1200}
+                  height={1200}
+                  className="h-full object-cover"
+                />
               </TabsContent>
-              <TabsContent value="help">Change your password here.</TabsContent>
+              <TabsContent value="help">
+                <Image
+                  src={page.images[1].imageUrl}
+                  width={1200}
+                  height={1200}
+                  className="h-full object-cover"
+                />
+              </TabsContent>
             </div>
           </Tabs>
         </div>
