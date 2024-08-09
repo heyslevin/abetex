@@ -1,7 +1,11 @@
 {
+  "$schema": "https://ui.shadcn.com/schema.json",
+
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["**/*.js", "**/*.jsx", "tailwind.config.tsss"],
+  "exclude": ["node_modules"]
 }
