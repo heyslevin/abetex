@@ -40,15 +40,18 @@ function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col gap-0"
+      >
         <FormField
           control={form.control}
           name="firstName"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="">
               <FormLabel>First Name</FormLabel>
               <FormControl>
-                <Input placeholder="First Name" {...field} />
+                <Input className="" placeholder="First Name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -93,7 +96,12 @@ function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button
+          className="text-md mt-10 flex w-full items-center justify-center space-x-2 rounded-full border border-white px-5 py-2 text-white transition-colors hover:border-white hover:bg-white hover:text-black"
+          type="submit"
+        >
+          Submit
+        </Button>
       </form>
     </Form>
   );

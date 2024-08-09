@@ -218,10 +218,10 @@ export default async function Home() {
                   >
                     <Separator className="group-rdx-state-active:bg-black" />
                     <div className="flex h-full flex-col py-4">
-                      <h1 className="text-md text-left font-bold group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500">
+                      <h1 className="text-md group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500 text-left font-bold">
                         Omnichannel
                       </h1>
-                      <p className="text-left group-rdx-state-inactive:text-neutral-500">
+                      <p className="group-rdx-state-inactive:text-neutral-500 text-left">
                         Help customers find accurate answers when and where they
                         need them. Always there, 24/7
                       </p>
@@ -234,10 +234,10 @@ export default async function Home() {
                   >
                     <Separator className="group-rdx-state-active:bg-black" />
                     <div className="flex h-full flex-col py-4">
-                      <h1 className="text-md text-left font-bold group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500">
+                      <h1 className="text-md group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500 text-left font-bold">
                         Help Center
                       </h1>
-                      <p className="text-left group-rdx-state-inactive:text-neutral-500">
+                      <p className="group-rdx-state-inactive:text-neutral-500 text-left">
                         Provide 24/7 support and resolve 50% of support volume,
                         instantly. It's so much more than an AI chatbot.
                       </p>
@@ -266,7 +266,7 @@ export default async function Home() {
             </div>
           </Tabs>
         </div>
-        <div className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 p-10 px-28 py-24">
+        <div className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-28 py-24">
           <div className="flex h-full w-full flex-row gap-4">
             <div className="flex h-full w-1/2 flex-col justify-start">
               <h2 className="text-6xl">Frequently asked questions</h2>
@@ -324,8 +324,13 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className="flex h-[750px] w-full flex-col">
-          <ContactForm />
+        <div className="flex h-auto w-full flex-row px-28 py-24">
+          <div className="w-1/2">
+            <h2 className="text-6xl text-white">Contact us</h2>
+          </div>
+          <div className="w-1/2">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </>
