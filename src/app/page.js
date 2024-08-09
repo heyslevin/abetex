@@ -156,6 +156,7 @@ export default async function Home() {
             />
           </div>
         </div>
+        {/* Data points */}
         <div className="flex h-[750px] w-full flex-col items-center justify-center bg-zinc-200 p-10 px-28">
           <p className="mb-4 flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
             For Customers
@@ -195,6 +196,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
+        {/* Tabs */}
         <div className="flex h-[750px] w-full flex-row justify-center bg-slate-100 p-10 px-28">
           <Tabs
             className="flex w-full gap-9"
@@ -266,6 +268,7 @@ export default async function Home() {
             </div>
           </Tabs>
         </div>
+        {/* Accordion */}
         <div className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-28 py-24">
           <div className="flex h-full w-full flex-row gap-4">
             <div className="flex h-full w-1/2 flex-col justify-start">
@@ -324,12 +327,59 @@ export default async function Home() {
             </div>
           </div>
         </div>
+        {/* Contact Form */}
         <div className="flex h-auto w-full flex-row px-28 py-24">
           <div className="w-1/2">
             <h2 className="text-6xl text-white">Contact us</h2>
           </div>
           <div className="w-1/2">
             <ContactForm />
+          </div>
+        </div>
+      </div>
+      {/* Footer */}
+      <div className="flex h-[555px] flex-col bg-slate-500 px-28 py-10">
+        <div className="flex w-full flex-row gap-6">
+          <div className="flex w-1/2 flex-col">
+            <p className="text-3xl">
+              Beautiful Website <br /> Corporation
+            </p>
+          </div>
+          <div className="flex w-1/2 flex-row">
+            <div className="flex w-1/3 flex-col">
+              <a href="#" className="">
+                Instagram
+              </a>
+              <a href="#" className="">
+                LinkedIn
+              </a>
+              <a href="#" className="">
+                X
+              </a>
+            </div>
+            <div className="flex w-1/3 flex-col">
+              <a href="">Privacy Policy</a>
+              <a href="">Legal</a>
+            </div>
+            <div className="w-1/3">
+              <p>
+                Sydney (Warrang) The Commons 388 George Street Sydney NSW 2000
+              </p>
+            </div>
+          </div>
+        </div>
+        <Separator className="my-5 mt-60 bg-slate-800" />
+        <div className="flex w-full flex-row">
+          <div className="flex w-1/2">
+            <p className="text-sm">Copyright 2024</p>
+          </div>
+          <div className="flex w-1/2 justify-end">
+            <p className="text-sm">
+              Code by{" "}
+              <a href="" className="border-b border-black">
+                Slevin
+              </a>
+            </p>
           </div>
         </div>
       </div>
