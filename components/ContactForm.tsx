@@ -42,16 +42,19 @@ function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-0"
+        className="flex flex-col gap-6"
       >
         <FormField
           control={form.control}
           name="firstName"
           render={({ field }) => (
             <FormItem className="">
-              <FormLabel>First Name</FormLabel>
               <FormControl>
-                <Input className="" placeholder="First Name" {...field} />
+                <Input
+                  className="text-white"
+                  placeholder="First Name"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -62,9 +65,12 @@ function ContactForm() {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Last Name</FormLabel>
               <FormControl>
-                <Input placeholder="Last Name" {...field} />
+                <Input
+                  className="text-white"
+                  placeholder="Last Name"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -74,10 +80,9 @@ function ContactForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
+            <FormItem className="">
               <FormControl>
-                <Input placeholder="Email" {...field} />
+                <Input className="text-white" placeholder="Email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -88,9 +93,12 @@ function ContactForm() {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Phone</FormLabel>
               <FormControl>
-                <Input placeholder="Phone Number" {...field} />
+                <Input
+                  placeholder="Phone Number"
+                  className="text-white"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
