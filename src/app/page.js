@@ -19,20 +19,42 @@ import { SeparatorHorizontal } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import TabData from "@/components/ui/tabData";
 import { ContactForm } from "@/components/ContactForm";
+import { PortableText } from "next-sanity";
 
 const DATA_QUERY = `*[_type == "page" && title == "Home"]
 {
   heading, 
   caption,
-      images[]{
+  images[]{
     alt,
     "imageUrl": asset->url
   },
+  textBlock,
 }[0]`;
 
 export default async function Home() {
   const page = await client.fetch(DATA_QUERY);
   console.log(page.images[0].imageUrl);
+
+  const myPortableTextComponents = {
+    marks: {
+      link: ({ children, value }) => {
+        const rel = !value.href.startsWith("?")
+          ? "norefferer noopener"
+          : undefined;
+        return (
+          <a
+            href={value.href}
+            rel={rel}
+            className="border-b border-white hover:border-red-500"
+          >
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+
   return (
     <>
       <div className="flex h-full w-full flex-col items-center bg-black">
@@ -111,16 +133,12 @@ export default async function Home() {
 
         <div className="flex h-[500px] w-full bg-black px-28">
           <div className="flex w-full flex-col items-start justify-center gap-y-10 text-white">
-            <p className="inline w-7/12 text-left md:text-2xl">
-              When it comes to the{" "}
-              <a href="" className="border-b border-white hover:border-red-500">
-                {" "}
-                founders we work with
-              </a>
-              , we look for the unexpected. The groundbreakers and game-changers
-              with a fire inside that can’t be dimmed or duplicated. Because at
-              Index, we’re invested in the people behind great ideas.
-            </p>
+            <div className="inline w-7/12 text-left md:text-2xl">
+              <PortableText
+                value={page.textBlock}
+                components={myPortableTextComponents}
+              />
+            </div>
 
             <a
               className="text-md flex max-w-fit items-center justify-center space-x-2 rounded-full border border-white px-5 py-2 text-white transition-colors hover:border-white hover:bg-white hover:text-black"
@@ -220,10 +238,10 @@ export default async function Home() {
                   >
                     <Separator className="group-rdx-state-active:bg-black" />
                     <div className="flex h-full flex-col py-4">
-                      <h1 className="text-md group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500 text-left font-bold">
+                      <h1 className="text-md text-left font-bold group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500">
                         Omnichannel
                       </h1>
-                      <p className="group-rdx-state-inactive:text-neutral-500 text-left">
+                      <p className="text-left group-rdx-state-inactive:text-neutral-500">
                         Help customers find accurate answers when and where they
                         need them. Always there, 24/7
                       </p>
@@ -236,10 +254,10 @@ export default async function Home() {
                   >
                     <Separator className="group-rdx-state-active:bg-black" />
                     <div className="flex h-full flex-col py-4">
-                      <h1 className="text-md group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500 text-left font-bold">
+                      <h1 className="text-md text-left font-bold group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500">
                         Help Center
                       </h1>
-                      <p className="group-rdx-state-inactive:text-neutral-500 text-left">
+                      <p className="text-left group-rdx-state-inactive:text-neutral-500">
                         Provide 24/7 support and resolve 50% of support volume,
                         instantly. It's so much more than an AI chatbot.
                       </p>

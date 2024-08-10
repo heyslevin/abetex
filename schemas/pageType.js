@@ -40,5 +40,15 @@ export const pageType = defineType({
         },
       ],
     }),
+    defineField({
+      name: "textBlock",
+      title: "Text block",
+      type: "array",
+      of: [
+        {
+          type: "block",
+        },
+      ],
+    }),
   ],
 });
