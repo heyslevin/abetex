@@ -120,10 +120,12 @@ export default async function Home() {
                   <div className="relative h-[555px] w-auto overflow-hidden rounded-lg bg-yellow-400">
                     <Image
                       src={image.imageUrl}
+                      alt={image.alt}
                       width={1200}
                       height={1200}
                       className="h-full object-cover"
                     />
+                    {image.alt}
                   </div>
                 </CarouselItem>
               ))}
@@ -168,6 +170,7 @@ export default async function Home() {
           <div className="flex-column flex-1 overflow-hidden rounded-lg text-black">
             <Image
               src={page.images[0].imageUrl}
+              alt={page.images[0].alt}
               width={1200}
               height={1200}
               className="h-full object-cover"
@@ -270,6 +273,7 @@ export default async function Home() {
               <TabsContent value="omnichannel">
                 <Image
                   src={page.images[0].imageUrl}
+                  alt={page.images[0].alt}
                   width={1200}
                   height={1200}
                   className="h-full object-cover"
@@ -278,6 +282,7 @@ export default async function Home() {
               <TabsContent value="help">
                 <Image
                   src={page.images[1].imageUrl}
+                  alt={page.images[0].alt}
                   width={1200}
                   height={1200}
                   className="h-full object-cover"
