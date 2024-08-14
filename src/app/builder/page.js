@@ -1,4 +1,4 @@
-import { client } from "@/src/sanity/lib/client";
+import { client, sanityFetch } from "@/src/sanity/lib/client";
 import React from "react";
 
 import { PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
@@ -11,7 +11,7 @@ const COMPONENT_MAP = {
 };
 
 async function PageBuilder() {
-  const page = await client.fetch(PAGE_BUILDER_QUERY);
+  const page = await sanityFetch({ query: PAGE_BUILDER_QUERY });
   console.log(page);
   return (
     <>
