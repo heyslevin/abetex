@@ -1,0 +1,27 @@
+import { client } from "@/src/sanity/lib/client";
+import React from "react";
+
+import { PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
+import Hero from "@/components/modules/Hero";
+import TextWithIllustration from "@/components/modules/TextWithIllustration";
+
+const COMPONENT_MAP = {
+  hero: Hero,
+  textWithIllustration: TextWithIllustration,
+};
+
+async function PageBuilder() {
+  const page = await client.fetch(PAGE_BUILDER_QUERY);
+  console.log(page);
+  return (
+    <>
+      {page.content.map((blockObject) => {
+        //   Correct here.
+        const BlockComponent = COMPONENT_MAP[blockObject._type];
+        return <BlockComponent key={blockObject._key} data={blockObject} />;
+      })}
+    </>
+  );
+}
+
+export default PageBuilder;

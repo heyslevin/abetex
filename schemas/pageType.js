@@ -1,4 +1,4 @@
-import { defineType, defineField } from "sanity";
+import { defineType, defineField, defineArrayMember } from "sanity";
 import { CalendarIcon, DocumentTextIcon } from "@sanity/icons";
 
 export const pageType = defineType({
@@ -14,6 +14,21 @@ export const pageType = defineType({
     defineField({
       name: "slug",
       type: "slug",
+    }),
+    defineField({
+      name: "pageBuilder",
+      type: "array",
+      title: "Page Builder",
+      of: [
+        defineArrayMember({
+          name: "hero",
+          type: "hero",
+        }),
+        defineArrayMember({
+          name: "textWithIllustration",
+          type: "textWithIllustration",
+        }),
+      ],
     }),
     defineField({
       name: "heading",
@@ -49,6 +64,16 @@ export const pageType = defineType({
           type: "block",
         },
       ],
+    }),
+    defineField({
+      name: "textBlockLink",
+      title: "Text block link",
+      type: "url",
+    }),
+    defineField({
+      name: "textBlockLinkTitle",
+      title: "Link Title",
+      type: "string",
     }),
   ],
 });

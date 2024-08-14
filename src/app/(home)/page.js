@@ -1,4 +1,4 @@
-import { client } from "../sanity/lib/client";
+import { client } from "../../sanity/lib/client";
 import {
   Carousel,
   CarouselContent,
@@ -30,6 +30,8 @@ const DATA_QUERY = `*[_type == "page" && title == "Home"]
     "imageUrl": asset->url
   },
   textBlock,
+  textBlockLink,
+  textBlockLinkTitle,
 }[0]`;
 
 export default async function Home() {
@@ -141,14 +143,16 @@ export default async function Home() {
                 components={myPortableTextComponents}
               />
             </div>
-
-            <a
-              className="text-md flex max-w-fit items-center justify-center space-x-2 rounded-full border border-white px-5 py-2 text-white transition-colors hover:border-white hover:bg-white hover:text-black"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p>See our philosophy</p>
-            </a>
+            {page.textBlockLink ? (
+              <a
+                className="text-md flex max-w-fit items-center justify-center space-x-2 rounded-full border border-white px-5 py-2 text-white transition-colors hover:border-white hover:bg-white hover:text-black"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={page.textBlockLink}
+              >
+                <p>{page.textBlockLinkTitle}</p>
+              </a>
+            ) : null}
           </div>
         </div>
         <div className="flex h-[500px] w-full justify-center gap-9 bg-white p-10 px-28">
