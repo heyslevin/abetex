@@ -1,22 +1,21 @@
-import { DocumentTextIcon, StarFilledIcon } from "@sanity/icons";
+import { LetterText } from "lucide-react";
 import { defineField, defineType } from "sanity";
 
-export const heroType = defineType({
-  name: "hero",
+export const paragraphSectionType = defineType({
+  name: "paragraphSection",
   type: "object",
-  title: "Hero",
+  title: "Paragraph Section",
   fields: [
     defineField({
-      name: "heading",
+      name: "description",
       type: "string",
+      title: "Paragraph description",
+      description: "Optional block description for internal use",
     }),
     defineField({
-      name: "tagline",
-      type: "string",
-    }),
-    defineField({
-      name: "caption",
-      type: "string",
+      name: "textBlock",
+      type: "array",
+      of: [{ type: "block" }],
     }),
     defineField({
       name: "button",
@@ -25,24 +24,25 @@ export const heroType = defineType({
         defineField({
           name: "text",
           type: "string",
+          title: "Link Text",
         }),
         defineField({
           name: "url",
           type: "url",
-          title: "Link url",
+          title: "Link Url",
         }),
       ],
     }),
   ],
-  icon: StarFilledIcon,
+  icon: <LetterText size={16} />,
   preview: {
     select: {
-      title: "heading",
+      title: "description",
     },
     prepare({ title }) {
       return {
         title: title || "Untitled",
-        subtitle: "Hero",
+        subtitle: "Paragraph Section",
       };
     },
   },

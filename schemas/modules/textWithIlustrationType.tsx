@@ -4,7 +4,7 @@ import { defineField, defineType } from "sanity";
 export const textWithIllustrationType = defineType({
   name: "textWithIllustration",
   type: "object",
-  title: "Text with illustration",
+  title: "Text with image",
   fields: [
     defineField({
       name: "heading",
@@ -24,8 +24,9 @@ export const textWithIllustrationType = defineType({
           type: "string",
         }),
         defineField({
-          name: "link",
+          name: "url",
           type: "url",
+          title: "Link url",
         }),
       ],
     }),
@@ -50,7 +51,7 @@ export const textWithIllustrationType = defineType({
     prepare({ title, image }) {
       return {
         title: title || "Untitled",
-        subtitle: "Text With Illustration",
+        subtitle: "Text With Image",
         media: image || MasterDetailIcon,
       };
     },

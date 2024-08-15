@@ -15,9 +15,7 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 import Image from "next/image";
 import CarouselSSR from "@/components/ui/carouselSSR";
-import { SeparatorHorizontal } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import TabData from "@/components/ui/tabData";
 import { ContactForm } from "@/components/ContactForm";
 import { PortableText } from "next-sanity";
 

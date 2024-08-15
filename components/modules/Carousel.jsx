@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CarouselContent, CarouselItem } from "../ui/carousel";
 import CarouselSSR from "../ui/carouselSSR";
 
-async function Carousel({ data }) {
+function Carousel({ data }) {
   // Data Structure
   //
   // const data = {

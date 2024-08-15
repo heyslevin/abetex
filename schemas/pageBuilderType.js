@@ -33,6 +33,10 @@ export const pageBuilderType = defineType({
           name: "carousel",
           type: "carousel",
         }),
+        defineType({
+          name: "paragraphSection",
+          type: "paragraphSection",
+        }),
       ],
     }),
   ],

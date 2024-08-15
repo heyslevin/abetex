@@ -25,7 +25,7 @@ function TextWithIllustration({ data }) {
         </h1>
         <p className="mt-6 inline w-10/12 text-left md:text-xl">{data.text}</p>
         <a
-          href={data.button.link}
+          href={data.button.url}
           className="mt-6 max-w-fit border-b border-black text-xl hover:border-red-500"
         >
           {data.button.text}

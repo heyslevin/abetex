@@ -35,7 +35,7 @@ function Hero({ data }) {
           className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-gray-500 px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
           target="_blank"
           rel="noopener noreferrer"
-          href={data.button.link}
+          href={data.button.url}
         >
           <svg
             className="h-4 w-4 group-hover:text-black"
