@@ -9,9 +9,15 @@ content[]{
   "image": image{
     ...,
     'imageUrl': asset->url
+  },
+  "images": images[]{
+    ...,
+    'imageUrl': asset->url
   }
-  
     
-    }
+  }
+
+  
 }
+
 [0]`;

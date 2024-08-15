@@ -4,10 +4,12 @@ import React from "react";
 import { PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
 import Hero from "@/components/modules/Hero";
 import TextWithIllustration from "@/components/modules/TextWithIllustration";
+import Carousel from "@/components/modules/Carousel";
 
 const COMPONENT_MAP = {
   hero: Hero,
   textWithIllustration: TextWithIllustration,
+  carousel: Carousel,
 };
 
 async function PageBuilder() {

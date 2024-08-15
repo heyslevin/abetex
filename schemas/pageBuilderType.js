@@ -29,6 +29,10 @@ export const pageBuilderType = defineType({
           name: "textWithIllustration",
           type: "textWithIllustration",
         }),
+        defineType({
+          name: "carousel",
+          type: "carousel",
+        }),
       ],
     }),
   ],
