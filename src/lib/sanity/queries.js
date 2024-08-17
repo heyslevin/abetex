@@ -13,7 +13,16 @@ content[]{
   "images": images[]{
     ...,
     'imageUrl': asset->url
+  },
+  tabs[]{
+    ...,
+  "image": image{
+    ...,
+    'imageUrl': asset->url
   }
+  }
+
+  
     
   }
 

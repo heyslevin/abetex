@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-function TextWithIllustration({ data }) {
-  console.log(data);
+function TextWithImage({ data }) {
   // Data Structure
 
   // const data = {
@@ -44,4 +43,4 @@ function TextWithIllustration({ data }) {
   );
 }
 
-export default TextWithIllustration;
+export default TextWithImage;

@@ -26,8 +26,8 @@ export const pageBuilderType = defineType({
           type: "hero",
         }),
         defineType({
-          name: "textWithIllustration",
-          type: "textWithIllustration",
+          name: "textWithImage",
+          type: "textWithImage",
         }),
         defineType({
           name: "carousel",
@@ -36,6 +36,14 @@ export const pageBuilderType = defineType({
         defineType({
           name: "paragraphSection",
           type: "paragraphSection",
+        }),
+        defineType({
+          name: "metrics",
+          type: "metrics",
+        }),
+        defineType({
+          name: "tabs",
+          type: "tabs",
         }),
       ],
     }),

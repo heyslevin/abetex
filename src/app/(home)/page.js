@@ -136,6 +136,7 @@ export default async function Home() {
           </CarouselSSR>
         </div>
 
+        {/* Paragraph Section */}
         <div className="flex h-[500px] w-full bg-black px-28">
           <div className="flex w-full flex-col items-start justify-center gap-y-10 text-white">
             <div className="inline w-7/12 text-left md:text-2xl">

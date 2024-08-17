@@ -1,8 +1,8 @@
 import { MasterDetailIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
-export const textWithIllustrationType = defineType({
-  name: "textWithIllustration",
+export const textWithImageType = defineType({
+  name: "textWithImage",
   type: "object",
   title: "Text with image",
   fields: [

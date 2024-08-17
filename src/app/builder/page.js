@@ -5,13 +5,17 @@ import { PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
 import Hero from "@/components/modules/Hero";
 import Carousel from "@/components/modules/Carousel";
 import ParagraphSection from "@/components/modules/ParagraphSection";
-import TextWithIllustration from "@/components/modules/TextWithIllustration";
+import TextWithImage from "@/components/modules/TextWithImage";
+import Metrics from "@/components/modules/Metrics";
+import Tabs from "@/components/modules/Tabs";
 
 const COMPONENT_MAP = {
   hero: Hero,
-  textWithIllustration: TextWithIllustration,
+  textWithImage: TextWithImage,
   carousel: Carousel,
   paragraphSection: ParagraphSection,
+  metrics: Metrics,
+  tabs: Tabs,
 };
 
 async function PageBuilder() {
