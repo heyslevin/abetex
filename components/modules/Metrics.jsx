@@ -25,7 +25,10 @@ export default function Metrics({ data }) {
       <div className="mt-24 flex w-full flex-row justify-center gap-5">
         {data.metricsGroup.map((metric) => {
           return (
-            <div className="border-1 flex h-80 w-1/3 flex-col justify-between rounded-lg border border-black p-3">
+            <div
+              className="border-1 flex h-80 w-1/3 flex-col justify-between rounded-lg border border-black p-3"
+              key={metric._key}
+            >
               <div className="">
                 <h2 className="ml-[-6px] text-8xl">{metric.heading}</h2>
                 <h3 className="">{metric.caption}</h3>
