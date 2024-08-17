@@ -1,4 +1,4 @@
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "@/components/ui/separator";
 import {
   Tabs as TabsRadix,
   TabsContent,
@@ -64,17 +64,11 @@ export default function Tabs({ data }) {
             </TabsList>
           </div>
         </div>
-        <div className="h-full w-3/5 overflow-hidden rounded-lg bg-blue-300">
+        <div className="relative h-full w-3/5 overflow-hidden rounded-lg bg-blue-300">
           {data.tabs.map((tab) => {
             return (
               <TabsContent value={tab._key} key={tab._key}>
-                <Image
-                  src={tab.image.imageUrl}
-                  alt={tab.image.alt}
-                  width={1200}
-                  height={1200}
-                  className="h-full object-cover"
-                />
+                <Image src={tab.image.imageUrl} alt={tab.image.alt} fill />
               </TabsContent>
             );
           })}
