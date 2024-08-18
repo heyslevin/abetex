@@ -60,7 +60,7 @@ export default async function Home() {
       {/* Wrapper */}
       <div className="flex h-full w-full flex-col items-center bg-black">
         {/* Hero */}
-        <div className="z-10 m-auto w-full max-w-xl px-5 py-8 xl:px-0">
+        <div className="z-10 m-auto w-full max-w-xl px-4 py-8 md:px-5 xl:px-0">
           <a
             href="https://twitter.com/steventey/status/1613928948915920896"
             target="_blank"
@@ -115,9 +115,9 @@ export default async function Home() {
           </div>
         </div>
         {/* Image Gallery */}
-        <div className="w-full pb-6">
+        <div className="w-full px-4 pb-6">
           <CarouselSSR>
-            <CarouselContent className="-ml-1">
+            <CarouselContent className="-ml-4 pl-0">
               {page.images.map((image, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="relative h-[555px] w-auto overflow-hidden rounded-lg bg-yellow-400">
@@ -137,9 +137,9 @@ export default async function Home() {
         </div>
 
         {/* Paragraph Section */}
-        <div className="flex h-[500px] w-full bg-black px-28">
+        <div className="flex h-[500px] w-full bg-black px-4 md:px-28">
           <div className="flex w-full flex-col items-start justify-center gap-y-10 text-white">
-            <div className="inline w-7/12 text-left md:text-2xl">
+            <div className="inline w-full text-left text-xl md:w-7/12 md:text-2xl">
               <PortableText
                 value={page.textBlock}
                 components={myPortableTextComponents}
@@ -147,7 +147,7 @@ export default async function Home() {
             </div>
             {page.textBlockLink ? (
               <a
-                className="text-md flex max-w-fit items-center justify-center space-x-2 rounded-full border border-white px-5 py-2 text-white transition-colors hover:border-white hover:bg-white hover:text-black"
+                className="text-md flex max-w-fit items-center justify-center space-x-2 rounded-full border border-white px-10 py-3 text-white transition-colors hover:border-white hover:bg-white hover:text-black md:px-5 md:py-2"
                 target="_blank"
                 rel="noopener noreferrer"
                 href={page.textBlockLink}
@@ -157,18 +157,18 @@ export default async function Home() {
             ) : null}
           </div>
         </div>
-        <div className="flex h-[500px] w-full justify-center gap-9 bg-white p-10 px-28">
-          <div className="flex h-full flex-1 flex-col content-center justify-center text-black">
-            <h1 className="font-display text-balance text-left text-xl font-bold tracking-tight drop-shadow-sm md:text-4xl md:leading-[2rem]">
+        <div className="flex h-auto w-full flex-col-reverse justify-center gap-9 bg-white p-10 px-4 md:h-[500px] md:flex-row md:px-28">
+          <div className="flex h-full flex-1 flex-col content-center justify-center gap-6 text-black md:gap-6">
+            <h1 className="font-display text-balance text-left text-3xl font-bold leading-none tracking-tight drop-shadow-sm md:text-4xl md:leading-[2rem]">
               Ideas don’t build businesses. People do.
             </h1>
-            <p className="mt-6 inline w-10/12 text-left md:text-xl">
+            <p className="inline w-10/12 text-left text-lg md:text-xl">
               We have a great philosophy on world building and making homes that
               really stand out.
             </p>
             <a
               href=""
-              className="mt-6 max-w-fit border-b border-black text-xl hover:border-red-500"
+              className="max-w-fit border-b border-black pt-4 text-lg hover:border-red-500 md:text-xl"
             >
               Learn more
             </a>
@@ -184,47 +184,53 @@ export default async function Home() {
           </div>
         </div>
         {/* Data points */}
-        <div className="flex h-[750px] w-full flex-col items-center justify-center bg-zinc-200 p-10 px-28">
-          <p className="mb-4 flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
-            For Customers
-          </p>
-          <h1 className="text-left text-5xl font-bold leading-[3rem] tracking-tight">
-            Instant service, exceptional experiences
-          </h1>
-          <div className="mt-24 flex w-full flex-row gap-5">
-            <div className="border-1 flex h-80 w-1/3 flex-col justify-between rounded-lg border border-black p-3">
-              <div className="">
-                <h2 className="ml-[-6px] text-8xl">2x</h2>
-                <h3 className="">on average per day</h3>
+        <div className="justify-left flex h-auto w-full flex-col bg-zinc-200 p-10 px-4 md:h-[750px] md:px-28">
+          <div className="flex flex-col justify-center pb-10 md:items-center md:pb-24">
+            <p className="mb-4 flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
+              For Customers
+            </p>
+            <h1 className="text-left text-5xl font-bold leading-[3rem] tracking-tight">
+              Instant service, exceptional experiences
+            </h1>
+          </div>
+          <div className="flex flex-col gap-6 md:flex-row md:justify-center">
+            <div className="">
+              <div className="border-1 flex h-auto flex-col justify-between gap-8 rounded-lg border border-black p-3 md:h-80">
+                <div className="">
+                  <h2 className="ml-[-6px] text-7xl md:text-8xl">2x</h2>
+                  <h3 className="">on average per day</h3>
+                </div>
+                <p className="text-lg">
+                  Up to 80% in cost savings as compared to in-house service
+                </p>
               </div>
-              <p className="text-lg">
-                Up to 80% in cost savings as compared to in-house service
-              </p>
             </div>
-            <div className="border-1 flex h-80 w-1/3 flex-col justify-between rounded-lg border border-black p-3">
-              <div className="">
-                <h2 className="ml-[-6px] text-8xl">32%</h2>
-                <h3 className="">on average per day</h3>
+            <div className="">
+              <div className="border-1 flex h-auto flex-col justify-between gap-8 rounded-lg border border-black p-3 md:h-80">
+                <div className="">
+                  <h2 className="ml-[-6px] text-7xl md:text-8xl">2x</h2>
+                  <h3 className="">on average per day</h3>
+                </div>
+                <p className="text-lg">
+                  Up to 80% in cost savings as compared to in-house service
+                </p>
               </div>
-              <p className="text-lg">
-                Keep all your systems in the know. And we believe we've only
-                scratched the surface.
-              </p>
-            </div>{" "}
-            <div className="border-1 flex h-80 w-1/3 flex-col justify-between rounded-lg border border-black p-3">
-              <div className="">
-                <h2 className="ml-[-6px] text-8xl">$1bn</h2>
-                <h3 className="">on average per day</h3>
+            </div>
+            <div className="">
+              <div className="border-1 flex h-auto flex-col justify-between gap-8 rounded-lg border border-black p-3 md:h-80">
+                <div className="">
+                  <h2 className="ml-[-6px] text-7xl md:text-8xl">2x</h2>
+                  <h3 className="">on average per day</h3>
+                </div>
+                <p className="text-lg">
+                  Up to 80% in cost savings as compared to in-house service
+                </p>
               </div>
-              <p className="text-lg">
-                With this technology there are so many rich opportunties to help
-                care staff.
-              </p>
             </div>
           </div>
         </div>
         {/* Tabs */}
-        <div className="flex h-[750px] w-full flex-row justify-center bg-slate-100 p-10 px-28">
+        <div className="flex w-full flex-row justify-center bg-slate-100 p-10 px-4 md:h-[750px] md:px-28">
           <Tabs
             className="flex w-full gap-9"
             orientation="vertical"
@@ -298,18 +304,20 @@ export default async function Home() {
           </Tabs>
         </div>
         {/* Accordion */}
-        <div className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-28 py-24">
-          <div className="flex h-full w-full flex-row gap-4">
-            <div className="flex h-full w-1/2 flex-col justify-start">
-              <h2 className="text-6xl">Frequently asked questions</h2>
+        <div className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-4 py-24 md:px-28">
+          <div className="flex h-full w-full flex-col gap-12 md:flex-row md:gap-4">
+            <div className="justify-start md:w-1/2">
+              <h2 className="text-4xl font-bold md:text-6xl">
+                Frequently asked questions
+              </h2>
             </div>
-            <div className="h-full w-1/2">
+            <div className="h-full md:w-1/2">
               <Accordion type="single" collapsible>
                 <AccordionItem
                   value="item-1"
                   className="border-b border-black hover:text-gray-700"
                 >
-                  <AccordionTrigger className="text-left text-xl">
+                  <AccordionTrigger className="text-left text-lg md:text-xl">
                     How much does it cost?
                   </AccordionTrigger>
                   <AccordionContent className="text-lg text-gray-600">
@@ -320,7 +328,7 @@ export default async function Home() {
                   value="item-2"
                   className="border-b border-black hover:text-gray-700"
                 >
-                  <AccordionTrigger className="text-left text-xl">
+                  <AccordionTrigger className="text-left text-lg md:text-xl">
                     Can your booking software system replace our reservations
                     diary?
                   </AccordionTrigger>
@@ -332,7 +340,7 @@ export default async function Home() {
                   value="item-3"
                   className="border-b border-black hover:text-gray-700"
                 >
-                  <AccordionTrigger className="text-left text-xl">
+                  <AccordionTrigger className="text-left text-lg md:text-xl">
                     Should I have a cash register or a digital cash register for
                     my restaurant?
                   </AccordionTrigger>
@@ -344,7 +352,7 @@ export default async function Home() {
                   value="item-4"
                   className="border-b border-black hover:text-gray-700"
                 >
-                  <AccordionTrigger className="text-left text-xl">
+                  <AccordionTrigger className="text-left text-lg md:text-xl">
                     Is your booking application suitable for all types of
                     restaurants?
                   </AccordionTrigger>
@@ -357,47 +365,51 @@ export default async function Home() {
           </div>
         </div>
         {/* Contact Form */}
-        <div className="flex h-auto w-full flex-row px-28 py-24">
-          <div className="w-1/2">
-            <h2 className="text-6xl text-white">Contact us</h2>
+        <div className="flex h-auto w-full flex-col gap-12 px-4 py-24 md:flex-row md:px-28">
+          <div className="md:w-1/2">
+            <h2 className="text-4xl font-bold text-white md:text-6xl">
+              Contact us
+            </h2>
           </div>
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <ContactForm />
           </div>
         </div>
       </div>
       {/* Footer */}
-      <div className="flex h-[555px] flex-col bg-slate-500 px-28 py-10">
-        <div className="flex w-full flex-row gap-6">
+      <div className="flex h-auto flex-col bg-slate-500 px-4 py-10 md:h-[555px] md:px-28">
+        <div className="flex w-full flex-col gap-6 md:flex-row">
           <div className="flex w-1/2 flex-col">
-            <p className="text-3xl">
+            <p className="text-xl md:text-3xl">
               Beautiful Website <br /> Corporation
             </p>
           </div>
-          <div className="flex w-1/2 flex-row">
-            <div className="flex w-1/3 flex-col">
-              <a href="#" className="">
-                Instagram
-              </a>
-              <a href="#" className="">
-                LinkedIn
-              </a>
-              <a href="#" className="">
-                X
-              </a>
+          <div className="flex flex-col md:w-1/2 md:flex-row">
+            <div className="flex flex-row">
+              <div className="flex w-1/2 flex-col md:w-1/3">
+                <a href="#" className="">
+                  Instagram
+                </a>
+                <a href="#" className="">
+                  LinkedIn
+                </a>
+                <a href="#" className="">
+                  X
+                </a>
+              </div>
+              <div className="flex w-1/2 flex-col md:w-1/3">
+                <a href="">Privacy Policy</a>
+                <a href="">Legal</a>
+              </div>
             </div>
-            <div className="flex w-1/3 flex-col">
-              <a href="">Privacy Policy</a>
-              <a href="">Legal</a>
-            </div>
-            <div className="w-1/3">
+            <div className="w-full pt-12 md:w-1/3 md:pt-28">
               <p>
                 Sydney (Warrang) The Commons 388 George Street Sydney NSW 2000
               </p>
             </div>
           </div>
         </div>
-        <Separator className="my-5 mt-60 bg-slate-800" />
+        <Separator className="my-5 mt-20 bg-slate-800 md:mt-60" />
         <div className="flex w-full flex-row">
           <div className="flex w-1/2">
             <p className="text-sm">Copyright 2024</p>
@@ -406,7 +418,7 @@ export default async function Home() {
             <p className="text-sm">
               Code by{" "}
               <a href="" className="border-b border-black">
-                Slevin
+                Mr.Tortilla
               </a>
             </p>
           </div>
