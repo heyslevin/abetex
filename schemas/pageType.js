@@ -1,11 +1,12 @@
 import { defineType, defineField, defineArrayMember } from "sanity";
 import { CalendarIcon, DocumentTextIcon } from "@sanity/icons";
+import { LayoutPanelTop } from "lucide-react";
 
 export const pageType = defineType({
   name: "page",
   type: "document",
-  title: "Page",
-  icon: DocumentTextIcon,
+  title: "Static Page",
+  icon: LayoutPanelTop,
   fields: [
     defineField({
       name: "title",

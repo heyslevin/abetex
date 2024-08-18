@@ -7,6 +7,8 @@ import { pageBuilderType } from "./pageBuilderType";
 import { pageType } from "./pageType";
 import { metricsType } from "./modules/metricsType";
 import { tabsType } from "./modules/tabsType";
+import { footerType } from "./footerType";
+import { globalSettingsType } from "./globalSettingsType";
 
 export const schemaTypes = [
   pageType,
@@ -18,4 +20,6 @@ export const schemaTypes = [
   paragraphSectionType,
   metricsType,
   tabsType,
+  footerType,
+  globalSettingsType,
 ];
