@@ -240,8 +240,8 @@ export default async function Home() {
             defaultValue="omnichannel"
           >
             <div className="flex h-full w-full flex-col justify-between md:w-2/5">
-              <div className="flex flex-col justify-center gap-6 pb-10 md:items-center md:pb-24">
-                <p className="flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
+              <div className="flex flex-col justify-center gap-6 pb-10 md:items-start md:pb-24">
+                <p className="flex max-w-fit overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
                   For Customers
                 </p>
                 <h1 className="text-left text-4xl font-bold leading-none tracking-tight md:text-5xl md:leading-[3rem]">
