@@ -17,15 +17,17 @@ function TextWithImage({ data }) {
   // };
 
   return (
-    <div className="flex h-[500px] w-full justify-center gap-9 bg-white p-10 px-28">
-      <div className="flex h-full flex-1 flex-col content-center justify-center text-black">
-        <h1 className="font-display text-balance text-left text-xl font-bold tracking-tight drop-shadow-sm md:text-4xl md:leading-[2rem]">
+    <div className="flex h-auto w-full flex-col-reverse justify-center gap-9 bg-white p-10 px-4 md:h-[500px] md:flex-row md:px-28">
+      <div className="flex h-full flex-1 flex-col content-center justify-center gap-6 text-black md:gap-6">
+        <h1 className="font-display text-balance text-left text-3xl font-bold leading-none tracking-tight drop-shadow-sm md:text-4xl md:leading-[2rem]">
           {data.heading}
         </h1>
-        <p className="mt-6 inline w-10/12 text-left md:text-xl">{data.text}</p>
+        <p className="inline w-10/12 text-left text-lg md:text-xl">
+          {data.text}
+        </p>
         <a
           href={data.button.url}
-          className="mt-6 max-w-fit border-b border-black text-xl hover:border-red-500"
+          className="max-w-fit border-b border-black pt-4 text-lg hover:border-red-500 md:text-xl"
         >
           {data.button.text}
         </a>

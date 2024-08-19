@@ -24,7 +24,7 @@ function Hero({ data }) {
       <h1 className="font-display text-balance text-center text-4xl font-bold tracking-tight text-white drop-shadow-sm md:text-7xl md:leading-[5rem]">
         {data.heading}
       </h1>
-      <p className="mt-6 text-center text-white [text-wrap:balance] md:text-xl">
+      <p className="mt-6 text-balance text-center text-white md:text-xl">
         {data.tagline}
       </p>
       <div
@@ -35,7 +35,7 @@ function Hero({ data }) {
           className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-gray-500 px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
           target="_blank"
           rel="noopener noreferrer"
-          href={data.button.url}
+          hfef={data.button.link}
         >
           <svg
             className="h-4 w-4 group-hover:text-black"
@@ -51,7 +51,17 @@ function Hero({ data }) {
               strokeLinejoin="round"
             />
           </svg>
-          <p>{data.button.text}</p>
+          <p>Deploy to Vercel</p>
+        </a>
+        <a
+          className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+          href="https://github.com/steven-tey/precedent"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>
+            <span className="hidden sm:inline-block">Star on</span> GitHub{" "}
+          </p>
         </a>
       </div>
     </div>

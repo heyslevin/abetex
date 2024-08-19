@@ -15,9 +15,9 @@ function Carousel({ data }) {
   //   },
   // };
   return (
-    <div className="w-full pb-6">
+    <div className="w-full px-4 pb-6">
       <CarouselSSR>
-        <CarouselContent className="-ml-1">
+        <CarouselContent className="-ml-4 pl-0">
           {data.images.map((image, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="relative h-[555px] w-auto overflow-hidden rounded-lg bg-yellow-400">
@@ -29,6 +29,7 @@ function Carousel({ data }) {
                   height={1200}
                   className="h-full object-cover"
                 />
+                {image.alt}
               </div>
             </CarouselItem>
           ))}

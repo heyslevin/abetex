@@ -157,6 +157,8 @@ export default async function Home() {
             ) : null}
           </div>
         </div>
+
+        {/* SideText and Image Section */}
         <div className="flex h-auto w-full flex-col-reverse justify-center gap-9 bg-white p-10 px-4 md:h-[500px] md:flex-row md:px-28">
           <div className="flex h-full flex-1 flex-col content-center justify-center gap-6 text-black md:gap-6">
             <h1 className="font-display text-balance text-left text-3xl font-bold leading-none tracking-tight drop-shadow-sm md:text-4xl md:leading-[2rem]">
@@ -183,7 +185,7 @@ export default async function Home() {
             />
           </div>
         </div>
-        {/* Data points */}
+        {/* Metrics */}
         <div className="justify-left flex h-auto w-full flex-col bg-zinc-200 p-10 px-4 md:h-[750px] md:px-28">
           <div className="flex flex-col justify-center pb-10 md:items-center md:pb-24">
             <p className="mb-4 flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
@@ -407,8 +409,8 @@ export default async function Home() {
             </p>
           </div>
           <div className="flex flex-col md:w-1/2 md:flex-row">
-            <div className="flex flex-row">
-              <div className="flex w-1/2 flex-col md:w-1/3">
+            <div className="flex w-1/2 flex-row">
+              <div className="flex w-1/2 flex-col md:w-1/2">
                 <a href="#" className="">
                   Instagram
                 </a>
@@ -419,12 +421,12 @@ export default async function Home() {
                   X
                 </a>
               </div>
-              <div className="flex w-1/2 flex-col md:w-1/3">
+              <div className="flex w-1/2 flex-col md:w-1/2">
                 <a href="">Privacy Policy</a>
                 <a href="">Legal</a>
               </div>
             </div>
-            <div className="w-full pt-12 md:w-1/3 md:pt-28">
+            <div className="flex w-full grow text-balance pt-12 md:w-1/2 md:pt-0">
               <p>
                 Sydney (Warrang) The Commons 388 George Street Sydney NSW 2000
               </p>
