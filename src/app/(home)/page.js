@@ -229,6 +229,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
+
         {/* Tabs */}
         <div className="flex w-full flex-row justify-center bg-slate-100 p-10 px-4 md:h-[750px] md:px-28">
           <Tabs
@@ -236,12 +237,12 @@ export default async function Home() {
             orientation="vertical"
             defaultValue="omnichannel"
           >
-            <div className="flex h-full w-2/5 flex-col justify-between">
-              <div className="mb-auto flex flex-col gap-y-5">
+            <div className="flex h-full w-full flex-col justify-between md:w-2/5">
+              <div className="flex flex-col justify-center gap-6 pb-10 md:items-center md:pb-24">
                 <p className="flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
                   For Customers
                 </p>
-                <h1 className="text-left text-5xl font-bold leading-[3rem] tracking-tight">
+                <h1 className="text-left text-4xl font-bold leading-none tracking-tight md:text-5xl md:leading-[3rem]">
                   Instant service, exceptional experiences
                 </h1>
               </div>
@@ -251,7 +252,7 @@ export default async function Home() {
                     className="group flex flex-col content-start"
                     value="omnichannel"
                   >
-                    <Separator className="group-rdx-state-active:bg-black" />
+                    <Separator className="border group-rdx-state-active:border-black group-rdx-state-inactive:border-gray-400" />
                     <div className="flex h-full flex-col py-4">
                       <h1 className="text-md text-left font-bold group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500">
                         Omnichannel
@@ -261,13 +262,25 @@ export default async function Home() {
                         need them. Always there, 24/7
                       </p>
                     </div>
+                    <TabsContent
+                      value="omnichannel"
+                      className="flex pb-4 md:hidden"
+                    >
+                      <Image
+                        src={page.images[0].imageUrl}
+                        alt={page.images[0].alt}
+                        width={1200}
+                        height={1200}
+                        className="h-full object-cover"
+                      />
+                    </TabsContent>
                   </TabsTrigger>
 
                   <TabsTrigger
                     className="group flex flex-col content-start"
                     value="help"
                   >
-                    <Separator className="group-rdx-state-active:bg-black" />
+                    <Separator className="border group-rdx-state-active:border-black group-rdx-state-inactive:border-gray-400" />
                     <div className="flex h-full flex-col py-4">
                       <h1 className="text-md text-left font-bold group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500">
                         Help Center
@@ -277,11 +290,20 @@ export default async function Home() {
                         instantly. It's so much more than an AI chatbot.
                       </p>
                     </div>
+                    <TabsContent value="help" className="flex pb-4 md:hidden">
+                      <Image
+                        src={page.images[1].imageUrl}
+                        alt={page.images[0].alt}
+                        width={1200}
+                        height={1200}
+                        className="h-full object-cover"
+                      />
+                    </TabsContent>
                   </TabsTrigger>
                 </TabsList>
               </div>
             </div>
-            <div className="h-full w-3/5 overflow-hidden rounded-lg bg-blue-300">
+            <div className="hidden h-full w-3/5 overflow-hidden rounded-lg bg-blue-300 sm:hidden md:flex">
               <TabsContent value="omnichannel">
                 <Image
                   src={page.images[0].imageUrl}
