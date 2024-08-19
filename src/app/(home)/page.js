@@ -60,7 +60,7 @@ export default async function Home() {
       {/* Wrapper */}
       <div className="flex h-full w-full flex-col items-center bg-black">
         {/* Hero */}
-        <div className="z-10 m-auto w-full max-w-xl px-4 py-8 md:px-5 xl:px-0">
+        <div className="z-10 m-auto w-10/12 max-w-xl px-5 py-8 xl:px-0">
           <a
             href="https://twitter.com/steventey/status/1613928948915920896"
             target="_blank"
