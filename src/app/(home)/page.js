@@ -60,7 +60,7 @@ export default async function Home() {
       {/* Wrapper */}
       <div className="flex h-full w-full flex-col items-center bg-black">
         {/* Hero */}
-        <div className="z-10 m-auto w-10/12 max-w-xl px-5 py-8 xl:px-0">
+        <div className="z-10 m-auto w-full max-w-xl px-5 py-8 xl:px-0">
           <a
             href="https://twitter.com/steventey/status/1613928948915920896"
             target="_blank"
@@ -74,7 +74,7 @@ export default async function Home() {
           <h1 className="font-display text-balance text-center text-4xl font-bold tracking-tight text-white drop-shadow-sm md:text-7xl md:leading-[5rem]">
             {page.heading}
           </h1>
-          <p className="mt-6 text-center text-white [text-wrap:balance] md:text-xl">
+          <p className="mt-6 text-balance text-center text-white md:text-xl">
             {page.caption}
           </p>
           <div
