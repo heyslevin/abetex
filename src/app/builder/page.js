@@ -18,6 +18,8 @@ const COMPONENT_MAP = {
   tabs: Tabs,
 };
 
+export const dynamic = "force-dynamic";
+
 async function PageBuilder() {
   const page = await sanityFetch({ query: PAGE_BUILDER_QUERY });
   return (

@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "@/src/app/styles/globals.css";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <div className="flex h-full w-full flex-col items-center bg-black">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

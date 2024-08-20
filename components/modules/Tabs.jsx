@@ -8,7 +8,6 @@ import {
 import Image from "next/image";
 
 export default function Tabs({ data }) {
-  console.log(data.tabs);
   //Data Structure
   //
   // const data = {
