@@ -1,3 +1,6 @@
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
+
 import { client, sanityFetch } from "@/src/sanity/lib/client";
 import React from "react";
 
@@ -21,8 +24,6 @@ const COMPONENT_MAP = {
   accordion: DuoAccordion,
   form: FormMaker,
 };
-
-export const dynamic = "force-dynamic";
 
 async function PageBuilder() {
   const page = await sanityFetch({ query: PAGE_BUILDER_QUERY });
