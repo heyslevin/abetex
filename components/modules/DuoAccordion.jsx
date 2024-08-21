@@ -6,7 +6,6 @@ import {
 } from "../ui/accordion";
 
 export default function DuoAccordion({ data }) {
-  console.log({ DuoAccordion: data });
   // const data = {
   //   heading: "Faqs",
   //   text: "Questions? We have answers",
