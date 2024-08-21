@@ -13,12 +13,13 @@ import { ZOD_SCHEMA_TYPES } from "./constants";
 //     },
 
 export function zodFormatter(data) {
-  const dataWithSchema = data.items.map((item) => ({
+  console.log({ zodFormatter: data });
+  const dataWithSchema = data.map((item) => ({
     ...item,
     type: ZOD_SCHEMA_TYPES[item.type],
   }));
 
-  const defaultValuesArray = data.items.map((item) =>
+  const defaultValuesArray = data.map((item) =>
     item.defaultValue
       ? { [item.title]: item.defaultValue }
       : { [item.title]: "" },

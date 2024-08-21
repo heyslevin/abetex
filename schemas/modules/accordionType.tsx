@@ -1,4 +1,4 @@
-import { ListCollapse } from "lucide-react";
+import { LetterText, ListCollapse } from "lucide-react";
 import { defineField, defineType } from "sanity";
 
 export const accordionType = defineType({
@@ -6,22 +6,36 @@ export const accordionType = defineType({
   type: "object",
   fields: [
     defineField({
-      name: "title",
+      name: "heading",
       type: "string",
-      description: "A name your accordion for internal use",
+      description: "Heading on the left side of accordion",
+    }),
+    defineField({
+      name: "text",
+      type: "text",
+      rows: 3,
+      description: "Optional text below heading",
     }),
     defineField({
       name: "accordionItems",
       type: "array",
       of: [
-        {
-          name: "title",
-          type: "string",
-        },
-        {
-          name: "description",
-          type: "text",
-        },
+        defineField({
+          name: "item",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              type: "string",
+            },
+            {
+              name: "description",
+              type: "text",
+              rows: 3,
+            },
+          ],
+          icon: LetterText,
+        }),
       ],
     }),
   ],

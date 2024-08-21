@@ -8,7 +8,7 @@ import ParagraphSection from "@/components/modules/ParagraphSection";
 import TextWithImage from "@/components/modules/TextWithImage";
 import Metrics from "@/components/modules/Metrics";
 import Tabs from "@/components/modules/Tabs";
-import Accordion from "@/components/modules/Accordion";
+import DuoAccordion from "@/components/modules/DuoAccordion";
 import FormMaker from "@/components/modules/FormMaker/FormMaker";
 
 const COMPONENT_MAP = {
@@ -18,7 +18,7 @@ const COMPONENT_MAP = {
   paragraphSection: ParagraphSection,
   metrics: Metrics,
   tabs: Tabs,
-  accordion: Accordion,
+  accordion: DuoAccordion,
   form: FormMaker,
 };
 

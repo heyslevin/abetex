@@ -1,3 +1,4 @@
+import { z } from "zod";
 import { phoneRegex } from "./utils";
 
 export const ZOD_SCHEMA_TYPES = {

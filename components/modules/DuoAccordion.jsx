@@ -1,8 +1,16 @@
-export default function Accordion({ data }) {
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+
+export default function DuoAccordion({ data }) {
+  console.log({ DuoAccordion: data });
   // const data = {
   //   heading: "Faqs",
   //   text: "Questions? We have answers",
-  //   items: [
+  //   accordionItems: [
   //     {
   //       title: "",
   //       description: "",
@@ -19,7 +27,7 @@ export default function Accordion({ data }) {
   return (
     <div className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-4 py-24 md:px-28">
       <div className="flex h-full w-full flex-col gap-12 md:flex-row md:gap-4">
-        <div className="justify-start md:w-1/2">
+        <div className="flex flex-col justify-start gap-6 md:w-1/2">
           <h2 className="text-4xl font-bold md:text-6xl">{data.heading}</h2>
           <p className="inline w-10/12 text-left text-lg md:text-xl">
             {data.text}
@@ -27,11 +35,11 @@ export default function Accordion({ data }) {
         </div>
         <div className="h-full md:w-1/2">
           <Accordion type="single" collapsible>
-            {data.items.map((item) => {
+            {data.accordionItems.map((item) => {
               return (
                 <AccordionItem
                   value={item._key}
-                  key={item_key}
+                  key={item._key}
                   className="border-b border-black hover:text-gray-700"
                 >
                   <AccordionTrigger className="text-left text-lg md:text-xl">

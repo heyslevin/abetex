@@ -47,10 +47,13 @@ export default function FormMaker({ data }) {
 
   return (
     <div className="flex h-auto w-full flex-col gap-12 px-4 py-24 md:flex-row md:px-28">
-      <div className="md:w-1/2">
+      <div className="flex flex-col justify-start gap-4 md:w-1/2">
         <h2 className="text-4xl font-bold text-white md:text-6xl">
           {data.heading}
         </h2>
+        <p className="inline w-10/12 text-left text-lg text-white md:text-xl">
+          {data.text}
+        </p>
       </div>
       <div className="md:w-1/2">
         <Form {...form}>
@@ -62,6 +65,7 @@ export default function FormMaker({ data }) {
               <FormField
                 control={form.control}
                 name={item.title}
+                key={item._key}
                 render={({ field }) => (
                   <FormItem className="">
                     <FormControl>

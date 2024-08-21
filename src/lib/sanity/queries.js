@@ -20,6 +20,10 @@ content[]{
     ...,
     'imageUrl': asset->url
   }
+  },
+  accordion[]{
+    ...,
+    
   }
 
   
