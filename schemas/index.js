@@ -7,12 +7,16 @@ import { pageBuilderType } from "./pageBuilderType";
 import { pageType } from "./pageType";
 import { metricsType } from "./modules/metricsType";
 import { tabsType } from "./modules/tabsType";
+import { accordionType } from "./modules/accordionType";
 import { footerType } from "./footerType";
 import { globalSettingsType } from "./globalSettingsType";
+import { formType } from "./modules/formType";
 
 export const schemaTypes = [
   pageType,
   pageBuilderType,
+  footerType,
+  globalSettingsType,
   heroType,
   textWithImageType,
   textWithIllustrationType,
@@ -20,6 +24,6 @@ export const schemaTypes = [
   paragraphSectionType,
   metricsType,
   tabsType,
-  footerType,
-  globalSettingsType,
+  accordionType,
+  formType,
 ];

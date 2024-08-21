@@ -45,6 +45,14 @@ export const pageBuilderType = defineType({
           name: "tabs",
           type: "tabs",
         }),
+        defineType({
+          name: "accordion",
+          type: "accordion",
+        }),
+        defineType({
+          name: "form",
+          type: "form",
+        }),
       ],
     }),
   ],

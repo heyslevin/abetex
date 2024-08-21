@@ -1,15 +1,20 @@
-export default function Accordion() {
-  const data = {
-    heading: "Faqs",
-    text: "Questions? We have answers",
-    items: [
-      {
-        title: "",
-        description: "",
-        _key: "randomKey",
-      },
-    ],
-  };
+export default function Accordion({ data }) {
+  // const data = {
+  //   heading: "Faqs",
+  //   text: "Questions? We have answers",
+  //   items: [
+  //     {
+  //       title: "",
+  //       description: "",
+  //       _key: "randomKey",
+  //     },
+  //     {
+  //       title: "",
+  //       description: "",
+  //       _key: "randomKey2",
+  //     },
+  //   ],
+  // };
 
   return (
     <div className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-4 py-24 md:px-28">
@@ -22,17 +27,22 @@ export default function Accordion() {
         </div>
         <div className="h-full md:w-1/2">
           <Accordion type="single" collapsible>
-            <AccordionItem
-              value="item-1"
-              className="border-b border-black hover:text-gray-700"
-            >
-              <AccordionTrigger className="text-left text-lg md:text-xl">
-                How much does it cost?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg text-gray-600">
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
+            {data.items.map((item) => {
+              return (
+                <AccordionItem
+                  value={item._key}
+                  key={item_key}
+                  className="border-b border-black hover:text-gray-700"
+                >
+                  <AccordionTrigger className="text-left text-lg md:text-xl">
+                    {item.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-lg text-gray-600">
+                    {item.description}
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
           </Accordion>
         </div>
       </div>

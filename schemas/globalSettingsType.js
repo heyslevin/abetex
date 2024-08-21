@@ -1,5 +1,6 @@
 import { Settings } from "lucide-react";
 import { defineField, defineType } from "sanity";
+import MyPrefixedSlug from "@/components/studio/MyPrefixedSlug";
 
 // const data = {
 //   siteTitle,
@@ -33,19 +34,41 @@ export const globalSettingsType = defineType({
     }),
     defineField({
       name: "socials",
+      description: "Add your social media handles",
       type: "object",
       fields: [
         defineField({
           name: "instagram",
-          type: "url",
+          type: "string",
+          components: {
+            input: MyPrefixedSlug,
+          },
+          options: {
+            urlPrefix: "instagram.com/",
+            maxLength: 30,
+          },
         }),
         defineField({
           name: "linkedIn",
-          type: "url",
+          type: "string",
+          components: {
+            input: MyPrefixedSlug,
+          },
+          options: {
+            urlPrefix: "linkedin.com/",
+            maxLength: 30,
+          },
         }),
         defineField({
           name: "x",
-          type: "url",
+          type: "string",
+          components: {
+            input: MyPrefixedSlug,
+          },
+          options: {
+            urlPrefix: "x.com/",
+            maxLength: 30,
+          },
         }),
       ],
     }),

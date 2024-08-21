@@ -8,6 +8,8 @@ import ParagraphSection from "@/components/modules/ParagraphSection";
 import TextWithImage from "@/components/modules/TextWithImage";
 import Metrics from "@/components/modules/Metrics";
 import Tabs from "@/components/modules/Tabs";
+import Accordion from "@/components/modules/Accordion";
+import FormMaker from "@/components/modules/FormMaker/FormMaker";
 
 const COMPONENT_MAP = {
   hero: Hero,
@@ -16,6 +18,8 @@ const COMPONENT_MAP = {
   paragraphSection: ParagraphSection,
   metrics: Metrics,
   tabs: Tabs,
+  accordion: Accordion,
+  form: FormMaker,
 };
 
 export const dynamic = "force-dynamic";
