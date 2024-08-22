@@ -42,11 +42,11 @@ export const accordionType = defineType({
   icon: <ListCollapse size={16} />,
   preview: {
     select: {
-      title: "title",
+      title: "heading",
     },
     prepare({ title }) {
       return {
-        title: title,
+        title: title || "Untitled",
         subtitle: "Accordion",
       };
     },
