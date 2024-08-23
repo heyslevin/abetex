@@ -1,21 +1,21 @@
 import { Separator } from "../ui/separator";
 
-export default function Footer() {
-  const data = {
-    title: "Beautiful Website Corporation",
-    socials: {
-      ig: "#",
-      x: "#",
-      li: "#",
-    },
-    address: "Sydney (Warrang) The Commons 388 George Street Sydney NSW 2000",
-    privacyPolicy: {
-      fileUrl: "#",
-    },
-    legal: {
-      fileUrl: "#",
-    },
-  };
+export default function Footer({ data }) {
+  // const data = {
+  //   title: "Beautiful Website Corporation",
+  //   socials: {
+  //     ig: "#",
+  //     x: "#",
+  //     li: "#",
+  //   },
+  //   address: "Sydney (Warrang) The Commons 388 George Street Sydney NSW 2000",
+  //   privacyPolicy: {
+  //     fileUrl: "#",
+  //   },
+  //   legal: {
+  //     fileUrl: "#",
+  //   },
+  // };
 
   return (
     <div className="flex h-auto flex-col bg-slate-500 px-4 py-10 md:h-[555px] md:px-28">
@@ -49,7 +49,7 @@ export default function Footer() {
       <Separator className="my-5 mt-20 bg-slate-800 md:mt-60" />
       <div className="flex w-full flex-row">
         <div className="flex w-1/2">
-          <p className="text-sm">Copyright 2024</p>
+          <p className="text-sm">Copyright {new Date().getFullYear()}</p>
         </div>
         <div className="flex w-1/2 justify-end">
           <p className="text-sm">
