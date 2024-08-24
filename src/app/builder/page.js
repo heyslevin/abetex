@@ -1,7 +1,7 @@
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
 
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import React from "react";
 
 import { PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";

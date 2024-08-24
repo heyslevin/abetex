@@ -1,21 +1,21 @@
 import { Separator } from "../ui/separator";
 
-export default function Footer({ data }) {
-  // const data = {
-  //   title: "Beautiful Website Corporation",
-  //   socials: {
-  //     ig: "#",
-  //     x: "#",
-  //     li: "#",
-  //   },
-  //   address: "Sydney (Warrang) The Commons 388 George Street Sydney NSW 2000",
-  //   privacyPolicy: {
-  //     fileUrl: "#",
-  //   },
-  //   legal: {
-  //     fileUrl: "#",
-  //   },
-  // };
+export default function Footer() {
+  const data = {
+    title: "Beautiful Website Corporation",
+    socials: {
+      ig: "#",
+      x: "#",
+      li: "#",
+    },
+    address: "Sydney (Warrang) The Commons 388 George Street Sydney NSW 2000",
+    privacyPolicy: {
+      fileUrl: "#",
+    },
+    legal: {
+      fileUrl: "#",
+    },
+  };
 
   return (
     <div className="flex h-auto flex-col bg-slate-500 px-4 py-10 md:h-[555px] md:px-28">
@@ -26,23 +26,23 @@ export default function Footer({ data }) {
         <div className="flex flex-col md:w-1/2 md:flex-row">
           <div className="flex w-1/2 flex-row">
             <div className="flex w-1/2 flex-col md:w-1/2">
-              <a href={data.socials.ig} className="">
+              <a href={data?.socials.ig} className="">
                 Instagram
               </a>
-              <a href={data.socials.li} className="">
+              <a href={data?.socials.li} className="">
                 LinkedIn
               </a>
-              <a href={data.socials.x} className="">
+              <a href={data?.socials.x} className="">
                 X
               </a>
             </div>
             <div className="flex w-1/2 flex-col md:w-1/2">
-              <a href={data.privacyPolicy.fileUrl}>Privacy Policy</a>
-              <a href={data.legal.fileUrl}>Legal</a>
+              <a href={data?.privacyPolicy.fileUrl}>Privacy Policy</a>
+              <a href={data?.legal.fileUrl}>Legal</a>
             </div>
           </div>
           <div className="flex w-full grow text-balance pt-12 md:w-1/2 md:pt-0">
-            <p>{data.address}</p>
+            <p>{data?.address}</p>
           </div>
         </div>
       </div>

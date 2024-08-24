@@ -28,6 +28,7 @@ export const formType = defineType({
               title: "Input title",
               type: "string",
               description: "Name of the input",
+              validation: (rule) => rule.required(),
             }),
             defineField({
               name: "type",

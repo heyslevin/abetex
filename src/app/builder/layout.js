@@ -1,10 +1,7 @@
-import { Inter } from "next/font/google";
 import "@/src/app/styles/globals.css";
 import Footer from "@/components/layout/Footer";
 import { sanityFetch } from "@/src/sanity/lib/client";
-import { PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
-
-const inter = Inter({ subsets: ["latin"] });
+import { GLOBAL_SETTINGS_QUERY } from "@/src/lib/sanity/queries";
 
 export const metadata = {
   title: "Page Builder",
@@ -12,14 +9,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  // const page = await sanityFetch({ query: PAGE_BUILDER_QUERY });
+  const data = await sanityFetch({ query: GLOBAL_SETTINGS_QUERY });
   return (
     <html lang="en">
       <body>
         <div className="flex h-full w-full flex-col items-center bg-black">
           {children}
         </div>
-        <Footer />
+        <Footer data={data} />
       </body>
     </html>
   );

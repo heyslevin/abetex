@@ -28,3 +28,13 @@ export const PAGE_BUILDER_QUERY = groq`
 }[0]
 
 `;
+
+// Missing File fetch
+export const GLOBAL_SETTINGS_QUERY = groq`
+*[_type == "globalSettings"] {
+  socials,
+  websiteTitle,
+  address
+}[0]
+
+`;
