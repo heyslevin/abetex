@@ -37,7 +37,6 @@ import { zodFormatter } from "./lib/helpers";
 // };
 
 export default function FormMaker({ data }) {
-  console.log({ formMaker: data });
   const { formSchema, defaultValues } = zodFormatter(data.items);
   const form = useForm({
     resolver: zodResolver(formSchema),

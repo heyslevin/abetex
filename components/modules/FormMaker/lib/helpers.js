@@ -13,7 +13,6 @@ import { ZOD_SCHEMA_TYPES } from "./constants";
 //     },
 
 export function zodFormatter(data) {
-  console.log({ zodFormatter: data });
   const dataWithSchema = data.map((item) => ({
     ...item,
     type: ZOD_SCHEMA_TYPES[item.type],
