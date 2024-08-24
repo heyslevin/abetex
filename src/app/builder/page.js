@@ -25,7 +25,7 @@ const COMPONENT_MAP = {
 async function PageBuilder() {
   const page = await sanityFetch({
     query: PAGE_BUILDER_QUERY,
-    tags: ["builder"],
+    tags: ["pageBuilder"],
   });
   return (
     <>
