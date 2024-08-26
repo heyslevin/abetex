@@ -11,6 +11,9 @@ import { accordionType } from "./modules/accordionType";
 import { footerType } from "./footerType";
 import { globalSettingsType } from "./globalSettingsType";
 import { formType } from "./modules/formType";
+import { headerType } from "./headerType";
+import { linkType } from "./objects/linkType";
+import { navigationItemType } from "./objects/navItemType";
 
 export const schemaTypes = [
   pageType,
@@ -25,5 +28,8 @@ export const schemaTypes = [
   metricsType,
   tabsType,
   accordionType,
+  linkType,
+  navigationItemType,
   formType,
+  headerType,
 ];
