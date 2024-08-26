@@ -12,11 +12,21 @@ export const myStructure = (S) =>
       S.listItem()
         .title("Header Navigation")
         .icon(PanelTop)
-        .child(S.document().schemaType("header").documentId("header")),
+        .child(
+          S.document()
+            .schemaType("header")
+            .documentId("header")
+            .title("Header Navigation"),
+        ),
       S.listItem()
         .title("Footer")
         .icon(PanelBottom)
-        .child(S.document().schemaType("footer").documentId("footer")),
+        .child(
+          S.document()
+            .schemaType("footer")
+            .documentId("footer")
+            .title("Footer Settings"),
+        ),
       S.listItem()
         .title("Global Settings")
         .icon(Settings)
