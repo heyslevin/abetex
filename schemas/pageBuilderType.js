@@ -1,4 +1,5 @@
 import { TiersIcon } from "@sanity/icons";
+import { Globe } from "lucide-react";
 import { defineType } from "sanity";
 
 export const pageBuilderType = defineType({
@@ -56,4 +57,16 @@ export const pageBuilderType = defineType({
       ],
     }),
   ],
+  icon: Globe,
+  preview: {
+    select: {
+      title: "title",
+    },
+    prepare({ title }) {
+      return {
+        title: title || "Untitled",
+        subtitle: "Page",
+      };
+    },
+  },
 });

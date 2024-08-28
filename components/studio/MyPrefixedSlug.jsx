@@ -45,7 +45,7 @@ const UrlPrefix = styled(Card)`
 const MyPrefixedSlug = (props) => {
   const { value, schemaType } = props;
   const options = schemaType.options;
-  console.log({ "options here": options.urlPrefix });
+  console.log({ "myPrefixedSlug options here": options.urlPrefix });
 
   return (
     <Flex style={{ gap: "0.5em" }} align="center">
