@@ -2,6 +2,7 @@ import "@/src/app/styles/globals.css";
 import Footer from "@/components/layout/Footer";
 import { sanityFetch } from "@/src/sanity/lib/client";
 import { GLOBAL_SETTINGS_QUERY } from "@/src/lib/sanity/queries";
+import Header from "@/components/layout/Header";
 
 export const metadata = {
   title: "Page Builder",
@@ -13,6 +14,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Header data={data} />
         <div className="flex h-full w-full flex-col items-center bg-black">
           {children}
         </div>
