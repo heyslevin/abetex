@@ -46,7 +46,7 @@ export default function Header({ data }) {
             </SheetContent>
           </Sheet>
         </div>
-        <div className="hidden md:flex">
+        <div className="hidden flex-row gap-4 md:flex">
           <a href="#" target="_blank" rel="noopener noreferrer">
             About us
           </a>
