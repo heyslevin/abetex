@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CarouselContent, CarouselItem } from "../ui/carousel";
 import CarouselSSR from "../ui/carouselSSR";
+import _ from "lodash";
 
 function Carousel({ data }) {
   // Data Structure
@@ -15,7 +16,7 @@ function Carousel({ data }) {
   //   },
   // };
   return (
-    <div id={data._key} className="w-full px-4 pb-6">
+    <div id={_.kebabCase(data.title)} className="w-full px-4 pb-6">
       <CarouselSSR>
         <CarouselContent className="-ml-4 pl-0">
           {data.images.map((image, index) => (

@@ -5,6 +5,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@radix-ui/react-tabs";
+import _ from "lodash";
 import Image from "next/image";
 
 export default function Tabs({ data }) {
@@ -25,7 +26,7 @@ export default function Tabs({ data }) {
 
   return (
     <div
-      id={data._key}
+      id={_.kebabCase(data.title)}
       className="flex w-full flex-row justify-center bg-slate-100 p-10 px-4 md:h-[750px] md:px-28"
     >
       <TabsRadix

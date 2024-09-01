@@ -1,3 +1,4 @@
+import { ASYNC_PAGE_SECTION_QUERY } from "@/src/lib/sanity/queries";
 import { client } from "@/src/sanity/lib/client";
 import {
   Box,
@@ -26,11 +27,12 @@ const AsyncSelect = (props) => {
   function formatSections(sections) {
     console.log({ sections });
     return sections.map((section) => {
+      console.log(section);
       return {
-        title: section.heading
-          ? `${_.startCase(section.type)} : ${section.heading}`
+        title: section.title
+          ? `${section.title} (${_.startCase(section.type)})`
           : `${_.startCase(section.type)}`,
-        value: section._key,
+        value: _.kebabCase(section.title),
       };
     });
   }
@@ -40,20 +42,9 @@ const AsyncSelect = (props) => {
     console.log({ path });
     const getSections = async () => {
       await studioClient
-        .fetch(
-          `
-            *[_type == 'pageBuilder' && _id == $id] {
-              content[] {
-                _key,
-                heading,
-                "type": _type
-              }
-            }[0].content
-            `,
-          {
-            id: internalLink._ref ? internalLink._ref : "",
-          },
-        )
+        .fetch(ASYNC_PAGE_SECTION_QUERY, {
+          id: internalLink._ref ? internalLink._ref : "",
+        })
         .then((data) => {
           setFullItems(data);
           return data;

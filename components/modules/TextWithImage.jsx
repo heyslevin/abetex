@@ -1,3 +1,4 @@
+import _ from "lodash";
 import Image from "next/image";
 
 function TextWithImage({ data }) {
@@ -18,7 +19,7 @@ function TextWithImage({ data }) {
 
   return (
     <div
-      id={data._key}
+      id={_.kebabCase(data.title)}
       className="flex h-auto w-full flex-col-reverse justify-center gap-9 bg-white p-10 px-4 md:h-[500px] md:flex-row md:px-28"
     >
       <div className="flex h-full flex-1 flex-col content-center justify-center gap-6 text-black md:gap-6">

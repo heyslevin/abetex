@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 export default function Metrics({ data }) {
   // Data Shape
   //
@@ -14,9 +16,10 @@ export default function Metrics({ data }) {
   //     },
   //   ],
   // };
+
   return (
     <div
-      id={data._key}
+      id={_.kebabCase(data.title)}
       className="justify-left flex h-auto w-full flex-col bg-zinc-200 p-10 px-4 md:h-[750px] md:px-28"
     >
       <div className="flex flex-col justify-center pb-10 md:items-center md:pb-24">

@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 function Hero({ data }) {
   // Data Structure
   //
@@ -13,7 +15,7 @@ function Hero({ data }) {
 
   return (
     <div
-      id={data._key}
+      id={_.kebabCase(data.title)}
       className="z-10 m-auto w-full max-w-xl px-5 py-8 xl:px-0"
     >
       <a

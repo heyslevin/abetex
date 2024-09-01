@@ -41,8 +41,8 @@ export const linkType = defineType({
         }),
       ],
       options: {
-        collapsible: true,
-        collapsed: true,
+        // collapsible: true,
+        // collapsed: true,
       },
       hidden: ({ parent }) => parent?.typeOfLink === "external",
     }),

@@ -1,5 +1,6 @@
 import { PortableText } from "next-sanity";
 import { PortableParagraph } from "../fragments/PortableParagraph";
+import _ from "lodash";
 
 function ParagraphSection({ data }) {
   // Data Structure
@@ -15,7 +16,7 @@ function ParagraphSection({ data }) {
   return (
     <div>
       <div
-        id={data._key}
+        id={_.kebabCase(data.title)}
         className="flex h-[500px] w-full bg-black px-4 md:px-28"
       >
         <div className="flex w-full flex-col items-start justify-center gap-y-10 text-white">

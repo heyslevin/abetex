@@ -1,3 +1,4 @@
+import _ from "lodash";
 import {
   Accordion,
   AccordionContent,
@@ -25,7 +26,7 @@ export default function DuoAccordion({ data }) {
 
   return (
     <div
-      id={data._key}
+      id={_.kebabCase(data.title)}
       className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-4 py-24 md:px-28"
     >
       <div className="flex h-full w-full flex-col gap-12 md:flex-row md:gap-4">

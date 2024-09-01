@@ -41,6 +41,7 @@ export const HEADER_NAVIGATION_QUERY = groq`
 *[_type == "header"] {
   navItems[] {
     text,
+    title,
     defined(navigationItemUrl.internalLink) => {
       "typeOfLink": navigationItemUrl.typeOfLink,
       "slug": navigationItemUrl.internalLink->slug.current,
@@ -53,6 +54,16 @@ export const HEADER_NAVIGATION_QUERY = groq`
   }
 }[0]
 `;
+
+export const ASYNC_PAGE_SECTION_QUERY = groq`
+            *[_type == 'pageBuilder' && _id == $id] {
+              content[] {
+                _key,
+                heading,
+                title,
+                "type": _type
+              }
+            }[0].content`;
 
 // Missing File fetch
 export const GLOBAL_SETTINGS_QUERY = groq`
