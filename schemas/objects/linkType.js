@@ -32,7 +32,7 @@ export const linkType = defineType({
       type: "object",
       fields: [
         defineField({
-          name: "linkSelector",
+          name: "pagePortionKey",
           title: "Select a section of the page",
           type: "string",
           components: {

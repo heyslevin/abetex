@@ -15,7 +15,7 @@ function Carousel({ data }) {
   //   },
   // };
   return (
-    <div className="w-full px-4 pb-6">
+    <div id={data._key} className="w-full px-4 pb-6">
       <CarouselSSR>
         <CarouselContent className="-ml-4 pl-0">
           {data.images.map((image, index) => (

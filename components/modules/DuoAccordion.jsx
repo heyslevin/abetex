@@ -24,7 +24,10 @@ export default function DuoAccordion({ data }) {
   // };
 
   return (
-    <div className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-4 py-24 md:px-28">
+    <div
+      id={data._key}
+      className="flex h-auto w-full flex-col items-center justify-center bg-zinc-200 px-4 py-24 md:px-28"
+    >
       <div className="flex h-full w-full flex-col gap-12 md:flex-row md:gap-4">
         <div className="flex flex-col justify-start gap-6 md:w-1/2">
           <h2 className="text-4xl font-bold md:text-6xl">{data.heading}</h2>

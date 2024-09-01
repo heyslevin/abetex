@@ -10,15 +10,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const data = await sanityFetch({ query: GLOBAL_SETTINGS_QUERY });
   return (
     <html lang="en">
       <body>
-        <Header data={data} />
+        <Header />
         <div className="flex h-full w-full flex-col items-center bg-black">
           {children}
         </div>
-        <Footer data={data} />
+        <Footer />
       </body>
     </html>
   );

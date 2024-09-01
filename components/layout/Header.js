@@ -7,16 +7,27 @@ import {
   SheetTitle,
   SheetDescription,
 } from "../ui/sheet";
+import { Menu } from "lucide-react";
+import { HEADER_NAVIGATION_QUERY } from "@/src/lib/sanity/queries";
+import { sanityFetch } from "@/src/sanity/lib/client";
+import Link from "next/link";
 
-export default function Header({ data }) {
-  console.log({ headerData: data });
+export default async function Header({ props }) {
+  const { navItems } = await sanityFetch({ query: HEADER_NAVIGATION_QUERY });
+  console.log({ headerData: JSON.stringify(navItems) });
+  //Process the navItem Data
+  // If internal: /
+  // If internal + section: /+section
+  // If external: url
   return (
     <div className="flex w-full flex-row justify-between border-b border-gray-800 bg-black px-5 py-5 text-white">
       <div className="flex">Awesome Company</div>
       <div className="flex flex-row gap-5">
         <div className="flex md:hidden">
           <Sheet>
-            <SheetTrigger>Open</SheetTrigger>
+            <SheetTrigger>
+              <Menu />
+            </SheetTrigger>
             <SheetContent
               className="h-full bg-black text-left text-white sm:text-left"
               side="top"
@@ -47,15 +58,13 @@ export default function Header({ data }) {
           </Sheet>
         </div>
         <div className="hidden flex-row gap-4 md:flex">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            About us
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            Services
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            Contact
-          </a>
+          {navItems.map((item) => {
+            return (
+              <Link href={`/${item.slug}#${item.pagePortionKey}`}>
+                {item.text}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

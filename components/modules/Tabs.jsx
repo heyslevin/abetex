@@ -24,7 +24,10 @@ export default function Tabs({ data }) {
   //   },
 
   return (
-    <div className="flex w-full flex-row justify-center bg-slate-100 p-10 px-4 md:h-[750px] md:px-28">
+    <div
+      id={data._key}
+      className="flex w-full flex-row justify-center bg-slate-100 p-10 px-4 md:h-[750px] md:px-28"
+    >
       <TabsRadix
         className="flex w-full gap-9"
         orientation="vertical"

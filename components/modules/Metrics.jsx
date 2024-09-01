@@ -15,7 +15,10 @@ export default function Metrics({ data }) {
   //   ],
   // };
   return (
-    <div className="justify-left flex h-auto w-full flex-col bg-zinc-200 p-10 px-4 md:h-[750px] md:px-28">
+    <div
+      id={data._key}
+      className="justify-left flex h-auto w-full flex-col bg-zinc-200 p-10 px-4 md:h-[750px] md:px-28"
+    >
       <div className="flex flex-col justify-center pb-10 md:items-center md:pb-24">
         <p className="mb-4 flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-red-500 px-7 py-2 text-sm font-semibold text-black">
           For Customers

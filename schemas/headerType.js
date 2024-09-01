@@ -6,7 +6,7 @@ export const headerType = defineType({
   title: "Header Navigation",
   fields: [
     defineField({
-      name: "items",
+      name: "navItems",
       type: "array",
       title: "Navigation Items",
       of: [{ type: "navigationItem" }],

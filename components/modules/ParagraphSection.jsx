@@ -14,7 +14,10 @@ function ParagraphSection({ data }) {
 
   return (
     <div>
-      <div className="flex h-[500px] w-full bg-black px-4 md:px-28">
+      <div
+        id={data._key}
+        className="flex h-[500px] w-full bg-black px-4 md:px-28"
+      >
         <div className="flex w-full flex-col items-start justify-center gap-y-10 text-white">
           <div className="inline w-full text-left text-xl md:w-7/12 md:text-2xl">
             <PortableText
