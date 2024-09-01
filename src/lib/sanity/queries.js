@@ -42,6 +42,7 @@ export const HEADER_NAVIGATION_QUERY = groq`
   navItems[] {
     text,
     title,
+    _key,
     defined(navigationItemUrl.internalLink) => {
       "typeOfLink": navigationItemUrl.typeOfLink,
       "slug": navigationItemUrl.internalLink->slug.current,
