@@ -1,6 +1,7 @@
 import ArrayMaxItems from "@/components/utils/ArrayMaxItems";
 import { Star, Trophy } from "lucide-react";
 import { defineField, defineType } from "sanity";
+import { TITLE_DESCRIPTION } from "./lib/constants";
 
 // const dataShape = {
 //   heading: "",
@@ -20,16 +21,29 @@ export const metricsType = defineType({
   name: "metrics",
   type: "object",
   title: "Metrics",
+  fieldsets: [
+    { name: "settings", title: "Settings" },
+    { name: "content", title: "Content" },
+  ],
   fields: [
+    defineField({
+      name: "title",
+      title: "Title for internal reference and jump-to-section links",
+      type: "string",
+      description: TITLE_DESCRIPTION,
+      fieldset: "settings",
+    }),
     defineField({
       name: "heading",
       type: "string",
       description: "Heading of the section",
+      fieldset: "content",
     }),
     defineField({
       name: "caption",
       type: "string",
       description: "Caption above the heading",
+      fieldset: "content",
     }),
     defineField({
       name: "metricsGroup",
@@ -37,6 +51,7 @@ export const metricsType = defineType({
       title: "Metrics Board",
       description: "Add your individual metrics here",
       components: { input: ArrayMaxItems },
+      fieldset: "content",
 
       of: [
         defineField({

@@ -1,18 +1,27 @@
 import { GalleryThumbnails } from "lucide-react";
 import { defineField, defineType } from "sanity";
+import { TITLE_DESCRIPTION } from "./lib/constants";
 
 export const carouselType = defineType({
   name: "carousel",
   type: "object",
   title: "Image Carousel",
+  fieldsets: [
+    { name: "settings", title: "Settings" },
+    { name: "content", title: "Content" },
+  ],
   fields: [
     defineField({
       name: "title",
+      title: "Title for internal reference and jump-to-section links",
       type: "string",
+      description: TITLE_DESCRIPTION,
+      fieldset: "settings",
     }),
     defineField({
       name: "images",
       type: "array",
+      fieldset: "content",
       of: [
         defineField({
           name: "image",

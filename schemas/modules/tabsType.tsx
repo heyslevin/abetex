@@ -1,5 +1,6 @@
 import { PanelTop, SquareStack } from "lucide-react";
 import { defineField, defineType } from "sanity";
+import { TITLE_DESCRIPTION } from "./lib/constants";
 
 // const data = {
 //   heading: "",
@@ -20,14 +21,27 @@ import { defineField, defineType } from "sanity";
 export const tabsType = defineType({
   name: "tabs",
   type: "object",
+  fieldsets: [
+    { name: "settings", title: "Settings" },
+    { name: "content", title: "Content" },
+  ],
   fields: [
+    defineField({
+      name: "title",
+      title: "Title for internal reference and jump-to-section links",
+      type: "string",
+      description: TITLE_DESCRIPTION,
+      fieldset: "settings",
+    }),
     defineField({
       name: "heading",
       type: "string",
+      fieldset: "content",
     }),
     defineField({
       name: "caption",
       type: "string",
+      fieldset: "content",
     }),
     defineField({
       name: "tabs",
@@ -36,6 +50,7 @@ export const tabsType = defineType({
         defineField({
           name: "tab",
           type: "object",
+          fieldset: "content",
           fields: [
             defineField({
               name: "heading",
@@ -48,6 +63,7 @@ export const tabsType = defineType({
             defineField({
               name: "image",
               type: "image",
+
               fields: [
                 defineField({
                   name: "alt",

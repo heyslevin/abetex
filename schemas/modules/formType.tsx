@@ -1,23 +1,38 @@
 import { SquarePen, TextCursor, TextCursorInput } from "lucide-react";
 import { defineField, defineType } from "sanity";
+import { TITLE_DESCRIPTION } from "./lib/constants";
 
 export const formType = defineType({
   name: "form",
   type: "object",
+  fieldsets: [
+    { name: "settings", title: "Settings" },
+    { name: "content", title: "Content" },
+  ],
   fields: [
+    defineField({
+      name: "title",
+      title: "Title for internal reference and jump-to-section links",
+      type: "string",
+      description: TITLE_DESCRIPTION,
+      fieldset: "settings",
+    }),
     defineField({
       name: "heading",
       type: "string",
+      fieldset: "content",
     }),
     defineField({
       name: "text",
       type: "text",
       rows: 3,
       description: "Optional text below header",
+      fieldset: "content",
     }),
     defineField({
       name: "items",
       type: "array",
+      fieldset: "content",
       of: [
         defineField({
           name: "formItems",
