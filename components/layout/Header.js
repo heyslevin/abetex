@@ -11,6 +11,7 @@ import { Menu } from "lucide-react";
 import { HEADER_NAVIGATION_QUERY } from "@/src/lib/sanity/queries";
 import { sanityFetch } from "@/src/sanity/lib/client";
 import Link from "next/link";
+import React from "react";
 
 export default async function Header({ props }) {
   const { navItems } = await sanityFetch({ query: HEADER_NAVIGATION_QUERY });
@@ -60,13 +61,12 @@ export default async function Header({ props }) {
         <div className="hidden flex-row gap-4 md:flex">
           {navItems.map((item) => {
             return (
-              <ul>
-                <li key={item._key}>
-                  <Link href={`/${item.slug}#${item.pagePortionKey}`}>
-                    {item.text}
-                  </Link>
-                </li>
-              </ul>
+              <Link
+                key={item._key}
+                href={`/${item.slug}#${item.pagePortionKey}`}
+              >
+                {item.text}
+              </Link>
             );
           })}
         </div>
