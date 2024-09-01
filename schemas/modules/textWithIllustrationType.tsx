@@ -17,6 +17,7 @@ export const textWithIllustrationType = defineType({
       type: "string",
       description: TITLE_DESCRIPTION,
       fieldset: "settings",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "heading",
@@ -61,7 +62,7 @@ export const textWithIllustrationType = defineType({
   icon: MasterDetailIcon,
   preview: {
     select: {
-      title: "heading",
+      title: "title",
       image: "image",
     },
     prepare({ title, image }) {

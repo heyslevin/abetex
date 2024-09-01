@@ -18,6 +18,7 @@ export const heroType = defineType({
       type: "string",
       description: TITLE_DESCRIPTION,
       fieldset: "settings",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "slug",
@@ -65,7 +66,7 @@ export const heroType = defineType({
   icon: StarFilledIcon,
   preview: {
     select: {
-      title: "heading",
+      title: "title",
     },
     prepare({ title }) {
       return {

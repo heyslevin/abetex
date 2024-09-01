@@ -32,6 +32,7 @@ export const metricsType = defineType({
       type: "string",
       description: TITLE_DESCRIPTION,
       fieldset: "settings",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "heading",
@@ -82,9 +83,12 @@ export const metricsType = defineType({
   ],
   icon: <Trophy size={16} />,
   preview: {
-    prepare() {
+    select: {
+      title: "title",
+    },
+    prepare({ title }) {
       return {
-        title: "Metric Board",
+        title: title || "Untitled",
         subtitle: "Metrics",
       };
     },

@@ -16,6 +16,7 @@ export const accordionType = defineType({
       type: "string",
       description: TITLE_DESCRIPTION,
       fieldset: "settings",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "heading",
@@ -57,7 +58,7 @@ export const accordionType = defineType({
   icon: <ListCollapse size={16} />,
   preview: {
     select: {
-      title: "heading",
+      title: "title",
     },
     prepare({ title }) {
       return {

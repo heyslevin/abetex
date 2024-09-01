@@ -32,6 +32,7 @@ export const tabsType = defineType({
       type: "string",
       description: TITLE_DESCRIPTION,
       fieldset: "settings",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "heading",
@@ -92,7 +93,7 @@ export const tabsType = defineType({
   icon: <SquareStack size={16} />,
   preview: {
     select: {
-      title: "heading",
+      title: "title",
     },
     prepare({ title }) {
       return {

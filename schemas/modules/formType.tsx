@@ -16,6 +16,7 @@ export const formType = defineType({
       type: "string",
       description: TITLE_DESCRIPTION,
       fieldset: "settings",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "heading",
@@ -76,7 +77,7 @@ export const formType = defineType({
   icon: <TextCursorInput size={16} />,
   preview: {
     select: {
-      title: "heading",
+      title: "title",
     },
     prepare({ title }) {
       return {

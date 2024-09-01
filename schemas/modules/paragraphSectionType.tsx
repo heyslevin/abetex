@@ -17,6 +17,7 @@ export const paragraphSectionType = defineType({
       type: "string",
       description: TITLE_DESCRIPTION,
       fieldset: "settings",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "description",
@@ -52,7 +53,7 @@ export const paragraphSectionType = defineType({
   icon: <LetterText size={16} />,
   preview: {
     select: {
-      title: "description",
+      title: "title",
     },
     prepare({ title }) {
       return {
