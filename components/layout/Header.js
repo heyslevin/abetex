@@ -60,12 +60,13 @@ export default async function Header({ props }) {
         <div className="hidden flex-row gap-4 md:flex">
           {navItems.map((item) => {
             return (
-              <Link
-                key={item._key}
-                href={`/${item.slug}#${item.pagePortionKey}`}
-              >
-                {item.text}
-              </Link>
+              <ul>
+                <li key={item._key}>
+                  <Link href={`/${item.slug}#${item.pagePortionKey}`}>
+                    {item.text}
+                  </Link>
+                </li>
+              </ul>
             );
           })}
         </div>
