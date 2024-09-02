@@ -6,6 +6,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetDescription,
+  SheetClose,
 } from "../ui/sheet";
 import { Menu } from "lucide-react";
 import { HEADER_NAVIGATION_QUERY } from "@/src/lib/sanity/queries";
@@ -36,25 +37,23 @@ export default async function Header({ props }) {
               <SheetHeader>
                 <SheetTitle className="text-white">Awesome Company</SheetTitle>
                 {/* <SheetDescription>Here it is</SheetDescription> */}
-                <div className="flex flex-col pt-8 text-3xl">
-                  <div className="w-full border-t border-gray-800 py-2">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      About us
-                    </a>
-                  </div>
-
-                  <div className="w-full border-t border-gray-800 py-2">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      Services
-                    </a>
-                  </div>
-                  <div className="w-full border-t border-gray-800 py-2">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      Contact Us
-                    </a>
-                  </div>
-                </div>
               </SheetHeader>
+              <div className="flex flex-col pt-8 text-3xl">
+                {navItems.map((item) => {
+                  return (
+                    <div
+                      key={item._key}
+                      className="w-full border-t border-gray-800 py-2"
+                    >
+                      <SheetClose asChild>
+                        <Link href={`/${item.slug}#${item.pagePortionKey}`}>
+                          {item.text}
+                        </Link>
+                      </SheetClose>
+                    </div>
+                  );
+                })}
+              </div>
             </SheetContent>
           </Sheet>
         </div>
