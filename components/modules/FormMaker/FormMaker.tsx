@@ -50,7 +50,7 @@ export default function FormMaker({ data }) {
   return (
     <div
       id={_.kebabCase(data.title)}
-      className="flex h-auto w-full flex-col gap-12 px-4 py-24 md:flex-row md:px-28"
+      className="flex h-auto w-full scroll-mt-10 flex-col gap-12 px-4 py-24 md:flex-row md:px-28"
     >
       <div className="flex flex-col justify-start gap-4 md:w-1/2">
         <h2 className="text-4xl font-bold text-white md:text-6xl">

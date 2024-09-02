@@ -28,6 +28,11 @@ export const globalSettingsType = defineType({
       type: "string",
     }),
     defineField({
+      name: "homepage",
+      type: "reference",
+      to: [{ type: "pageBuilder" }],
+    }),
+    defineField({
       name: "address",
       type: "text",
       rows: 3,

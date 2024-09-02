@@ -13,6 +13,7 @@ import { schemaTypes } from "./schemas";
 import { apiVersion, dataset, projectId } from "./src/sanity/env";
 import { schema } from "./src/sanity/schema";
 import { myStructure } from "./deskStructure";
+import { patchReferenceAction } from "./src/sanity/lib/actions";
 
 export default defineConfig({
   basePath: "/studio",
@@ -30,4 +31,15 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
   ],
+  document: {
+    actions: (prev, context) => {
+      return context.schemaType == "globalSettings"
+        ? prev.map((originalAction) =>
+            originalAction.action === "publish"
+              ? patchReferenceAction(originalAction, context)
+              : originalAction,
+          )
+        : prev;
+    },
+  },
 });

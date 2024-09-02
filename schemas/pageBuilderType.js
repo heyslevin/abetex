@@ -19,6 +19,11 @@ export const pageBuilderType = defineType({
       hidden: ({ document }) => !document?.title,
     }),
     defineType({
+      name: "isHomepage",
+      type: "boolean",
+      initialValue: false,
+    }),
+    defineType({
       name: "content",
       type: "array",
       of: [

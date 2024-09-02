@@ -27,7 +27,7 @@ export default function Tabs({ data }) {
   return (
     <div
       id={_.kebabCase(data.title)}
-      className="flex w-full flex-row justify-center bg-slate-100 p-10 px-4 md:h-[750px] md:px-28"
+      className="flex w-full scroll-mt-10 flex-row justify-center bg-slate-100 p-10 px-4 md:h-[750px] md:px-28"
     >
       <TabsRadix
         className="flex w-full gap-9"
