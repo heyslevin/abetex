@@ -13,14 +13,18 @@ import { HEADER_NAVIGATION_QUERY } from "@/src/lib/sanity/queries";
 import { sanityFetch } from "@/src/sanity/lib/client";
 import Link from "next/link";
 import React from "react";
+import { navUrlProcessor } from "./lib/helpers";
 
 export default async function Header({ props }) {
   const { navItems } = await sanityFetch({ query: HEADER_NAVIGATION_QUERY });
-  console.log({ headerData: JSON.stringify(navItems) });
-  //Process the navItem Data
-  // If internal: /
-  // If internal + section: /+section
+
+  //Helper to process the navItem Data
+  // If "home": /
+  // If internal: /slug
+  // If internal + section: /slug#section
   // If external: url
+  let navItemsWithUrl = navUrlProcessor(navItems);
+
   return (
     <div className="flex w-full flex-row justify-between border-b border-gray-800 bg-black px-5 py-5 text-white">
       <div className="flex">Awesome Company</div>
@@ -39,16 +43,14 @@ export default async function Header({ props }) {
                 {/* <SheetDescription>Here it is</SheetDescription> */}
               </SheetHeader>
               <div className="flex flex-col pt-8 text-3xl">
-                {navItems.map((item) => {
+                {navItemsWithUrl.map((item) => {
                   return (
                     <div
                       key={item._key}
                       className="w-full border-t border-gray-800 py-2"
                     >
                       <SheetClose asChild>
-                        <Link href={`/${item.slug}#${item.pagePortionKey}`}>
-                          {item.text}
-                        </Link>
+                        <Link href={item.navUrl}>{item.text}</Link>
                       </SheetClose>
                     </div>
                   );
@@ -58,12 +60,9 @@ export default async function Header({ props }) {
           </Sheet>
         </div>
         <div className="hidden flex-row gap-4 md:flex">
-          {navItems.map((item) => {
+          {navItemsWithUrl.map((item) => {
             return (
-              <Link
-                key={item._key}
-                href={`/${item.slug}#${item.pagePortionKey}`}
-              >
+              <Link key={item._key} href={item.navUrl}>
                 {item.text}
               </Link>
             );
