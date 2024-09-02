@@ -16,7 +16,7 @@ function Hero({ data }) {
   return (
     <div
       id={_.kebabCase(data.title)}
-      className="z-10 m-auto w-full max-w-xl px-5 py-8 xl:px-0"
+      className="m-auto w-full max-w-xl px-5 py-8 xl:px-0"
     >
       <a
         href="https://twitter.com/steventey/status/1613928948915920896"

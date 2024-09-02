@@ -26,8 +26,10 @@ export default async function Header({ props }) {
   let navItemsWithUrl = navUrlProcessor(navItems);
 
   return (
-    <div className="flex w-full flex-row justify-between border-b border-gray-800 bg-black px-5 py-5 text-white">
-      <div className="flex">Awesome Company</div>
+    <div className="sticky top-0 z-10 flex w-full flex-row justify-between border-b border-gray-800 bg-black px-5 py-5 text-white">
+      <div className="flex">
+        <Link href="/">Awesome Company</Link>
+      </div>
       <div className="flex flex-row gap-5">
         <div className="flex md:hidden">
           <Sheet>
