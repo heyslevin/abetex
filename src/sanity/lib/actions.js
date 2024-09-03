@@ -11,9 +11,9 @@ export function patchReferenceAction(originalPublishAction, context) {
 
         //First look for any document with homepage = true, set false
         const query = "*[isHomepage == true]{_id}[0]";
-        let prevHome = await client.fetch(query);
+        let { _id: prevHome } = await client.fetch(query);
         const removePrevHome = client
-          .patch(prevHome._id)
+          .patch(prevHome)
           .set({ isHomepage: false });
 
         //Then Set referenced document to homepage = true

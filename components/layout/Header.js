@@ -9,7 +9,10 @@ import {
   SheetClose,
 } from "../ui/sheet";
 import { Menu } from "lucide-react";
-import { HEADER_NAVIGATION_QUERY } from "@/src/lib/sanity/queries";
+import {
+  HEADER_NAVIGATION_QUERY,
+  HOMEPAGE_QUERY,
+} from "@/src/lib/sanity/queries";
 import { sanityFetch } from "@/src/sanity/lib/client";
 import Link from "next/link";
 import React from "react";
@@ -17,13 +20,14 @@ import { navUrlProcessor } from "./lib/helpers";
 
 export default async function Header({ props }) {
   const { navItems } = await sanityFetch({ query: HEADER_NAVIGATION_QUERY });
+  const { slug: homepageSlug } = await sanityFetch({ query: HOMEPAGE_QUERY });
 
   //Helper to process the navItem Data
   // If "home": /
   // If internal: /slug
   // If internal + section: /slug#section
   // If external: url
-  let navItemsWithUrl = navUrlProcessor(navItems);
+  let navItemsWithUrl = navUrlProcessor(navItems, homepageSlug);
 
   return (
     <div className="sticky top-0 z-10 flex w-full flex-row justify-between border-b border-gray-800 bg-black px-5 py-5 text-white">

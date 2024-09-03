@@ -1,4 +1,4 @@
-export function navUrlProcessor(navItems) {
+export function navUrlProcessor(navItems, homepageSlug) {
   //   dataShape = [
   //     {
   //       _key: "ac16281d5748",
@@ -22,7 +22,7 @@ export function navUrlProcessor(navItems) {
       item.navUrl = item.externalUrl;
       return item;
     } else if (item.typeOfLink === "internal") {
-      let path = item.slug === "home" ? "" : slug;
+      let path = item.slug === homepageSlug ? "" : item.slug;
       if (item.pagePortionKey) {
         item.navUrl = `${path}/#${item.pagePortionKey}`;
         return item;

@@ -22,11 +22,14 @@ const COMPONENT_MAP = {
   form: FormMaker,
 };
 
-async function PageBuilder() {
+async function PageBuilder({ params }) {
+  console.log("in slug");
   const page = await sanityFetch({
     query: PAGE_BUILDER_QUERY,
+    params: { slug: params.slug },
     tags: ["pageBuilder"],
   });
+  console.log({ pagedata: params.slug == "favicon.ico", pageDat2: params });
   return (
     <>
       {page.content.map((blockObject) => {

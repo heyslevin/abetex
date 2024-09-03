@@ -1,7 +1,7 @@
 import { sanityFetch } from "@/src/sanity/lib/client";
 import React from "react";
 
-import { PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
+import { HOME_PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
 import Hero from "@/components/modules/Hero";
 import Carousel from "@/components/modules/Carousel";
 import ParagraphSection from "@/components/modules/ParagraphSection";
@@ -22,9 +22,11 @@ const COMPONENT_MAP = {
   form: FormMaker,
 };
 
-async function PageBuilder() {
+async function PageBuilder({ params }) {
+  console.log(params);
+  console.log("in home");
   const page = await sanityFetch({
-    query: PAGE_BUILDER_QUERY,
+    query: HOME_PAGE_BUILDER_QUERY,
     tags: ["pageBuilder"],
   });
   return (
