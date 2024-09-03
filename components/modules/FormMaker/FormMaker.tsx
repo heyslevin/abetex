@@ -17,6 +17,9 @@ import { Button } from "@/components/ui/button";
 import { Item } from "@radix-ui/react-accordion";
 import { zodFormatter } from "./lib/helpers";
 import _ from "lodash";
+import { z } from "zod";
+import { Toaster } from "@/components/ui/toaster";
+import { useToast } from "@/hooks/use-toast";
 
 // const data = {
 //   heading: "Contact us",
@@ -37,15 +40,60 @@ import _ from "lodash";
 //   ],
 // };
 
+//To do:
+// Create a static working form
+// --- Fix formSchema for static form
+// Check console log working
+// Check resend working
+// Create a dynamic form
+
 export default function FormMaker({ data }) {
+  // formSchema generator for form generator
   const { formSchema, defaultValues } = zodFormatter(data.items);
-  const form = useForm({
+  const { toast } = useToast();
+
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues,
   });
 
-  function onSubmit(values: any) {
-    console.log(values);
-  }
+  const onSubmit = async (formValues: any) => {
+    console.log({ sending: formValues });
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formValues,
+        }),
+      });
+
+      // Handle success
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description:
+            "We’ve received your message and will be in touch shortly.",
+        });
+        // Clean up form
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Uh oh!",
+          description: "Something went wrong!",
+        });
+      }
+    } catch (error) {
+      console.log("Error sending email:", error);
+      toast({
+        variant: "destructive",
+        title: "Uh oh!",
+        description: "Something went wrong!",
+      });
+    }
+  };
 
   return (
     <div
@@ -69,15 +117,21 @@ export default function FormMaker({ data }) {
             {data.items.map((item: any) => (
               <FormField
                 control={form.control}
-                name={item.title}
+                name={_.camelCase(item.title)}
                 key={item._key}
                 render={({ field }) => (
                   <FormItem className="">
+                    <FormLabel>{item.title}</FormLabel>
+
                     <FormControl>
                       <Input
                         className="text-white"
-                        placeholder={item.placeholder || item.title}
+                        placeholder={
+                          item.placeholder ||
+                          `Enter your ${_.lowerCase(item.title)}`
+                        }
                         {...field}
+                        value={field.value ?? ""}
                       />
                     </FormControl>
                     <FormMessage />
@@ -94,6 +148,7 @@ export default function FormMaker({ data }) {
             </Button>
           </form>
         </Form>
+        <Toaster />
       </div>
     </div>
   );
