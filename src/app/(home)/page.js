@@ -10,17 +10,7 @@ import Metrics from "@/components/modules/Metrics";
 import Tabs from "@/components/modules/Tabs";
 import DuoAccordion from "@/components/modules/DuoAccordion";
 import FormMaker from "@/components/modules/FormMaker/FormMaker";
-
-const COMPONENT_MAP = {
-  hero: Hero,
-  textWithImage: TextWithImage,
-  carousel: Carousel,
-  paragraphSection: ParagraphSection,
-  metrics: Metrics,
-  tabs: Tabs,
-  accordion: DuoAccordion,
-  form: FormMaker,
-};
+import { COMPONENT_MAP } from "@/src/lib/frontend/constants";
 
 async function PageBuilder({ params }) {
   console.log(params);

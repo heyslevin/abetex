@@ -18,6 +18,7 @@ import { projectLink } from "./objects/projectLink";
 import { project } from "./project";
 import { gallery } from "./objects/gallery";
 import { galleryImage } from "./objects/galleryImage";
+import { featuredProjects } from "./modules/featuredProjects";
 
 export const schemaTypes = [
   pageType,
@@ -32,6 +33,7 @@ export const schemaTypes = [
   metricsType,
   tabsType,
   accordionType,
+  featuredProjects,
   linkType,
   navigationItemType,
   formType,

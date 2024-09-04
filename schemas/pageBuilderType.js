@@ -22,6 +22,7 @@ export const pageBuilderType = defineType({
       name: "isHomepage",
       type: "boolean",
       initialValue: false,
+      hidden: true,
     }),
     defineType({
       name: "content",
@@ -58,6 +59,10 @@ export const pageBuilderType = defineType({
         defineType({
           name: "form",
           type: "form",
+        }),
+        defineType({
+          name: "featuredProjects",
+          type: "featuredProjects",
         }),
       ],
     }),
