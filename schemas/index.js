@@ -14,6 +14,10 @@ import { formType } from "./modules/formType";
 import { headerType } from "./headerType";
 import { linkType } from "./objects/linkType";
 import { navigationItemType } from "./objects/navItemType";
+import { projectLink } from "./objects/projectLink";
+import { projects } from "./projects";
+import { gallery } from "./objects/gallery";
+import { galleryImage } from "./objects/galleryImage";
 
 export const schemaTypes = [
   pageType,
@@ -32,4 +36,8 @@ export const schemaTypes = [
   navigationItemType,
   formType,
   headerType,
+  projects,
+  projectLink,
+  gallery,
+  galleryImage,
 ];
