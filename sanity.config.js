@@ -14,6 +14,10 @@ import { apiVersion, dataset, projectId } from "./src/sanity/env";
 import { schema } from "./src/sanity/schema";
 import { myStructure } from "./deskStructure";
 import { patchReferenceAction } from "./src/sanity/lib/actions";
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
 
 export default defineConfig({
   basePath: "/studio",

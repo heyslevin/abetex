@@ -1,7 +1,7 @@
 import { defineField, defineType } from "sanity";
 
-export const projects = defineType({
-  name: "projects",
+export const project = defineType({
+  name: "project",
   type: "document",
   title: "Projects",
   fieldsets: [
@@ -32,5 +32,25 @@ export const projects = defineType({
       title: "Link to project website",
       description: "Optional",
     }),
+    // For orderable Desk
+    defineField({
+      name: "orderRank",
+      type: "string",
+      hidden: true,
+    }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      images: "gallery",
+      image: "gallery.0",
+    },
+    prepare({ images, image, title }) {
+      return {
+        title: title,
+        subtitle: `${Object.keys(images).length} images`,
+        media: image,
+      };
+    },
+  },
 });

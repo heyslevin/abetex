@@ -1,14 +1,37 @@
-import { PanelBottom, PanelTop, Settings, Settings2 } from "lucide-react";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
+import {
+  PanelBottom,
+  PanelTop,
+  Settings,
+  Settings2,
+  Target,
+} from "lucide-react";
 
-export const myStructure = (S) =>
+export const myStructure = (S, context) =>
   S.list()
     .title("Content")
     .items([
+      // Remove Singletons from list
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["globalSettings", "footer", "header"].includes(listItem.getId()),
+          !["globalSettings", "footer", "header", "project"].includes(
+            listItem.getId(),
+          ),
       ),
       S.divider(),
+
+      // Optional configuration
+      orderableDocumentListDeskItem({
+        type: "project",
+        title: "Projects",
+        icon: Target,
+        menuItems: [], // allow an array of `S.menuItem()` to be injected to orderable document list menu
+        // pass from the structure callback params above
+        S,
+        context,
+      }),
+      S.divider(),
+      //Singletons Below
       S.listItem()
         .title("Header Navigation")
         .icon(PanelTop)

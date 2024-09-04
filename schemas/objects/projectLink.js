@@ -1,10 +1,16 @@
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
 import { defineField, defineType } from "sanity";
 
 export const projectLink = defineType({
   name: "projectLink",
   type: "object",
   title: "Project Link",
+  orderings: [orderRankOrdering],
   fields: [
+    orderRankField({ type: "category", newItemPosition: "before" }),
     defineField({
       name: "externalUrl",
       type: "url",

@@ -15,7 +15,7 @@ import { headerType } from "./headerType";
 import { linkType } from "./objects/linkType";
 import { navigationItemType } from "./objects/navItemType";
 import { projectLink } from "./objects/projectLink";
-import { projects } from "./projects";
+import { project } from "./project";
 import { gallery } from "./objects/gallery";
 import { galleryImage } from "./objects/galleryImage";
 
@@ -36,7 +36,7 @@ export const schemaTypes = [
   navigationItemType,
   formType,
   headerType,
-  projects,
+  project,
   projectLink,
   gallery,
   galleryImage,
