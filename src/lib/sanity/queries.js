@@ -30,9 +30,26 @@ export const HOME_PAGE_BUILDER_QUERY = groq`
       accordion[] {
         ...
       }
+    },
+    defined(projects) => {
+      title,
+      projects[]-> {
+        gallery,
+        title,
+        caption,
+        defined(projectLinkArea.externalUrl) => {
+          "url": projectLinkArea.externalUrl
+        },
+        gallery[] {
+          _key,
+          alt,
+          "imageUrl": asset->.url
+        }
+      }
     }
   }
-}[0]`;
+}[0]
+`;
 
 export const PAGE_BUILDER_QUERY = groq`
 *[_type == "pageBuilder" && slug.current == $slug] {
@@ -72,7 +89,23 @@ export const PAGE_BUILDER_QUERY = groq`
 `;
 
 export const HOMEPAGE_QUERY = groq`
-  *[isHomepage == true]{'slug':slug.current, _id}
+  *[isHomepage == true]{'slug':slug.current, _id}[0]
+`;
+
+export const LOAD_ALL_PROJECTS_QUERY = groq`
+*[_type == "project"] {
+  gallery,
+  title,
+  caption,
+  defined(projectLinkArea.externalUrl) => {
+    "url": projectLinkArea.externalUrl
+  },
+  gallery[] {
+    alt,
+    "imageUrl": asset->.url
+  }
+}
+
 `;
 
 export const HEADER_NAVIGATION_QUERY = groq`

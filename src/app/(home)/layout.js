@@ -11,8 +11,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className="scroll-smooth">
+      <body className="">
         <Header />
         <div className="flex h-full w-full flex-col items-center bg-black">
           {children}

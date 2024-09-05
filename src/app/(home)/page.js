@@ -13,8 +13,6 @@ import FormMaker from "@/components/modules/FormMaker/FormMaker";
 import { COMPONENT_MAP } from "@/src/lib/frontend/constants";
 
 async function PageBuilder({ params }) {
-  console.log(params);
-  console.log("in home");
   const page = await sanityFetch({
     query: HOME_PAGE_BUILDER_QUERY,
     tags: ["pageBuilder"],

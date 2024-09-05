@@ -21,7 +21,6 @@ import { navUrlProcessor } from "./lib/helpers";
 export default async function Header({ props }) {
   const { navItems } = await sanityFetch({ query: HEADER_NAVIGATION_QUERY });
   const { slug: homepageSlug } = await sanityFetch({ query: HOMEPAGE_QUERY });
-
   //Helper to process the navItem Data
   // If "home": /
   // If internal: /slug
