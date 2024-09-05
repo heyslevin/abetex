@@ -22,18 +22,24 @@ function Hero({ data }) {
         href="https://twitter.com/steventey/status/1613928948915920896"
         target="_blank"
         rel="noreferrer"
-        className="mx-auto mb-5 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
+        className="animate-fade-up mx-auto mb-5 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
       >
         <p className="text-sm font-semibold text-[#1d9bf0]">{data.caption}</p>
       </a>
-      <h1 className="font-display text-balance text-center text-4xl font-bold tracking-tight text-white drop-shadow-sm md:text-7xl md:leading-[5rem]">
+      <h1
+        className="animate-fade-up font-display text-balance text-center text-4xl font-bold tracking-tight text-white opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
+        style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
+      >
         {data.heading}
       </h1>
-      <p className="mt-6 text-balance text-center text-white md:text-xl">
+      <p
+        className="animate-fade-up mt-6 text-balance text-center text-white opacity-0 md:text-xl"
+        style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
+      >
         {data.tagline}
       </p>
       <div
-        className="mx-auto mt-6 flex items-center justify-center space-x-5"
+        className="animate-fade-up mx-auto mt-6 flex items-center justify-center space-x-5 opacity-0"
         style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
       >
         <a

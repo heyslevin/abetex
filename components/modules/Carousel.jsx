@@ -18,7 +18,7 @@ function Carousel({ data }) {
   return (
     <div id={_.kebabCase(data.title)} className="w-full scroll-mt-10 px-4 pb-6">
       <CarouselSSR>
-        <CarouselContent className="-ml-4 pl-0">
+        <CarouselContent className="animate-fade-up -ml-4 pl-0">
           {data.images.map((image, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="relative h-[555px] w-auto overflow-hidden rounded-lg">
