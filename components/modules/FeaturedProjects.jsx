@@ -32,12 +32,9 @@ export default function FeaturedProjects({ data }) {
       <div className="flex-column flex flex-wrap gap-9 md:flex-row md:flex-nowrap md:justify-center md:gap-6">
         {data.projects.map((project) => {
           return (
-            <Dialog>
+            <Dialog key={project._key}>
               <DialogTrigger asChild>
-                <div
-                  className="border-1 flex h-[450px] w-full flex-col md:w-1/3"
-                  key={project._key}
-                >
+                <div className="border-1 flex h-[450px] w-full flex-col md:w-1/3">
                   <Image
                     src={project.gallery[0].imageUrl}
                     alt={project.gallery[0].alt}
