@@ -43,6 +43,8 @@ function TextWithImage({ data }) {
           width={1200}
           height={1200}
           className="h-full object-cover"
+          placeholder="blur"
+          blurDataURL={data.image.blurDataURL}
         />
       </div>
     </div>

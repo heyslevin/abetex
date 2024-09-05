@@ -8,13 +8,15 @@ export const HOME_PAGE_BUILDER_QUERY = groq`
     defined(image) => {
       "image": image {
         ...,
-        "imageUrl": asset->.url
+        "imageUrl": asset->.url,
+        "blurDataURL": asset->.metadata.lqip,
       }
     },
     defined(images) => {
       "images": images[] {
         ...,
-        "imageUrl": asset->.url
+        "imageUrl": asset->.url,
+        "blurDataURL": asset->.metadata.lqip,
       }
     },
     defined(tabs) => {
@@ -22,7 +24,8 @@ export const HOME_PAGE_BUILDER_QUERY = groq`
         ...,
         "image": image {
           ...,
-          "imageUrl": asset->.url
+          "imageUrl": asset->.url,
+          "blurDataURL": asset->.metadata.lqip,
         }
       }
     },
@@ -43,7 +46,8 @@ export const HOME_PAGE_BUILDER_QUERY = groq`
         gallery[] {
           _key,
           alt,
-          "imageUrl": asset->.url
+          "imageUrl": asset->.url,
+          "blurDataURL": asset->.metadata.lqip,
         }
       }
     }
@@ -60,13 +64,16 @@ export const PAGE_BUILDER_QUERY = groq`
     defined(image) => {
       "image": image {
         ...,
-        "imageUrl": asset->.url
+        "imageUrl": asset->.url,
+        "blurDataURL": asset->.metadata.lqip,
       }
     },
     defined(images) => {
       "images": images[] {
         ...,
-        "imageUrl": asset->.url
+        "imageUrl": asset->.url,
+        "blurDataURL": asset->.metadata.lqip,
+        
       }
     },
     defined(tabs) => {
@@ -74,7 +81,8 @@ export const PAGE_BUILDER_QUERY = groq`
         ...,
         "image": image {
           ...,
-          "imageUrl": asset->.url
+          "imageUrl": asset->.url,
+          "blurDataURL": asset->.metadata.lqip,
         }
       }
     },
@@ -102,7 +110,8 @@ export const LOAD_ALL_PROJECTS_QUERY = groq`
   },
   gallery[] {
     alt,
-    "imageUrl": asset->.url
+    "imageUrl": asset->.url,
+    "blurDataURL": asset->.metadata.lqip,
   }
 }
 

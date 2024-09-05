@@ -43,6 +43,8 @@ export default function FeaturedProjects({ data }) {
                     width={1200}
                     height={1200}
                     className="h-full object-cover"
+                    placeholder="blur"
+                    blurDataURL={project.gallery[0].blurDataURL}
                   />
                   <div className="flex h-auto w-full flex-col gap-1 pt-2 md:gap-3 md:pt-3">
                     <div className="flex w-full flex-row justify-between">

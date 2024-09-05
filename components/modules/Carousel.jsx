@@ -21,7 +21,7 @@ function Carousel({ data }) {
         <CarouselContent className="-ml-4 pl-0">
           {data.images.map((image, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="relative h-[555px] w-auto overflow-hidden rounded-lg bg-yellow-400">
+              <div className="relative h-[555px] w-auto overflow-hidden rounded-lg">
                 <Image
                   src={image.imageUrl}
                   alt={image.alt}
@@ -29,6 +29,8 @@ function Carousel({ data }) {
                   width={1200}
                   height={1200}
                   className="h-full object-cover"
+                  placeholder="blur"
+                  blurDataURL={image.blurDataURL}
                 />
                 {image.alt}
               </div>

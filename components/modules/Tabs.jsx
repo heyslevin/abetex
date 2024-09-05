@@ -71,6 +71,8 @@ export default function Tabs({ data }) {
                         width={1200}
                         height={1200}
                         className="h-full object-cover"
+                        placeholder="blur"
+                        blurDataURL={tab.image.blurDataURL}
                       />
                     </TabsContent>
                   </TabsTrigger>
@@ -89,6 +91,8 @@ export default function Tabs({ data }) {
                   width={1200}
                   height={1200}
                   className="h-full object-cover"
+                  placeholder="blur"
+                  blurDataURL={tab.image.blurDataURL}
                 />
               </TabsContent>
             );
