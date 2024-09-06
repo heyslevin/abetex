@@ -32,6 +32,7 @@ export default defineConfig({
       structure: myStructure,
     }),
     presentationTool({
+      resolve,
       previewUrl: {
         previewMode: {
           enable: "/api/draft-mode/enable",

@@ -4,7 +4,7 @@ import { validatePreviewUrl } from "@sanity/preview-url-secret";
 import { draftMode } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
-import { clientv2 as client } from "@/src/sanity/lib/newclient";
+import { client } from "@/src/sanity/lib/client";
 import { token } from "@/src/sanity/lib/token";
 
 const clientWithToken = client.withConfig({ token });

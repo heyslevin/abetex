@@ -1,9 +1,9 @@
-import { sanityFetchv2 } from "@/src/sanity/lib/newclient";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { Separator } from "../ui/separator";
 import { GLOBAL_SETTINGS_QUERY } from "@/src/lib/sanity/queries";
 
 export default async function Footer() {
-  const data = await sanityFetchv2({ query: GLOBAL_SETTINGS_QUERY });
+  const data = await sanityFetch({ query: GLOBAL_SETTINGS_QUERY });
 
   // const data = {
   //   title: "Beautiful Website Corporation",

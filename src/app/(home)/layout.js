@@ -16,18 +16,18 @@ export default async function RootLayout({ children }) {
       <body className="">
         <Header />
         <div className="flex h-full w-full flex-col items-center bg-black">
-          {draftMode().isEnabled && (
-            <a
-              className="fixed bottom-0 right-0 m-4 bg-blue-500 p-4 text-white"
-              href="/api/draft-mode/disable"
-            >
-              Disable preview mode
-            </a>
-          )}
           {children}
-          {draftMode().isEnabled && <VisualEditing />}
         </div>
         <Footer />
+        {draftMode().isEnabled && (
+          <a
+            className="fixed bottom-0 right-0 m-4 bg-blue-500 p-4 text-white"
+            href="/api/draft-mode/disable"
+          >
+            Disable preview mode
+          </a>
+        )}
+        {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>
   );

@@ -2,10 +2,10 @@ import React from "react";
 
 import { HOME_PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
 import { COMPONENT_MAP } from "@/src/lib/frontend/constants";
-import { sanityFetchv2 } from "@/src/sanity/lib/newclient";
+import { sanityFetch } from "@/src/sanity/lib/client";
 
 async function PageBuilder({ params }) {
-  const page = await sanityFetchv2({
+  const page = await sanityFetch({
     query: HOME_PAGE_BUILDER_QUERY,
     tags: ["pageBuilder"],
   });

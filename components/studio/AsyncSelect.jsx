@@ -1,21 +1,6 @@
 import { ASYNC_PAGE_SECTION_QUERY } from "@/src/lib/sanity/queries";
-import { client } from "@/src/sanity/lib/client";
-import {
-  Box,
-  Button,
-  Card,
-  Menu,
-  MenuButton,
-  MenuItem,
-  Stack,
-  Text,
-} from "@sanity/ui";
-import _ from "lodash";
-import { Globe } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useFormValue } from "sanity";
-
-const studioClient = client.withConfig({ apiVersion: "2024-08-01" });
+import { useClient, useFormValue } from "sanity";
 
 const AsyncSelect = (props) => {
   const [listItems, setListItems] = useState([]);
@@ -24,8 +9,12 @@ const AsyncSelect = (props) => {
   const { options } = schemaType;
   const internalLink = useFormValue([...path.slice(0, -2), "internalLink"]);
 
+  const studioClient = useClient({ apiVersion: "2024-08-01" });
+
   function formatSections(sections) {
+    console.log({ sections });
     return sections.map((section) => {
+      console.log(section);
       return {
         title: section.title
           ? `${section.title} (${_.startCase(section.type)})`
@@ -36,6 +25,8 @@ const AsyncSelect = (props) => {
   }
 
   useEffect(() => {
+    console.log([...path.slice(0, -2), "internalLink"]);
+    console.log({ path });
     const getSections = async () => {
       await studioClient
         .fetch(ASYNC_PAGE_SECTION_QUERY, {
