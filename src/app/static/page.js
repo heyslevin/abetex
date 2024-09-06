@@ -393,9 +393,7 @@ export default async function Home() {
               Contact us
             </h2>
           </div>
-          <div className="md:w-1/2">
-            <ContactForm />
-          </div>
+          <div className="md:w-1/2"></div>
         </div>
         {/* Footer */}
       </div>
