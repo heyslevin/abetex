@@ -1,4 +1,4 @@
-import { sanityFetchv2 } from "../../sanity/lib/newclient";
+import { sanityFetch } from "../../sanity/lib/client";
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +16,6 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 import Image from "next/image";
 import CarouselSSR from "@/components/ui/carouselSSR";
 import { Separator } from "@/components/ui/separator";
-import { ContactForm } from "@/components/ContactForm";
 import { PortableText } from "next-sanity";
 
 const DATA_QUERY = `*[_type == "page" && title == "Home"]
@@ -33,7 +32,7 @@ const DATA_QUERY = `*[_type == "page" && title == "Home"]
 }[0]`;
 
 export default async function Home() {
-  const page = await sanityFetchv2({ query: DATA_QUERY });
+  const page = await sanityFetch({ query: DATA_QUERY });
 
   const myPortableTextComponents = {
     marks: {
