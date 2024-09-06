@@ -1,15 +1,16 @@
-import { sanityFetch } from "@/src/sanity/lib/client";
 import React from "react";
 
 import { PAGE_BUILDER_QUERY } from "@/src/lib/sanity/queries";
 import { COMPONENT_MAP } from "@/src/lib/frontend/constants";
+import { sanityFetchv2, clientv2 as client } from "@/src/sanity/lib/newclient";
 
 async function PageBuilder({ params }) {
-  const page = await sanityFetch({
+  const page = await sanityFetchv2({
     query: PAGE_BUILDER_QUERY,
     params: { slug: params.slug },
     tags: ["pageBuilder"],
   });
+
   return (
     <>
       {page?.content?.map((blockObject) => {

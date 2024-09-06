@@ -1,11 +1,5 @@
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
-import {
-  PanelBottom,
-  PanelTop,
-  Settings,
-  Settings2,
-  Target,
-} from "lucide-react";
+import { PanelBottom, PanelTop, Settings, Target } from "lucide-react";
 
 export const myStructure = (S, context) =>
   S.list()

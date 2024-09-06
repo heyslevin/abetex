@@ -55,6 +55,10 @@ export const HOME_PAGE_BUILDER_QUERY = groq`
 }[0]
 `;
 
+export const PAGES_QUERY = groq`*[_type == "pageBuilder" && defined(slug.current)][0...12]{
+  _id, title, slug
+}`;
+
 export const PAGE_BUILDER_QUERY = groq`
 *[_type == "pageBuilder" && slug.current == $slug] {
   title,

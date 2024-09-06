@@ -25,7 +25,6 @@ export function zodFormatter(data) {
 
   data.forEach((item) => {
     const title = _.camelCase(item.title);
-    console.log(ZOD_SCHEMA_TYPES[item.type].toString());
     // Create Zod schema entry
     formSchemaObject[title] = ZOD_SCHEMA_TYPES[item.type];
 

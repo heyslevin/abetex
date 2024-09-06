@@ -1,4 +1,3 @@
-import { MenuDivider } from "@sanity/ui";
 import {
   Sheet,
   SheetTrigger,
@@ -13,14 +12,14 @@ import {
   HEADER_NAVIGATION_QUERY,
   HOMEPAGE_QUERY,
 } from "@/src/lib/sanity/queries";
-import { sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetchv2 } from "@/src/sanity/lib/newclient";
 import Link from "next/link";
 import React from "react";
 import { navUrlProcessor } from "./lib/helpers";
 
 export default async function Header({ props }) {
-  const { navItems } = await sanityFetch({ query: HEADER_NAVIGATION_QUERY });
-  const { slug: homepageSlug } = await sanityFetch({ query: HOMEPAGE_QUERY });
+  const { navItems } = await sanityFetchv2({ query: HEADER_NAVIGATION_QUERY });
+  const { slug: homepageSlug } = await sanityFetchv2({ query: HOMEPAGE_QUERY });
   //Helper to process the navItem Data
   // If "home": /
   // If internal: /slug

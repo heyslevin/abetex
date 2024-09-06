@@ -14,7 +14,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Item } from "@radix-ui/react-accordion";
 import { zodFormatter } from "./lib/helpers";
 import _ from "lodash";
 import { z } from "zod";
@@ -58,7 +57,6 @@ export default function FormMaker({ data }) {
   });
 
   const onSubmit = async (formValues: any) => {
-    console.log({ sending: formValues });
     try {
       const response = await fetch("/api/send", {
         method: "POST",

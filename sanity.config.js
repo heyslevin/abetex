@@ -14,6 +14,9 @@ import { apiVersion, dataset, projectId } from "./src/sanity/env";
 import { myStructure } from "./deskStructure";
 import { patchReferenceAction } from "./src/sanity/lib/actions";
 
+import { presentationTool } from "sanity/presentation";
+import { resolve } from "./src/sanity/presentation/resolve";
+
 export default defineConfig({
   basePath: "/studio",
   projectId,
@@ -27,6 +30,13 @@ export default defineConfig({
   plugins: [
     structureTool({
       structure: myStructure,
+    }),
+    presentationTool({
+      previewUrl: {
+        previewMode: {
+          enable: "/api/draft-mode/enable",
+        },
+      },
     }),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin

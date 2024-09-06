@@ -1,8 +1,9 @@
 import "@/src/app/styles/globals.css";
 import Footer from "@/components/layout/Footer";
-import { sanityFetch } from "@/src/sanity/lib/client";
-import { GLOBAL_SETTINGS_QUERY } from "@/src/lib/sanity/queries";
 import Header from "@/components/layout/Header";
+
+import { VisualEditing } from "next-sanity";
+import { draftMode } from "next/headers";
 
 export const metadata = {
   title: "Page Builder",
@@ -15,7 +16,16 @@ export default async function RootLayout({ children }) {
       <body className="">
         <Header />
         <div className="flex h-full w-full flex-col items-center bg-black">
+          {draftMode().isEnabled && (
+            <a
+              className="fixed bottom-0 right-0 m-4 bg-blue-500 p-4 text-white"
+              href="/api/draft-mode/disable"
+            >
+              Disable preview mode
+            </a>
+          )}
           {children}
+          {draftMode().isEnabled && <VisualEditing />}
         </div>
         <Footer />
       </body>

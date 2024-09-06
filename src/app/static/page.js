@@ -1,4 +1,4 @@
-import { client, sanityFetch } from "../../sanity/lib/client";
+import { sanityFetchv2 } from "../../sanity/lib/newclient";
 import {
   Carousel,
   CarouselContent,
@@ -33,8 +33,7 @@ const DATA_QUERY = `*[_type == "page" && title == "Home"]
 }[0]`;
 
 export default async function Home() {
-  const page = await sanityFetch({ query: DATA_QUERY });
-  console.log(page.images[0].imageUrl);
+  const page = await sanityFetchv2({ query: DATA_QUERY });
 
   const myPortableTextComponents = {
     marks: {
