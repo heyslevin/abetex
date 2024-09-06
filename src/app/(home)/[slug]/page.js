@@ -12,7 +12,7 @@ async function PageBuilder({ params }) {
   });
   return (
     <>
-      {page.content.map((blockObject) => {
+      {page?.content?.map((blockObject) => {
         const BlockComponent = COMPONENT_MAP[blockObject._type];
         return <BlockComponent key={blockObject._key} data={blockObject} />;
       })}

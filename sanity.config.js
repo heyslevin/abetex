@@ -4,8 +4,6 @@
  * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...tool]]/page.jsx` route
  */
 
-//Trying v2
-
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
@@ -13,13 +11,8 @@ import { schemaTypes } from "./schemas";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from "./src/sanity/env";
-import { schema } from "./src/sanity/schema";
 import { myStructure } from "./deskStructure";
 import { patchReferenceAction } from "./src/sanity/lib/actions";
-import {
-  orderRankField,
-  orderRankOrdering,
-} from "@sanity/orderable-document-list";
 
 export default defineConfig({
   basePath: "/studio",
