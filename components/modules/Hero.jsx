@@ -43,7 +43,7 @@ function Hero({ data }) {
         style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
       >
         <a
-          className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-gray-500 px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
+          className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-white px-5 py-2 text-sm text-inherit transition-colors hover:bg-black hover:text-white"
           target="_blank"
           rel="noopener noreferrer"
           hfef={data.button.link}
