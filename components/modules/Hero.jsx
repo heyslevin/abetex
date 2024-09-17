@@ -16,30 +16,30 @@ function Hero({ data }) {
   return (
     <div
       id={_.kebabCase(data.title)}
-      className="m-auto w-full max-w-xl px-5 py-8 xl:px-0"
+      className="flex w-full flex-col bg-white px-5 py-8 text-black xl:px-0"
     >
       <a
         href="https://twitter.com/steventey/status/1613928948915920896"
         target="_blank"
         rel="noreferrer"
-        className="animate-fade-up mx-auto mb-5 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
+        className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
       >
         <p className="text-sm font-semibold text-[#1d9bf0]">{data.caption}</p>
       </a>
       <h1
-        className="animate-fade-up font-display text-balance text-center text-4xl font-bold tracking-tight text-white opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
+        className="font-display animate-fade-up text-balance text-center text-4xl font-bold tracking-tight text-inherit opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
         style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
       >
         {data.heading}
       </h1>
       <p
-        className="animate-fade-up mt-6 text-balance text-center text-white opacity-0 md:text-xl"
+        className="mt-6 animate-fade-up text-balance text-center text-inherit opacity-0 md:text-xl"
         style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
       >
         {data.tagline}
       </p>
       <div
-        className="animate-fade-up mx-auto mt-6 flex items-center justify-center space-x-5 opacity-0"
+        className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
         style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
       >
         <a
