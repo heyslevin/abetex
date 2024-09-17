@@ -12,9 +12,7 @@ const AsyncSelect = (props) => {
   const studioClient = useClient({ apiVersion: "2024-08-01" });
 
   function formatSections(sections) {
-    console.log({ sections });
     return sections.map((section) => {
-      console.log(section);
       return {
         title: section.title
           ? `${section.title} (${_.startCase(section.type)})`
@@ -25,8 +23,6 @@ const AsyncSelect = (props) => {
   }
 
   useEffect(() => {
-    console.log([...path.slice(0, -2), "internalLink"]);
-    console.log({ path });
     const getSections = async () => {
       await studioClient
         .fetch(ASYNC_PAGE_SECTION_QUERY, {
