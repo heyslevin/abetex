@@ -23,6 +23,7 @@ export const carouselType = defineType({
       name: "images",
       type: "array",
       fieldset: "content",
+      validation: (rule) => rule.required(),
       of: [
         defineField({
           name: "image",
