@@ -20,10 +20,10 @@ function TextWithImage({ data }) {
   return (
     <div
       id={_.kebabCase(data.title)}
-      className="flex h-auto w-full scroll-mt-10 flex-col-reverse justify-center gap-9 bg-white p-10 px-4 md:h-[500px] md:flex-row md:px-28"
+      className="font-body flex h-auto w-full scroll-mt-10 flex-col-reverse justify-center gap-9 bg-white p-10 px-4 md:h-[500px] md:flex-row md:px-28"
     >
       <div className="flex h-full flex-1 flex-col content-center justify-center gap-6 text-black md:gap-6">
-        <h1 className="font-display text-balance text-left text-3xl font-bold leading-none tracking-tight drop-shadow-sm md:text-4xl md:leading-[2rem]">
+        <h1 className="text-balance text-left text-3xl leading-none tracking-tight drop-shadow-sm md:text-4xl md:leading-[2rem]">
           {data.heading}
         </h1>
         <p className="inline w-10/12 text-left text-lg md:text-xl">

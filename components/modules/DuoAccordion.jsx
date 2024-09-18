@@ -27,7 +27,7 @@ export default function DuoAccordion({ data }) {
   return (
     <div
       id={_.kebabCase(data.title)}
-      className="flex h-auto w-full scroll-mt-10 flex-col items-center justify-center bg-zinc-200 px-4 py-24 md:px-28"
+      className="font-body flex h-auto w-full scroll-mt-10 flex-col items-center justify-center bg-zinc-200 px-4 py-24 md:px-28"
     >
       <div className="flex h-full w-full flex-col gap-12 md:flex-row md:gap-4">
         <div className="flex flex-col justify-start gap-6 md:w-1/2">

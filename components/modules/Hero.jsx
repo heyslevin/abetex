@@ -22,9 +22,9 @@ function Hero({ data }) {
         href="https://twitter.com/steventey/status/1613928948915920896"
         target="_blank"
         rel="noreferrer"
-        className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
+        className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-primary px-7 py-2 transition-colors hover:bg-blue-200"
       >
-        <p className="text-sm font-semibold text-[#1d9bf0]">{data.caption}</p>
+        <p className="text-sm font-semibold text-white">{data.caption}</p>
       </a>
       <h1
         className="font-display animate-fade-up text-balance text-center text-4xl tracking-tight text-inherit opacity-0 drop-shadow-sm md:max-w-xl md:text-7xl md:leading-[5rem]"

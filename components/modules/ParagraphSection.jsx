@@ -17,7 +17,7 @@ function ParagraphSection({ data }) {
     <div>
       <div
         id={_.kebabCase(data.title)}
-        className="flex h-[500px] w-full scroll-mt-10 bg-black px-4 md:px-28"
+        className="font-body flex h-[500px] w-full scroll-mt-10 bg-primary px-4 md:px-28"
       >
         <div className="flex w-full flex-col items-start justify-center gap-y-10 text-white">
           <div className="inline w-full text-left text-xl md:w-7/12 md:text-2xl">

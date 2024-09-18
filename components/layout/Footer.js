@@ -22,7 +22,7 @@ export default async function Footer() {
   // };
 
   return (
-    <div className="flex h-auto flex-col bg-slate-500 px-4 py-10 md:h-[555px] md:px-28">
+    <div className="flex h-auto flex-col bg-primary px-4 py-10 text-white md:h-[555px] md:px-28">
       <div className="flex w-full flex-col gap-6 md:flex-row">
         <div className="flex w-1/2 flex-col">
           <p className="text-xl md:text-3xl">{data.websiteTitle}</p>

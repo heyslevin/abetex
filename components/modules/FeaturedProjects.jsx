@@ -25,7 +25,7 @@ export default function FeaturedProjects({ data }) {
   return (
     <div
       id={_.kebabCase(data.title)}
-      className="justify-left flex h-auto w-full scroll-mt-10 flex-col bg-zinc-200 p-10 px-4 md:h-[750px] md:px-28"
+      className="font-body justify-left flex h-auto w-full scroll-mt-10 flex-col bg-zinc-200 p-10 px-4 md:h-[750px] md:px-28"
     >
       <div className="flex justify-center pb-8 md:justify-start">
         <p className="text-sm font-bold">FEATURED PROPERTIES</p>
