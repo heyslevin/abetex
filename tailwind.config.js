@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["var(--font-signifier)"],
+        body: ["var(--font-llsub)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

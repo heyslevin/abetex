@@ -28,7 +28,7 @@ export default async function Header({ props }) {
   let navItemsWithUrl = navUrlProcessor(navItems, homepageSlug);
 
   return (
-    <div className="sticky top-0 z-10 flex w-full flex-row justify-between border-b border-gray-800 bg-black px-5 py-5 text-white">
+    <div className="sticky top-0 z-10 flex w-full flex-row justify-between border-b border-gray-800 bg-white px-5 py-5 text-black">
       <div className="flex">
         <Link href="/">Awesome Company</Link>
       </div>
@@ -39,11 +39,13 @@ export default async function Header({ props }) {
               <Menu />
             </SheetTrigger>
             <SheetContent
-              className="h-full bg-black text-left text-white sm:text-left"
+              className="h-full bg-white text-left text-black sm:text-left"
               side="top"
             >
               <SheetHeader>
-                <SheetTitle className="text-white">Awesome Company</SheetTitle>
+                <SheetTitle className="text-inherit">
+                  Awesome Company
+                </SheetTitle>
                 {/* <SheetDescription>Here it is</SheetDescription> */}
               </SheetHeader>
               <div className="flex flex-col pt-8 text-3xl">

@@ -16,7 +16,7 @@ function Hero({ data }) {
   return (
     <div
       id={_.kebabCase(data.title)}
-      className="flex w-full flex-col bg-white px-5 py-8 text-black xl:px-0"
+      className="flex w-full flex-col items-center justify-center bg-white px-5 py-8 text-black xl:px-0"
     >
       <a
         href="https://twitter.com/steventey/status/1613928948915920896"
@@ -27,13 +27,13 @@ function Hero({ data }) {
         <p className="text-sm font-semibold text-[#1d9bf0]">{data.caption}</p>
       </a>
       <h1
-        className="font-display animate-fade-up text-balance text-center text-4xl font-bold tracking-tight text-inherit opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
+        className="font-display animate-fade-up text-balance text-center text-4xl tracking-tight text-inherit opacity-0 drop-shadow-sm md:max-w-xl md:text-7xl md:leading-[5rem]"
         style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
       >
         {data.heading}
       </h1>
       <p
-        className="mt-6 animate-fade-up text-balance text-center text-inherit opacity-0 md:text-xl"
+        className="font-body mt-6 animate-fade-up text-balance text-center font-bold text-inherit opacity-0 md:text-xl"
         style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
       >
         {data.tagline}
