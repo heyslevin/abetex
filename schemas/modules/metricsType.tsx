@@ -47,6 +47,13 @@ export const metricsType = defineType({
       fieldset: "content",
     }),
     defineField({
+      name: "description",
+      type: "text",
+      rows: 3,
+      description: "Paragraph of additional text",
+      fieldset: "content",
+    }),
+    defineField({
       name: "metricsGroup",
       type: "array",
       title: "Metrics Board",

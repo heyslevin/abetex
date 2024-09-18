@@ -1,9 +1,7 @@
 import { groq } from "next-sanity";
-export const HOME_PAGE_BUILDER_QUERY = groq`
-*[_type == "pageBuilder" && isHomepage == true] {
-  title,
-  slug,
-  content[] {
+
+const PAGE_BUILDER_CONTENT_QUERY = `
+content[] {
     ...,
     defined(image) => {
       "image": image {
@@ -52,6 +50,13 @@ export const HOME_PAGE_BUILDER_QUERY = groq`
       }
     }
   }
+`;
+export const HOME_PAGE_BUILDER_QUERY = groq`
+*[_type == "pageBuilder" && isHomepage == true] {
+  title,
+  slug,
+  ${PAGE_BUILDER_CONTENT_QUERY}
+  
 }[0]
 `;
 
@@ -63,39 +68,7 @@ export const PAGE_BUILDER_QUERY = groq`
 *[_type == "pageBuilder" && slug.current == $slug] {
   title,
   slug,
-  content[] {
-    ...,
-    defined(image) => {
-      "image": image {
-        ...,
-        "imageUrl": asset->.url,
-        "blurDataURL": asset->.metadata.lqip,
-      }
-    },
-    defined(images) => {
-      "images": images[] {
-        ...,
-        "imageUrl": asset->.url,
-        "blurDataURL": asset->.metadata.lqip,
-        
-      }
-    },
-    defined(tabs) => {
-      tabs[] {
-        ...,
-        "image": image {
-          ...,
-          "imageUrl": asset->.url,
-          "blurDataURL": asset->.metadata.lqip,
-        }
-      }
-    },
-    defined(accordion) => {
-      accordion[] {
-        ...
-      }
-    }
-  }
+  ${PAGE_BUILDER_CONTENT_QUERY}
 }[0]
 
 `;
