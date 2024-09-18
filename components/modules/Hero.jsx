@@ -33,7 +33,7 @@ function Hero({ data }) {
         {data.heading}
       </h1>
       <p
-        className="font-body mt-6 animate-fade-up text-balance text-center font-bold text-inherit opacity-0 md:text-xl"
+        className="font-body mt-6 animate-fade-up text-balance text-center text-inherit opacity-0 md:text-xl"
         style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
       >
         {data.tagline}
