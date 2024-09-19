@@ -1,6 +1,6 @@
 import { PanelTop, SquareStack } from "lucide-react";
 import { defineField, defineType } from "sanity";
-import { TITLE_DESCRIPTION } from "./lib/constants";
+import { LUCIDE_ICONS_VALUES, TITLE_DESCRIPTION } from "./lib/constants";
 
 // const data = {
 //   heading: "",
@@ -9,6 +9,7 @@ import { TITLE_DESCRIPTION } from "./lib/constants";
 //      tab: {
 //          heading: "",
 //          text: "",
+
 //      image: {
 //          imageUrl: "",
 //          alt: "",
@@ -62,6 +63,13 @@ export const tabsType = defineType({
               name: "description",
               type: "text",
               rows: 3,
+            }),
+            defineField({
+              name: "icon",
+              type: "string",
+              options: {
+                list: LUCIDE_ICONS_VALUES,
+              },
             }),
             defineField({
               name: "image",
