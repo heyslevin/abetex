@@ -52,14 +52,16 @@ export const tabsType = defineType({
           name: "tab",
           type: "object",
           fieldset: "content",
+          validation: (rule) => rule.required(),
           fields: [
             defineField({
               name: "heading",
               type: "string",
             }),
             defineField({
-              name: "text",
-              type: "string",
+              name: "description",
+              type: "text",
+              rows: 3,
             }),
             defineField({
               name: "image",

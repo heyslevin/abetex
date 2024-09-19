@@ -1,4 +1,4 @@
-export default function CircleIcon(color = "currentColor") {
+export default function CircleIcon({ color = "currentColor" }) {
   return (
     <svg
       width="17"
