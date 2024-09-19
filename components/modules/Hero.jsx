@@ -14,7 +14,7 @@ function Hero({ data }) {
   // };
 
   return (
-    <div
+    <main
       id={_.kebabCase(data.title)}
       className="flex w-full flex-col items-start justify-center bg-white px-5 py-8 text-black"
     >
@@ -29,17 +29,20 @@ function Hero({ data }) {
         </a>
       )}
       <h1
-        className="font-display animate-fade-up text-balance text-left text-xl tracking-tight text-inherit opacity-0 drop-shadow-sm md:max-w-5xl md:text-6xl md:leading-none"
+        className="font-display animate-fade-up text-balance text-left text-3xl tracking-tight text-inherit opacity-0 drop-shadow-sm md:max-w-5xl md:text-6xl md:leading-none"
         style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
       >
         {data?.heading}
       </h1>
-      <p
-        className="font-body mt-6 animate-fade-up text-balance text-center text-inherit opacity-0 md:text-xl"
-        style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
-      >
-        {data?.tagline}
-      </p>
+      {data?.tagline && (
+        <p
+          className="font-body mt-6 animate-fade-up text-balance text-center text-inherit opacity-0 md:text-xl"
+          style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
+        >
+          {data?.tagline}
+        </p>
+      )}
+
       {data?.button && (
         <div
           className="mt-6 flex animate-fade-up space-x-5 opacity-0"
@@ -55,7 +58,7 @@ function Hero({ data }) {
           </a>
         </div>
       )}
-    </div>
+    </main>
   );
 }
 
