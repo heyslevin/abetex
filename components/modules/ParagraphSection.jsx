@@ -1,11 +1,13 @@
 import { PortableText } from "next-sanity";
 import { PortableParagraph } from "../fragments/PortableParagraph";
 import _ from "lodash";
+import CircleIcon from "../utils/CircleIcon";
 
 function ParagraphSection({ data }) {
   // Data Structure
   //
   //   const data = {
+  //     caption,
   //     textBlock,
   //     button: {
   //       text,
@@ -17,10 +19,17 @@ function ParagraphSection({ data }) {
     <div>
       <div
         id={_.kebabCase(data.title)}
-        className="font-body flex h-[500px] w-full scroll-mt-10 bg-primary px-4 md:px-28"
+        className="font-body flex w-full scroll-mt-10 bg-primary p-10 px-4 md:px-28 md:py-20"
       >
-        <div className="flex w-full flex-col items-start justify-center gap-y-10 text-white">
-          <div className="inline w-full text-left text-xl md:w-7/12 md:text-2xl">
+        <div className="flex w-full flex-col items-start justify-center gap-y-6 text-white">
+          {data?.caption && (
+            <figure className="flex max-w-fit flex-row items-center justify-center gap-1">
+              <CircleIcon />
+              <p className="text-sm uppercase">{data?.caption}</p>
+            </figure>
+          )}
+
+          <div className="inline w-full text-left text-xl text-white md:w-7/12 md:text-2xl">
             <PortableText
               value={data.textBlock}
               components={PortableParagraph}

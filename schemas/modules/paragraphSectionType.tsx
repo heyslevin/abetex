@@ -20,10 +20,10 @@ export const paragraphSectionType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "description",
+      name: "caption",
       type: "string",
-      title: "Paragraph description",
-      description: "Optional block description for internal use",
+      title: "Caption",
+      description: "Optional caption above main text",
       fieldset: "content",
     }),
     defineField({

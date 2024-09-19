@@ -23,7 +23,7 @@ export default function Metrics({ data }) {
   return (
     <main
       id={_.kebabCase(data.title)}
-      className="justify-left font-body flex h-auto w-full scroll-mt-10 flex-col bg-secondary p-10 px-4 text-white md:h-[750px] md:px-28"
+      className="justify-left font-body flex h-auto w-full scroll-mt-10 flex-col bg-secondary p-10 px-4 text-white md:px-28"
     >
       <section className="flex flex-col">
         <figure className="mb-4 flex max-w-fit flex-row items-center justify-center gap-1 pl-1">
