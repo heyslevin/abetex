@@ -21,26 +21,26 @@ export default function Metrics({ data }) {
   // };
 
   return (
-    <div
+    <main
       id={_.kebabCase(data.title)}
       className="justify-left font-body flex h-auto w-full scroll-mt-10 flex-col bg-secondary p-10 px-4 text-white md:h-[750px] md:px-28"
     >
-      <div className="flex flex-col">
-        <div className="mb-4 flex max-w-fit flex-row items-center justify-center gap-1 pl-1">
+      <section className="flex flex-col">
+        <figure className="mb-4 flex max-w-fit flex-row items-center justify-center gap-1 pl-1">
           <CircleIcon />
           <p className="text-sm uppercase">{data?.caption}</p>
-        </div>
-        <div className="flex flex-row items-start justify-center gap-4 pb-10 md:items-start md:pb-24">
-          <div className="flex-1">
-            <h1 className="text-balance text-left text-6xl leading-none tracking-tight">
+        </figure>
+        <article className="flex flex-col items-start justify-center gap-4 pb-10 md:flex-row md:items-start md:pb-24">
+          <heading className="flex-1">
+            <h1 className="text-balance pb-3 text-left text-4xl leading-none tracking-tight md:pb-0 md:text-6xl">
               {data?.heading}
             </h1>
-          </div>
+          </heading>
           <div className="flex-1">
             <p className="text-xl">{data?.description}</p>
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
 
       <div className="flex flex-col gap-6 md:flex-row md:justify-center">
         {data?.metricsGroup.map((metric) => {
@@ -62,6 +62,6 @@ export default function Metrics({ data }) {
           );
         })}
       </div>
-    </div>
+    </main>
   );
 }
