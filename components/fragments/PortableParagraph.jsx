@@ -29,12 +29,18 @@ export const PortableParagraph = {
         {children}
       </blockquote>
     ),
-    ul: ({ children }) => <ul className="my-4 ml-8 list-disc">{children}</ul>,
-    ol: ({ children }) => (
-      <ol className="my-4 ml-8 list-decimal">{children}</ol>
-    ),
-    li: ({ children }) => <li className="mb-2">{children}</li>,
-    p: ({ children }) => <p className="my-4 text-lg">{children}</p>,
+    normal: ({ children }) => <p className="my-4 text-lg">{children}</p>,
+  },
+  list: {
+    // Ex. 1: customizing common list types
+    bullet: ({ children }) => <ul className="my-4 ml-8">{children}</ul>,
+    number: ({ children }) => <ol className="my-4 ml-8">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }) => <li className="mb-2">{children}</li>,
+
+    // Ex. 2: rendering custom list items
+    checkmarks: ({ children }) => <li>✅ {children}</li>,
   },
   marks: {
     link: ({ children, value }) => {

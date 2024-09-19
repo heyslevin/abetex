@@ -29,7 +29,34 @@ export const paragraphSectionType = defineType({
     defineField({
       name: "textBlock",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          // Only allow these block styles
+          styles: [
+            { title: "Normal", value: "normal" },
+            { title: "H1", value: "h1" },
+            { title: "H2", value: "h2" },
+            { title: "H3", value: "h3" },
+            { title: "H4", value: "h4" },
+            { title: "H5", value: "h5" },
+            { title: "H6", value: "h6" },
+          ],
+          // Only allow numbered lists
+          // lists: [
+          //   { title: "Numbered", value: "number" },
+          //   { title: "Ordered", value: "bullet" },
+          // ],
+
+          marks: {
+            // Empty array means no decorators
+            decorators: [
+              // { title: "Strong", value: "strong" },
+              // { title: "Emphasis", value: "em" },
+            ],
+          },
+        },
+      ],
       fieldset: "content",
     }),
     defineField({
