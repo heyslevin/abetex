@@ -20,6 +20,15 @@ export const textWithImageType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "style",
+      type: "string",
+      description: "Choose a visual style for this block",
+      options: {
+        list: ["default", "strokes"],
+      },
+      initialValue: "default",
+    }),
+    defineField({
       name: "heading",
       type: "string",
       fieldset: "content",
