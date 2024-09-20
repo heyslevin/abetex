@@ -16,31 +16,55 @@ function Carousel({ data }) {
   //   },
   // };
 
+  console.log({ carousel: data });
+
   const singleImage = data.images.length === 1;
 
   // Renders differently depeding on quantity of images
 
   if (singleImage) {
     const image = data.images[0];
-    return (
-      <div
-        id={_.kebabCase(data.title)}
-        className="w-full scroll-mt-10 bg-white"
-      >
-        <div className="w-full bg-red-300">
-          <Image
-            src={image.imageUrl}
-            alt={image.alt}
-            key={image._key}
-            width={1800}
-            height={1800}
-            className="h-full object-cover"
-            placeholder="blur"
-            blurDataURL={image.blurDataURL}
-          />
+    if (data?.style === "default") {
+      return (
+        <main
+          id={_.kebabCase(data.title)}
+          className="scroll-mt-10 bg-primary px-4 pt-10 md:px-28"
+        >
+          <div className="w-full bg-red-300">
+            <Image
+              src={image.imageUrl}
+              alt={image.alt}
+              key={image._key}
+              width={1800}
+              height={1800}
+              className="h-full object-cover"
+              placeholder="blur"
+              blurDataURL={image.blurDataURL}
+            />
+          </div>
+        </main>
+      );
+    } else {
+      return (
+        <div
+          id={_.kebabCase(data.title)}
+          className="w-full scroll-mt-10 bg-white"
+        >
+          <div className="w-full bg-red-300">
+            <Image
+              src={image.imageUrl}
+              alt={image.alt}
+              key={image._key}
+              width={1800}
+              height={1800}
+              className="h-full object-cover"
+              placeholder="blur"
+              blurDataURL={image.blurDataURL}
+            />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   } else {
     return (
       <div

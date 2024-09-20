@@ -16,7 +16,7 @@ function Hero({ data }) {
   return (
     <main
       id={_.kebabCase(data.title)}
-      className="flex w-full flex-col items-start justify-center bg-white px-5 py-8 text-black"
+      className="flex w-full flex-col items-start justify-center bg-white px-5 py-8 text-black md:px-28"
     >
       {data.caption && (
         <a

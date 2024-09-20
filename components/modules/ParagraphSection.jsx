@@ -18,7 +18,7 @@ function ParagraphSection({ data }) {
   return (
     <main
       id={_.kebabCase(data.title)}
-      className="font-body flex w-full scroll-mt-10 bg-primary p-10 px-4 md:px-28 md:py-20"
+      className="font-body flex w-full scroll-mt-10 bg-primary p-10 px-4 md:px-28 md:py-10"
     >
       <section className="flex w-full flex-col items-start justify-center gap-y-6 text-white">
         {data?.caption && (

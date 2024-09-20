@@ -2,7 +2,6 @@ import _ from "lodash";
 import CircleIcon from "../utils/CircleIcon";
 
 export default function Metrics({ data }) {
-  console.log({ metric: data });
   // Data Shape
   //
   // const data = {

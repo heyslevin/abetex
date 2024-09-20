@@ -12,7 +12,6 @@ import { Search } from "lucide-react";
 import Icon from "../fragments/Icon";
 
 export default function Tabs({ data }) {
-  console.log({ tabs: data.tabs[0] });
   //Data Structure
   //
   // const data = {

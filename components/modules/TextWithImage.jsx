@@ -20,8 +20,6 @@ function TextWithImage({ data }) {
   //
   // };
 
-  console.log({ textwImage: data });
-
   if (data?.style === "strokes") {
     return (
       // Padding after vertical border
@@ -56,7 +54,7 @@ function TextWithImage({ data }) {
               </div>
             </article>
 
-            <aside className="flex-column flex-1 overflow-hidden rounded-lg text-black">
+            <aside className="flex-column flex-1 overflow-hidden text-black">
               <Image
                 src={data.image.imageUrl}
                 alt={data.image.alt}

@@ -35,7 +35,8 @@ export const textWithImageType = defineType({
     }),
     defineField({
       name: "text",
-      type: "string",
+      type: "text",
+      rows: 3,
       fieldset: "content",
     }),
     defineField({

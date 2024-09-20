@@ -20,6 +20,18 @@ export const carouselType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "style",
+      type: "string",
+      description: "Choose a visual style for this block",
+      options: {
+        list: [
+          { title: "Full Width Image", value: "full-width" },
+          { title: "Default", value: "default" },
+        ],
+      },
+      initialValue: "full-width",
+    }),
+    defineField({
       name: "images",
       type: "array",
       fieldset: "content",
