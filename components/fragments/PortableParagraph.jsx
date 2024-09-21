@@ -38,7 +38,6 @@ export const PortableParagraph = {
   },
   listItem: {
     bullet: ({ children }) => <li className="mb-2">{children}</li>,
-
     // Ex. 2: rendering custom list items
     checkmarks: ({ children }) => <li>✅ {children}</li>,
   },

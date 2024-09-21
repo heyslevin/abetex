@@ -2,7 +2,7 @@ import { Target } from "lucide-react";
 import { defineField, defineType } from "sanity";
 import { TITLE_DESCRIPTION } from "./lib/constants";
 
-export const featuredProjects = defineType({
+export const featuredProjectsType = defineType({
   name: "featuredProjects",
   type: "object",
   fieldsets: [
@@ -17,6 +17,22 @@ export const featuredProjects = defineType({
       description: TITLE_DESCRIPTION,
       fieldset: "settings",
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "Heading",
+      type: "string",
+      description: "Heading text above the project gallery",
+      fieldset: "content",
+    }),
+    defineField({
+      name: "itemsPerRow",
+      type: "string",
+      title: "Projects per row",
+      fieldset: "content",
+      options: {
+        list: ["2", "3"],
+      },
+      initialValue: "3",
     }),
     defineField({
       name: "projects",

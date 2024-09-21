@@ -15,10 +15,11 @@ import { headerType } from "./headerType";
 import { linkType } from "./objects/linkType";
 import { navigationItemType } from "./objects/navItemType";
 import { projectLink } from "./objects/projectLink";
-import { project } from "./project";
+import { projectType } from "./projectType";
 import { gallery } from "./objects/gallery";
 import { galleryImage } from "./objects/galleryImage";
-import { featuredProjects } from "./modules/featuredProjects";
+import { featuredProjectsType } from "./modules/featuredProjectsType";
+import { descriptionItemType } from "./objects/descriptionItemtype";
 
 export const schemaTypes = [
   pageType,
@@ -33,13 +34,14 @@ export const schemaTypes = [
   metricsType,
   tabsType,
   accordionType,
-  featuredProjects,
+  featuredProjectsType,
   linkType,
   navigationItemType,
   formType,
   headerType,
-  project,
+  projectType,
   projectLink,
+  descriptionItemType,
   gallery,
   galleryImage,
 ];

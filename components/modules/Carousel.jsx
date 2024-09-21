@@ -16,7 +16,6 @@ function Carousel({ data }) {
   //   },
   // };
 
-  console.log({ carousel: data });
 
   const singleImage = data.images.length === 1;
 

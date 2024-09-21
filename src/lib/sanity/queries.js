@@ -1,55 +1,66 @@
 import { groq } from "next-sanity";
 
-const PAGE_BUILDER_CONTENT_QUERY = `
-content[] {
-    ...,
-    defined(image) => {
+const PAGE_BUILDER_CONTENT_QUERY = groq`
+        defined(projectLinkArea.externalUrl) => {
+          "url": projectLinkArea.externalUrl,
+            openInNewWindow,
+        },content[] {
+  ...,
+  defined(image) => {
+    "image": image {
+      ...,
+      "imageUrl": asset->.url,
+      "blurDataURL": asset->.metadata.lqip
+    }
+  },
+  defined(images) => {
+    "images": images[] {
+      ...,
+      "imageUrl": asset->.url,
+      "blurDataURL": asset->.metadata.lqip
+    }
+  },
+  defined(tabs) => {
+    tabs[] {
+      ...,
       "image": image {
         ...,
         "imageUrl": asset->.url,
-        "blurDataURL": asset->.metadata.lqip,
+        "blurDataURL": asset->.metadata.lqip
       }
-    },
-    defined(images) => {
-      "images": images[] {
-        ...,
-        "imageUrl": asset->.url,
-        "blurDataURL": asset->.metadata.lqip,
-      }
-    },
-    defined(tabs) => {
-      tabs[] {
-        ...,
-        "image": image {
-          ...,
-          "imageUrl": asset->.url,
-          "blurDataURL": asset->.metadata.lqip,
-        }
-      }
-    },
-    defined(accordion) => {
-      accordion[] {
-        ...
-      }
-    },
-    defined(projects) => {
-      title,
-      projects[]-> {
-        gallery,
+    }
+  },
+  defined(accordion) => {
+    accordion[] {
+      ...
+    }
+  },
+  defined(projects) => {
+    title,
+    heading,
+    projects[]-> {
+      gallery,
+      projectInfo[] {
         title,
-        caption,
-        defined(projectLinkArea.externalUrl) => {
-          "url": projectLinkArea.externalUrl
-        },
-        gallery[] {
-          _key,
-          alt,
-          "imageUrl": asset->.url,
-          "blurDataURL": asset->.metadata.lqip,
-        }
+        text
+      },
+      title,
+      status,
+      defined(projectLinkArea.externalUrl) => {
+        "url": projectLinkArea.externalUrl,
+        openInNewWindow,
+        urlTitle,
+      },
+      gallery[] {
+        _key,
+        alt,
+        "imageUrl": asset->.url,
+        "blurDataURL": asset->.metadata.lqip
       }
     }
   }
+}
+
 `;
 export const HOME_PAGE_BUILDER_QUERY = groq`
 *[_type == "pageBuilder" && isHomepage == true] {

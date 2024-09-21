@@ -51,7 +51,6 @@ export default function Tabs({ data }) {
           <section className="">
             <TabsList className="font-body flex flex-col">
               {data?.tabs.map((tab) => {
-                console.log(tab);
                 return (
                   <TabsTrigger
                     className="group flex h-fit w-full flex-col content-start"
