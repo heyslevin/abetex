@@ -60,7 +60,7 @@ export default function FeaturedProjects({ data }) {
   return (
     <main
       id={_.kebabCase(data?.title)}
-      className="font-body justify-left flex w-full scroll-mt-10 flex-col bg-zinc-200 p-10 px-4 md:px-28"
+      className="justify-left flex w-full scroll-mt-10 flex-col bg-zinc-200 p-10 px-4 font-body md:px-28"
     >
       <header className="flex justify-center pb-8 md:justify-start">
         <h2 className="text-4xl">{data?.heading || "Our Work"}</h2>
@@ -112,8 +112,8 @@ export default function FeaturedProjects({ data }) {
                     <section className="h-auto md:w-full md:px-3">
                       <header className="flex flex-col">
                         <h2 className="pb-4 text-3xl">{project.title}</h2>
-                        <figcaption className="border-gray-300 pt-1">
-                          <div className="flex w-full flex-col border-b border-gray-300 py-2 last:border-b-0 md:flex-row">
+                        <figcaption className="pt-1">
+                          <div className="flex w-full flex-col py-2 md:flex-row">
                             <p className="flex-1 text-base text-gray-400">
                               Status
                             </p>
@@ -125,7 +125,7 @@ export default function FeaturedProjects({ data }) {
                           <div>
                             {project.projectInfo &&
                               project.projectInfo.map((item) => (
-                                <div className="flex w-full flex-col border-b border-gray-300 py-2 last:border-b-0 md:flex-row">
+                                <div className="flex w-full flex-col border-b border-gray-300 py-2 first:border-t last:border-b-0 md:flex-row">
                                   <p className="flex-1 text-base text-gray-400">
                                     {item.title}
                                   </p>
@@ -135,7 +135,6 @@ export default function FeaturedProjects({ data }) {
                                 </div>
                               ))}
                           </div>
-
                           {project.url && (
                             <div className="flex h-14 w-full items-center justify-center border border-gray-300 text-gray-500 hover:bg-gray-300 hover:text-black">
                               <a href={project.url} className="">
