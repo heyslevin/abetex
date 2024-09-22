@@ -69,7 +69,6 @@ export default function FeaturedProjects({ data }) {
         className={classNames("grid grid-cols-1 gap-8", STYLES[itemsPerRow])}
       >
         {data?.projects.map((project) => {
-          console.log({ projectData: project });
           return (
             <Dialog key={project._key}>
               <DialogTrigger asChild>
@@ -125,7 +124,10 @@ export default function FeaturedProjects({ data }) {
                           <div>
                             {project.projectInfo &&
                               project.projectInfo.map((item) => (
-                                <div className="flex w-full flex-col border-b border-gray-300 py-2 first:border-t last:border-b-0 md:flex-row">
+                                <div
+                                  key={item.title}
+                                  className="flex w-full flex-col border-b border-gray-300 py-2 first:border-t last:border-b-0 md:flex-row"
+                                >
                                   <p className="flex-1 text-base text-gray-400">
                                     {item.title}
                                   </p>
