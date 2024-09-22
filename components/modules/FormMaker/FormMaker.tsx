@@ -101,7 +101,7 @@ export default function FormMaker({ data }) {
       className="flex h-auto w-full scroll-mt-10 flex-col gap-12 bg-primary px-4 py-24 font-body md:flex-row md:px-28"
     >
       <section className="flex flex-col justify-start gap-4 md:w-1/2">
-        <h2 className="text-4xl font-bold text-white md:text-6xl">
+        <h2 className="text-4xl text-primary text-white md:text-6xl">
           {data.heading}
         </h2>
         <p className="inline w-10/12 text-left text-lg text-white md:text-xl">
@@ -109,7 +109,7 @@ export default function FormMaker({ data }) {
         </p>
         <button className="flex h-11 items-center justify-center rounded-full bg-white text-black">
           <p className="text-base">Schedule a Call</p>
-          <Icon name="phone" strokeWidth={1} />
+          <Icon name="Phone" strokeWidth={1} />
         </button>
         <section className="grid grid-cols-2 gap-3 text-white">
           <div>
