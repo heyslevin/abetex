@@ -19,7 +19,7 @@ import { projectType } from "./projectType";
 import { gallery } from "./objects/gallery";
 import { galleryImage } from "./objects/galleryImage";
 import { featuredProjectsType } from "./modules/featuredProjectsType";
-import { descriptionItemType } from "./objects/descriptionItemtype";
+import { descriptionItemType } from "./objects/descriptionItemType";
 
 export const schemaTypes = [
   pageType,

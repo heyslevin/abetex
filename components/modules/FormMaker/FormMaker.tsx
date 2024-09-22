@@ -16,9 +16,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { zodFormatter } from "./lib/helpers";
 import _ from "lodash";
-import { z } from "zod";
+
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/hooks/use-toast";
+import Icon from "@/components/fragments/Icon";
+import { z } from "zod";
 
 // const data = {
 //   heading: "Contact us",
@@ -94,19 +96,33 @@ export default function FormMaker({ data }) {
   };
 
   return (
-    <div
+    <main
       id={_.kebabCase(data.title)}
-      className="font-body flex h-auto w-full scroll-mt-10 flex-col gap-12 bg-primary px-4 py-24 md:flex-row md:px-28"
+      className="flex h-auto w-full scroll-mt-10 flex-col gap-12 bg-primary px-4 py-24 font-body md:flex-row md:px-28"
     >
-      <div className="flex flex-col justify-start gap-4 md:w-1/2">
+      <section className="flex flex-col justify-start gap-4 md:w-1/2">
         <h2 className="text-4xl font-bold text-white md:text-6xl">
           {data.heading}
         </h2>
         <p className="inline w-10/12 text-left text-lg text-white md:text-xl">
           {data.text}
         </p>
-      </div>
-      <div className="md:w-1/2">
+        <button className="flex h-11 items-center justify-center rounded-full bg-white text-black">
+          <p className="text-base">Schedule a Call</p>
+          <Icon name="phone" strokeWidth={1} />
+        </button>
+        <section className="grid grid-cols-2 gap-3 text-white">
+          <div>
+            <h3>Contact</h3>
+            <a className="text-gray-300">+52 (81) 1936 6130</a>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <a className="text-gray-300">info@abetex.com</a>
+          </div>
+        </section>
+      </section>
+      <section className="md:w-1/2">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -147,7 +163,7 @@ export default function FormMaker({ data }) {
           </form>
         </Form>
         <Toaster />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

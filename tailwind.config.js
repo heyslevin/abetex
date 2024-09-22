@@ -126,4 +126,5 @@ module.exports = {
       variantPrefix: "rdx",
     }),
   ],
+  mode: "jit",
 };
