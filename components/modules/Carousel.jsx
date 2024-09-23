@@ -57,7 +57,7 @@ function Carousel({ data }) {
           id={_.kebabCase(data.title)}
           className="w-full scroll-mt-10 bg-white"
         >
-          <div className="w-full bg-red-300">
+          <div className="w-full">
             <Image
               src={image.imageUrl}
               alt={image.alt}
