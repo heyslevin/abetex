@@ -9,6 +9,7 @@ export const carouselType = defineType({
   fieldsets: [
     { name: "settings", title: "Settings" },
     { name: "content", title: "Content" },
+    { name: "style", title: "Style" },
   ],
   fields: [
     defineField({
@@ -49,6 +50,13 @@ export const carouselType = defineType({
           ],
         }),
       ],
+    }),
+    defineField({
+      name: "backgroundColor",
+      type: "string",
+      options: {
+        list: ["primary", "secondary"],
+      },
     }),
   ],
   icon: <GalleryThumbnails size={16} />,

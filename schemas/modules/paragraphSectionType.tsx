@@ -9,6 +9,7 @@ export const paragraphSectionType = defineType({
   fieldsets: [
     { name: "settings", title: "Settings" },
     { name: "content", title: "Content" },
+    { name: "style", title: "Style" },
   ],
   fields: [
     defineField({
@@ -75,6 +76,16 @@ export const paragraphSectionType = defineType({
           title: "Link Url",
         }),
       ],
+    }),
+    defineField({
+      name: "textAlign",
+      title: "Content Alignment",
+      type: "string",
+      description: "Select alignment for content of block. Centered or Left",
+      options: {
+        list: ["left", "center"],
+      },
+      initialValue: "left",
     }),
   ],
   icon: <LetterText size={16} />,

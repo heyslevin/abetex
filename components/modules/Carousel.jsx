@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CarouselContent, CarouselItem } from "../ui/carousel";
 import CarouselSSR from "../ui/carouselSSR";
 import _ from "lodash";
+import { classNames } from "../utils/helpers";
 
 function Carousel({ data }) {
   // Data Structure
@@ -16,6 +17,7 @@ function Carousel({ data }) {
   //   },
   // };
 
+  console.log({ carousel: data });
 
   const singleImage = data.images.length === 1;
 
@@ -27,7 +29,12 @@ function Carousel({ data }) {
       return (
         <main
           id={_.kebabCase(data.title)}
-          className="scroll-mt-10 bg-primary px-4 pt-10 md:px-28"
+          className={classNames(
+            "scroll-mt-10 px-4 pt-10 md:px-28",
+            data.backgroundColor === "secondary"
+              ? "bg-secondary"
+              : "bg-primary",
+          )}
         >
           <div className="w-full bg-red-300">
             <Image
@@ -68,7 +75,10 @@ function Carousel({ data }) {
     return (
       <div
         id={_.kebabCase(data.title)}
-        className="w-full scroll-mt-10 bg-white px-4 pb-6"
+        className={classNames(
+          "w-full scroll-mt-10 px-4 pb-6",
+          data.backgroundColor === "secondary" ? "bg-secondary" : "bg-primary",
+        )}
       >
         <CarouselSSR>
           <CarouselContent className="-ml-4 animate-fade-up pl-0">

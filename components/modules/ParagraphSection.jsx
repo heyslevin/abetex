@@ -2,6 +2,7 @@ import { PortableText } from "next-sanity";
 import { PortableParagraph } from "../fragments/PortableParagraph";
 import _ from "lodash";
 import CircleIcon from "../utils/CircleIcon";
+import { classNames } from "../utils/helpers";
 
 function ParagraphSection({ data }) {
   // Data Structure
@@ -13,22 +14,43 @@ function ParagraphSection({ data }) {
   //       text,
   //       url,
   //     },
+  //     textAlign: "center" || "left"
+  //
+  //
   //   };
 
+  console.log({ paragraph: data });
   return (
     <main
       id={_.kebabCase(data?.title)}
-      className="font-body flex w-full scroll-mt-10 bg-primary p-10 px-4 md:px-28 md:py-10"
+      className={classNames(
+        "flex w-full scroll-mt-10 p-10 px-4 md:px-28 md:py-10",
+        data.textAlign === "center"
+          ? "bg-secondary font-display text-white"
+          : "bg-primary font-body text-white",
+      )}
     >
-      <section className="flex w-full flex-col items-start justify-center gap-y-6 text-white">
+      <section
+        className={classNames(
+          "flex w-full flex-col justify-center gap-y-6 text-inherit",
+          data.textAlign === "center" ? "items-center" : "items-start",
+        )}
+      >
         {data?.caption && (
-          <figure className="flex max-w-fit flex-row items-center justify-center gap-1">
+          <figure className="flex max-w-fit flex-row items-center justify-center gap-1 font-body text-base">
             <CircleIcon />
             <p className="text-sm uppercase">{data?.caption}</p>
           </figure>
         )}
 
-        <article className="inline w-full text-balance text-left text-white">
+        <article
+          className={classNames(
+            "flex text-balance text-inherit",
+            data.textAlign === "center"
+              ? "w-2/3 text-center"
+              : "w-full text-left",
+          )}
+        >
           <PortableText
             value={data?.textBlock}
             components={PortableParagraph}
