@@ -55,13 +55,14 @@ export default async function Header({ props }) {
   function NavTitle() {
     if (selectedAsset !== "noAsset") {
       return (
-        <div className="h-6 md:h-7">
+        <div className="flex h-5 md:h-7">
           <Image
             width={getImageDimensions(selectedAsset.imageUrl).width}
             height={getImageDimensions(selectedAsset.imageUrl).height}
             src={selectedAsset.imageUrl}
             className="h-full"
             alt={selectedAsset.alt}
+            layout="responsive"
           />
         </div>
       );

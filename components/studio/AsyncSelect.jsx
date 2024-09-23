@@ -37,7 +37,7 @@ const AsyncSelect = (props) => {
     };
 
     getSections();
-  }, [studioClient]);
+  }, [internalLink, studioClient]);
 
   return renderDefault({
     ...props,
