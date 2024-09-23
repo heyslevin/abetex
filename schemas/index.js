@@ -20,6 +20,7 @@ import { gallery } from "./objects/gallery";
 import { galleryImage } from "./objects/galleryImage";
 import { featuredProjectsType } from "./modules/featuredProjectsType";
 import { descriptionItemType } from "./objects/descriptionItemType";
+import { brandAsset } from "./objects/brandAssetType";
 
 export const schemaTypes = [
   pageType,
@@ -44,4 +45,5 @@ export const schemaTypes = [
   descriptionItemType,
   gallery,
   galleryImage,
+  brandAsset,
 ];

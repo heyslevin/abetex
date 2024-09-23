@@ -1,3 +1,4 @@
+import AsyncSelectBrandAsset from "@/components/studio/AsyncSelectBrandAsset";
 import { PanelBottom } from "lucide-react";
 import { defineField, defineType } from "sanity";
 
@@ -7,8 +8,12 @@ export const footerType = defineType({
   title: "Footer",
   fields: [
     defineField({
-      name: "title",
+      name: "brandAsset",
+      title: "Navigation Logo",
       type: "string",
+      components: {
+        input: AsyncSelectBrandAsset,
+      },
     }),
   ],
   icon: PanelBottom,

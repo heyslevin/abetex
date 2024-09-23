@@ -43,39 +43,6 @@ const AsyncSelect = (props) => {
     ...props,
     schemaType: { ...schemaType, options: { ...options, list: listItems } },
   });
-
-  //   return (
-  //     <Box padding={4}>
-  //       <Card radius={3} shadow={2}>
-  //         <MenuButton
-  //           button={<Button text="Select a section" />}
-  //           id="options-button"
-  //           menu={
-  //             <Menu>
-  //               {fullItems.map((item) => (
-  //                 <MenuItem fontSize={1}>
-  //                   {/* {item._key} */}
-  //                   <Box padding={1}>
-  //                     <Box>
-  //                       <Globe size={16} />
-  //                     </Box>
-  //                     <Stack space={1}>
-  //                       <Text fontSize={1} weight="semibold">
-  //                         {item.type}
-  //                       </Text>
-  //                       <Text muted size={1}>
-  //                         {item.heading}
-  //                       </Text>
-  //                     </Stack>
-  //                   </Box>
-  //                 </MenuItem>
-  //               ))}
-  //             </Menu>
-  //           }
-  //         ></MenuButton>
-  //       </Card>
-  //     </Box>
-  //   );
 };
 
 export default AsyncSelect;

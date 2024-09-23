@@ -66,7 +66,10 @@ export default function FeaturedProjects({ data }) {
         <h2 className="text-4xl">{data?.heading || "Our Work"}</h2>
       </header>
       <section
-        className={classNames("grid grid-cols-1 gap-8", STYLES[itemsPerRow])}
+        className={classNames(
+          "grid grid-cols-1 gap-8 md:grid-cols-2",
+          STYLES[itemsPerRow],
+        )}
       >
         {data?.projects.map((project) => {
           return (

@@ -105,11 +105,24 @@ export const LOAD_ALL_PROJECTS_QUERY = groq`
 
 `;
 
+// To use Brand Asset, first Query the type of document.
+// Example:
+// *[_type == "header"] {
+const BRAND_ASSET_QUERY = groq`
+  brandAsset,  // This will hold the asset reference
+  "selectedAsset": *[_type == "globalSettings"][0].brandAssets[image.asset._ref == ^.brandAsset][0] {
+    name,
+    "imageUrl": image.asset->url,
+    "blurDataURL": image.asset->metadata.lqip
+  },
+  "websiteTitle": *[_type == "globalSettings"][0].websiteTitle
+  `;
+
 export const HEADER_NAVIGATION_QUERY = groq`
 *[_type == "header"] {
+  ${BRAND_ASSET_QUERY},
   navItems[] {
     text,
-    title,
     _key,
     defined(navigationItemUrl.internalLink) => {
       "typeOfLink": navigationItemUrl.typeOfLink,
@@ -123,6 +136,12 @@ export const HEADER_NAVIGATION_QUERY = groq`
   }
 }[0]
 `;
+
+export const FOOTER_QUERY = groq`
+*[_type == "footer"] {
+  ${BRAND_ASSET_QUERY},
+  }[0]
+  `;
 
 export const ASYNC_PAGE_SECTION_QUERY = groq`
             *[_type == 'pageBuilder' && _id == $id] {

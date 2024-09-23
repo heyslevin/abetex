@@ -22,6 +22,7 @@ import MyPrefixedSlug from "@/components/studio/MyPrefixedSlug";
 export const globalSettingsType = defineType({
   name: "globalSettings",
   type: "document",
+  fieldsets: [{ name: "brand", title: "Brand Assets" }],
   fields: [
     defineField({
       name: "websiteTitle",
@@ -90,6 +91,19 @@ export const globalSettingsType = defineType({
       options: {
         accept: "application/pdf",
       },
+    }),
+    defineField({
+      name: "brandAssets",
+      title: "Brand Assets",
+      type: "array",
+      description: "Add your brand assets in .svg",
+      fieldset: "brand",
+      of: [
+        {
+          name: "brandAsset",
+          type: "brandAsset",
+        },
+      ],
     }),
   ],
   icon: Settings,
