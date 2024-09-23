@@ -28,24 +28,6 @@ export default async function Footer() {
   //   },
   // };
 
-  function WebsiteTitle() {
-    if (selectedAsset !== "noAsset") {
-      return (
-        <div className="h-6 md:h-7">
-          <Image
-            width="2400px"
-            src={selectedAsset.imageUrl}
-            className="h-full"
-          />
-        </div>
-      );
-    } else {
-      <Link className="text-xl md:text-3xl" href="/">
-        {websiteTitle}
-      </Link>;
-    }
-  }
-
   return (
     <main className="flex h-auto flex-col bg-primary px-4 py-10 text-white md:h-[555px] md:px-28">
       <section className="flex w-full text-white">

@@ -10,6 +10,7 @@ import Image from "next/image";
 import CircleIcon from "../utils/CircleIcon";
 import { Search } from "lucide-react";
 import Icon from "../fragments/Icon";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 export default function Tabs({ data }) {
   //Data Structure
@@ -49,7 +50,7 @@ export default function Tabs({ data }) {
             </h1>
           </heading>
           <section className="">
-            <TabsList className="font-body flex flex-col">
+            <TabsList className="flex flex-col font-body">
               {data?.tabs.map((tab) => {
                 return (
                   <TabsTrigger
@@ -79,8 +80,8 @@ export default function Tabs({ data }) {
                       <Image
                         src={tab.image.imageUrl}
                         alt={tab.image.alt}
-                        width={1200}
-                        height={1200}
+                        width={getImageDimensions(tab.image.imageUrl).width}
+                        height={getImageDimensions(tab.image.imageUrl).height}
                         className="h-full rounded-md object-cover"
                         placeholder="blur"
                         blurDataURL={tab.image.blurDataURL}
@@ -99,8 +100,8 @@ export default function Tabs({ data }) {
                 <Image
                   src={tab.image.imageUrl}
                   alt={tab.image.alt}
-                  width={1200}
-                  height={1200}
+                  width={getImageDimensions(tab.image.imageUrl).width}
+                  height={getImageDimensions(tab.image.imageUrl).height}
                   className="h-full object-cover"
                   placeholder="blur"
                   blurDataURL={tab.image.blurDataURL}

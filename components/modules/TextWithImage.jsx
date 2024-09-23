@@ -1,6 +1,7 @@
 import _ from "lodash";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 function TextWithImage({ data }) {
   // Data Structure
@@ -33,7 +34,7 @@ function TextWithImage({ data }) {
           />
           <main
             id={_.kebabCase(data.title)}
-            className="font-body flex w-full scroll-mt-10 flex-col-reverse justify-center gap-16 border-y border-white bg-primary p-10 px-4 text-white md:flex-row-reverse md:px-28"
+            className="flex w-full scroll-mt-10 flex-col-reverse justify-center gap-16 border-y border-white bg-primary p-10 px-4 font-body text-white md:flex-row-reverse md:px-28"
           >
             <article className="flex flex-1 flex-col items-stretch justify-between gap-6 md:gap-6">
               <h1 className="text-balance text-left text-2xl leading-none tracking-tight drop-shadow-sm md:text-3xl md:leading-[2rem]">
@@ -58,8 +59,8 @@ function TextWithImage({ data }) {
               <Image
                 src={data.image.imageUrl}
                 alt={data.image.alt}
-                width={1200}
-                height={1200}
+                width={getImageDimensions(data.image.imageUrl).width}
+                height={getImageDimensions(data.image.imageUrl).height}
                 className="h-full object-cover"
                 placeholder="blur"
                 blurDataURL={data.image.blurDataURL}
@@ -73,7 +74,7 @@ function TextWithImage({ data }) {
     // Default style
     <main
       id={_.kebabCase(data.title)}
-      className="font-body flex h-auto w-full scroll-mt-10 flex-col-reverse justify-center gap-9 bg-white p-10 px-4 md:h-[500px] md:flex-row md:px-28"
+      className="flex h-auto w-full scroll-mt-10 flex-col-reverse justify-center gap-9 bg-white p-10 px-4 font-body md:h-[500px] md:flex-row md:px-28"
     >
       <article className="flex h-full flex-1 flex-col content-center justify-center gap-6 text-black md:gap-6">
         <h1 className="text-balance text-left text-3xl leading-none tracking-tight drop-shadow-sm md:text-4xl md:leading-[2rem]">
@@ -93,8 +94,8 @@ function TextWithImage({ data }) {
         <Image
           src={data.image.imageUrl}
           alt={data.image.alt}
-          width={1200}
-          height={1200}
+          width={getImageDimensions(data.image.imageUrl).width}
+          height={getImageDimensions(data.image.imageUrl).height}
           className="h-full object-cover"
           placeholder="blur"
           blurDataURL={data.image.blurDataURL}
