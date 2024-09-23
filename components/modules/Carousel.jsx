@@ -95,6 +95,7 @@ function Carousel({ data }) {
                     className="h-full object-cover"
                     placeholder="blur"
                     blurDataURL={image.blurDataURL}
+                    layout="responsive"
                   />
                 </div>
               </CarouselItem>

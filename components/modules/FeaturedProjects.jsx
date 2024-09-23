@@ -173,6 +173,7 @@ export default function FeaturedProjects({ data }) {
                                   className="h-full object-cover"
                                   placeholder="blur"
                                   blurDataURL={image.blurDataURL}
+                                  layout="responsive"
                                 />
                                 {image.alt}
                               </div>

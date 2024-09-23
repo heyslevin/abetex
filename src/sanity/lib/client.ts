@@ -12,7 +12,7 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion, // https://www.sanity.io/docs/api-versioning
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  useCdn: false, // Set to false if statically generating pages, using ISR or tag-based revalidation
   stega: {
     enabled: process.env.NEXT_PUBLIC_VERCEL_ENV === "preview",
     studioUrl: "/studio",
@@ -43,6 +43,7 @@ export async function sanityFetch<QueryResponse>({
     queryOptions.token = token;
     queryOptions.perspective = "previewDrafts";
     queryOptions.stega = true;
+    console.log("Draft mode is enabled:", isDraftMode);
 
     maybeRevalidate = 0; // Do not cache in Draft Mode
   } else if (tags.length) {
