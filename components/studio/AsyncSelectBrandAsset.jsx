@@ -13,7 +13,7 @@ const AsyncSelectBrandAsset = (props) => {
   function formatData(data) {
     return data.brandAssets?.map((asset) => {
       return {
-        title: asset.name,
+        title: asset.alt,
         value: asset.image.asset._ref,
       };
     });
@@ -28,7 +28,7 @@ const AsyncSelectBrandAsset = (props) => {
     };
 
     getSections();
-  }, []);
+  }, [studioClient]);
 
   return renderDefault({
     ...props,

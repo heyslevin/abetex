@@ -61,6 +61,7 @@ export default async function Header({ props }) {
             height={getImageDimensions(selectedAsset.imageUrl).height}
             src={selectedAsset.imageUrl}
             className="h-full"
+            alt={selectedAsset.alt}
           />
         </div>
       );

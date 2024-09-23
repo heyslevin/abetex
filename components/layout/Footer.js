@@ -36,6 +36,7 @@ export default async function Footer() {
           className="w-full"
           width={getImageDimensions(selectedAsset.imageUrl).width}
           height={getImageDimensions(selectedAsset.imageUrl).height}
+          alt={selectedAsset.alt}
         />
       </section>
       <Separator className="my-5 mt-20 bg-white" />
