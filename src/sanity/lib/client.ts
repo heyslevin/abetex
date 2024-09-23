@@ -8,8 +8,6 @@ import { draftMode } from "next/headers";
 import { apiVersion, dataset, projectId } from "../env";
 import { token } from "./token";
 
-//Push
-
 export const client = createClient({
   projectId,
   dataset,

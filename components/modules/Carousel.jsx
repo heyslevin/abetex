@@ -37,7 +37,7 @@ function Carousel({ data }) {
               : "bg-primary",
           )}
         >
-          <div className="w-full bg-red-300">
+          <div className="w-full">
             <Image
               src={image.imageUrl}
               alt={image.alt}
