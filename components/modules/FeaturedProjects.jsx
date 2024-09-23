@@ -9,6 +9,7 @@ import CircleIcon from "../utils/CircleIcon";
 import { PortableText } from "next-sanity";
 import { PortableParagraph } from "../fragments/PortableParagraph";
 import _ from "lodash";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 export default function FeaturedProjects({ data }) {
   // let dataShape = {
@@ -84,8 +85,12 @@ export default function FeaturedProjects({ data }) {
                     src={project.gallery[0].imageUrl}
                     alt={project.gallery[0].alt}
                     key={project.gallery[0]._key}
-                    width={1200}
-                    height={1200}
+                    width={
+                      getImageDimensions(project.gallery[0].imageUrl).width
+                    }
+                    height={
+                      getImageDimensions(project.gallery[0].imageUrl).height
+                    }
                     className="h-96 object-cover"
                     placeholder="blur"
                     blurDataURL={project.gallery[0].blurDataURL}
@@ -159,8 +164,12 @@ export default function FeaturedProjects({ data }) {
                                   src={image.imageUrl}
                                   alt={image.alt}
                                   key={image._key}
-                                  width={1200}
-                                  height={1200}
+                                  width={
+                                    getImageDimensions(image.imageUrl).width
+                                  }
+                                  height={
+                                    getImageDimensions(image.imageUrl).height
+                                  }
                                   className="h-full object-cover"
                                   placeholder="blur"
                                   blurDataURL={image.blurDataURL}

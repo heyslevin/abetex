@@ -2,6 +2,9 @@ import { sanityFetch } from "@/src/sanity/lib/client";
 import { Separator } from "../ui/separator";
 import { FOOTER_QUERY, GLOBAL_SETTINGS_QUERY } from "@/src/lib/sanity/queries";
 import { Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 export default async function Footer() {
   const data = await sanityFetch({ query: GLOBAL_SETTINGS_QUERY });
@@ -29,7 +32,11 @@ export default async function Footer() {
     if (selectedAsset !== "noAsset") {
       return (
         <div className="h-6 md:h-7">
-          <img src={selectedAsset.imageUrl} className="h-full" />
+          <Image
+            width="2400px"
+            src={selectedAsset.imageUrl}
+            className="h-full"
+          />
         </div>
       );
     } else {
@@ -42,7 +49,12 @@ export default async function Footer() {
   return (
     <main className="flex h-auto flex-col bg-primary px-4 py-10 text-white md:h-[555px] md:px-28">
       <section className="flex w-full text-white">
-        <img src={selectedAsset.imageUrl} className="w-full" />
+        <Image
+          src={selectedAsset.imageUrl}
+          className="w-full"
+          width={getImageDimensions(selectedAsset.imageUrl).width}
+          height={getImageDimensions(selectedAsset.imageUrl).height}
+        />
       </section>
       <Separator className="my-5 mt-20 bg-white" />
       <section className="flex w-full flex-col gap-6 md:flex-row">

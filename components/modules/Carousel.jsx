@@ -3,6 +3,7 @@ import { CarouselContent, CarouselItem } from "../ui/carousel";
 import CarouselSSR from "../ui/carouselSSR";
 import _ from "lodash";
 import { classNames } from "../utils/helpers";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 function Carousel({ data }) {
   // Data Structure
@@ -41,8 +42,8 @@ function Carousel({ data }) {
               src={image.imageUrl}
               alt={image.alt}
               key={image._key}
-              width={1800}
-              height={1800}
+              width={getImageDimensions(image.imageUrl).width}
+              height={getImageDimensions(image.imageUrl).height}
               className="h-full object-cover"
               placeholder="blur"
               blurDataURL={image.blurDataURL}
@@ -61,8 +62,8 @@ function Carousel({ data }) {
               src={image.imageUrl}
               alt={image.alt}
               key={image._key}
-              width={1800}
-              height={1800}
+              width={getImageDimensions(image.imageUrl).width}
+              height={getImageDimensions(image.imageUrl).height}
               className="h-full object-cover"
               placeholder="blur"
               blurDataURL={image.blurDataURL}
@@ -89,8 +90,8 @@ function Carousel({ data }) {
                     src={image.imageUrl}
                     alt={image.alt}
                     key={image._key}
-                    width={1200}
-                    height={1200}
+                    width={getImageDimensions(image.imageUrl).width}
+                    height={getImageDimensions(image.imageUrl).height}
                     className="h-full object-cover"
                     placeholder="blur"
                     blurDataURL={image.blurDataURL}

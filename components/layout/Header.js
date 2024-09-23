@@ -17,6 +17,8 @@ import { sanityFetch } from "@/src/sanity/lib/client";
 import Link from "next/link";
 import React from "react";
 import { navUrlProcessor } from "./lib/helpers";
+import Image from "next/image";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 export default async function Header({ props }) {
   const {
@@ -54,7 +56,12 @@ export default async function Header({ props }) {
     if (selectedAsset !== "noAsset") {
       return (
         <div className="h-6 md:h-7">
-          <img src={selectedAsset.imageUrl} className="h-full" />
+          <Image
+            width={getImageDimensions(selectedAsset.imageUrl).width}
+            height={getImageDimensions(selectedAsset.imageUrl).height}
+            src={selectedAsset.imageUrl}
+            className="h-full"
+          />
         </div>
       );
     } else {
