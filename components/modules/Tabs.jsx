@@ -59,6 +59,7 @@ export default function Tabs({ data }) {
                     key={tab._key}
                   >
                     <Separator className="my-4 border-t group-rdx-state-active:border-black group-rdx-state-inactive:border-gray-400" />
+
                     <section className="flex h-full w-full flex-row items-center justify-between md:group-rdx-state-active:pb-9">
                       <h1 className="ml-[-2px] text-left text-2xl tracking-tight group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500 md:text-5xl">
                         {tab.heading}
@@ -67,11 +68,13 @@ export default function Tabs({ data }) {
                         <Icon name={tab.icon} />
                       </figure>
                     </section>
+
                     <TabsContent value={tab._key} className="flex">
                       <p className="pt-4 text-left group-rdx-state-inactive:text-neutral-500">
                         {tab.description}
                       </p>
                     </TabsContent>
+
                     {/* Mobile */}
                     <TabsContent
                       value={tab._key}

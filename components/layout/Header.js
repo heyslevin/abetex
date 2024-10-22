@@ -75,7 +75,7 @@ export default async function Header({ props }) {
 
   return (
     <div className="sticky top-0 z-10 flex w-full flex-row justify-between border-b border-gray-800 bg-white px-5 py-5 text-black">
-      <div className="flex flex-row items-center justify-start">
+      <div className="flex flex-row items-start justify-start">
         <NavTitle />
       </div>
       <div className="flex flex-row gap-5">
