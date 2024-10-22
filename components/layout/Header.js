@@ -55,12 +55,12 @@ export default async function Header({ props }) {
   function NavTitle() {
     if (selectedAsset !== "noAsset") {
       return (
-        <div className="flex h-5 md:h-7">
+        <div className="md:h-7">
           <Image
             width={getImageDimensions(selectedAsset.imageUrl).width}
             height={getImageDimensions(selectedAsset.imageUrl).height}
             src={selectedAsset.imageUrl}
-            className="h-full"
+            className="w-full max-w-40"
             alt={selectedAsset.alt}
             layout="responsive"
           />
@@ -75,7 +75,7 @@ export default async function Header({ props }) {
 
   return (
     <div className="sticky top-0 z-10 flex w-full flex-row justify-between border-b border-gray-800 bg-white px-5 py-5 text-black">
-      <div className="flex flex-row items-start justify-start">
+      <div className="flex flex-row items-center justify-start">
         <NavTitle />
       </div>
       <div className="flex flex-row gap-5">
