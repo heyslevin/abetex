@@ -103,8 +103,8 @@ export default function Tabs({ data }) {
                 <Image
                   src={tab?.image?.imageUrl}
                   alt={tab?.image?.alt}
-                  width={getImageDimensions(tab?.image?.imageUrl).width}
-                  height={getImageDimensions(tab?.image?.imageUrl).height}
+                  width={getImageDimensions(tab?.image?.imageUrl)?.width}
+                  height={getImageDimensions(tab?.image?.imageUrl)?.height}
                   className="h-full object-cover"
                   placeholder="blur"
                   blurDataURL={tab?.image?.blurDataURL}
