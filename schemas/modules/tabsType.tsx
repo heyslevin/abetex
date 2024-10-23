@@ -58,15 +58,18 @@ export const tabsType = defineType({
             defineField({
               name: "heading",
               type: "string",
+              validation: (rule) => rule.required(),
             }),
             defineField({
               name: "description",
               type: "text",
               rows: 3,
+              validation: (rule) => rule.required(),
             }),
             defineField({
               name: "icon",
               type: "string",
+              validation: (rule) => rule.required(),
               options: {
                 list: LUCIDE_ICONS_VALUES,
               },
@@ -74,7 +77,7 @@ export const tabsType = defineType({
             defineField({
               name: "image",
               type: "image",
-
+              validation: (rule) => rule.required(),
               fields: [
                 defineField({
                   name: "alt",

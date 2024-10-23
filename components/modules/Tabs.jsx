@@ -62,16 +62,16 @@ export default function Tabs({ data }) {
 
                     <section className="flex h-full w-full flex-row items-center justify-between md:group-rdx-state-active:pb-9">
                       <h1 className="ml-[-2px] text-left text-2xl tracking-tight group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500 md:text-5xl">
-                        {tab.heading}
+                        {tab?.heading}
                       </h1>
                       <figure className="flex size-10 items-center justify-center rounded-full bg-primary text-white">
-                        <Icon name={tab.icon} />
+                        <Icon name={tab?.icon} />
                       </figure>
                     </section>
 
                     <TabsContent value={tab._key} className="flex">
                       <p className="pt-4 text-left group-rdx-state-inactive:text-neutral-500">
-                        {tab.description}
+                        {tab?.description}
                       </p>
                     </TabsContent>
 
@@ -81,13 +81,13 @@ export default function Tabs({ data }) {
                       className="flex group-rdx-state-active:pt-5 md:hidden"
                     >
                       <Image
-                        src={tab.image.imageUrl}
-                        alt={tab.image.alt}
-                        width={getImageDimensions(tab.image.imageUrl).width}
-                        height={getImageDimensions(tab.image.imageUrl).height}
+                        src={tab?.image?.imageUrl}
+                        alt={tab?.image?.alt}
+                        width={getImageDimensions(tab?.image?.imageUrl).width}
+                        height={getImageDimensions(tab?.image?.imageUrl).height}
                         className="h-full rounded-md object-cover"
                         placeholder="blur"
-                        blurDataURL={tab.image.blurDataURL}
+                        blurDataURL={tab?.image?.blurDataURL}
                       />
                     </TabsContent>
                   </TabsTrigger>
@@ -101,13 +101,13 @@ export default function Tabs({ data }) {
             return (
               <TabsContent value={tab._key} key={tab._key}>
                 <Image
-                  src={tab.image.imageUrl}
-                  alt={tab.image.alt}
-                  width={getImageDimensions(tab.image.imageUrl).width}
-                  height={getImageDimensions(tab.image.imageUrl).height}
+                  src={tab?.image?.imageUrl}
+                  alt={tab?.image?.alt}
+                  width={getImageDimensions(tab?.image?.imageUrl).width}
+                  height={getImageDimensions(tab?.image?.imageUrl).height}
                   className="h-full object-cover"
                   placeholder="blur"
-                  blurDataURL={tab.image.blurDataURL}
+                  blurDataURL={tab?.image?.blurDataURL}
                 />
               </TabsContent>
             );
