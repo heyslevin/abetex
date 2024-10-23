@@ -8,3 +8,4 @@ Testing new repo
 [] Export current sanity schema?
 [] Setup new domain and sanity project
 [] Apply Styles
+[] Fix revalidation
