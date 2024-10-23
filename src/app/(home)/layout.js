@@ -36,6 +36,7 @@ const llsub = localFont({
 });
 
 export default async function RootLayout({ children }) {
+  const draft = await draftMode();
   return (
     <html
       lang="en"
@@ -47,7 +48,7 @@ export default async function RootLayout({ children }) {
           {children}
         </div>
         <Footer />
-        {draftMode().isEnabled && (
+        {draft.isEnabled && (
           <a
             className="fixed bottom-0 right-0 m-4 bg-blue-500 p-4 text-white"
             href="/api/draft-mode/disable"
@@ -55,7 +56,7 @@ export default async function RootLayout({ children }) {
             Disable preview mode
           </a>
         )}
-        {draftMode().isEnabled && <VisualEditing />}
+        {draft.isEnabled && <VisualEditing />}
       </body>
     </html>
   );

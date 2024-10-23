@@ -3,7 +3,6 @@ import { Separator } from "../ui/separator";
 import { FOOTER_QUERY, GLOBAL_SETTINGS_QUERY } from "@/src/lib/sanity/queries";
 import { Phone } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { getImageDimensions } from "@sanity/asset-utils";
 
 export default async function Footer() {

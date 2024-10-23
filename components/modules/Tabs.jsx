@@ -65,7 +65,7 @@ export default function Tabs({ data }) {
                         {tab?.heading}
                       </h1>
                       <figure className="flex size-10 items-center justify-center rounded-full bg-primary text-white">
-                        <Icon name={tab?.icon} />
+                        {tab.icon && <Icon name={tab.icon} />}
                       </figure>
                     </section>
 
@@ -83,9 +83,15 @@ export default function Tabs({ data }) {
                       <Image
                         src={tab?.image?.imageUrl}
                         alt={tab?.image?.alt}
-                        width={getImageDimensions(tab?.image?.imageUrl)?.width}
+                        width={
+                          tab?.image?.imageUrl
+                            ? getImageDimensions(tab?.image?.imageUrl)?.width
+                            : "500"
+                        }
                         height={
-                          getImageDimensions(tab?.image?.imageUrl)?.height
+                          tab?.image?.imageUrl
+                            ? getImageDimensions(tab?.image?.imageUrl)?.height
+                            : "500"
                         }
                         className="h-full rounded-md object-cover"
                         placeholder="blur"
@@ -106,10 +112,14 @@ export default function Tabs({ data }) {
                   src={tab?.image?.imageUrl}
                   alt={tab?.image?.alt}
                   width={
-                    getImageDimensions(tab?.image?.imageUrl)?.width || "500"
+                    tab?.image?.imageUrl
+                      ? getImageDimensions(tab?.image?.imageUrl)?.width
+                      : "500"
                   }
                   height={
-                    getImageDimensions(tab?.image?.imageUrl)?.height || "500"
+                    tab?.image?.imageUrl
+                      ? getImageDimensions(tab?.image?.imageUrl)?.height
+                      : "500"
                   }
                   className="h-full object-cover"
                   placeholder="blur"
