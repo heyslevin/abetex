@@ -1,9 +1,7 @@
-// ./src/sanity/lib/client.ts
-
 import "server-only";
 
-import { createClient, QueryOptions, type QueryParams } from "next-sanity";
 import { draftMode } from "next/headers";
+import { createClient, type QueryOptions, type QueryParams } from "next-sanity";
 
 import { apiVersion, dataset, projectId } from "../env";
 import { token } from "./token";
@@ -15,14 +13,14 @@ export const client = createClient({
   useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
   stega: {
     enabled: process.env.NEXT_PUBLIC_VERCEL_ENV === "preview",
-    studioUrl: "/studio",
+    studioUrl: "/studio", // Or: 'https://my-cool-project.sanity.studio'
   },
 });
 
 export async function sanityFetch<QueryResponse>({
   query,
   params = {},
-  revalidate = 60, // default revalidation time in seconds
+  revalidate = 60,
   tags = [],
 }: {
   query: string;
@@ -30,50 +28,30 @@ export async function sanityFetch<QueryResponse>({
   revalidate?: number | false;
   tags?: string[];
 }) {
-  const draft = await draftMode();
-  const isDraftMode = draft.isEnabled;
-
+  const isDraftMode = draftMode().isEnabled;
   if (isDraftMode && !token) {
     throw new Error("Missing environment variable SANITY_API_READ_TOKEN");
   }
 
-  let queryOptions: QueryOptions = {};
-  let maybeRevalidate = revalidate;
-
+  let dynamicRevalidate = revalidate;
   if (isDraftMode) {
-    queryOptions.token = token;
-    queryOptions.perspective = "previewDrafts";
-    queryOptions.stega = true;
-    console.log("Draft mode is enabled:", isDraftMode);
-
-    maybeRevalidate = 0; // Do not cache in Draft Mode
+    // Do not cache in Draft Mode
+    dynamicRevalidate = 0;
   } else if (tags.length) {
-    maybeRevalidate = false; // Cache indefinitely if tags supplied
+    // Cache indefinitely if tags supplied, purge with revalidateTag()
+    dynamicRevalidate = false;
   }
 
   return client.fetch<QueryResponse>(query, params, {
-    ...queryOptions,
+    ...(isDraftMode &&
+      ({
+        token: token,
+        perspective: "previewDrafts",
+        stega: true,
+      } satisfies QueryOptions)),
     next: {
-      revalidate: maybeRevalidate,
+      revalidate: dynamicRevalidate,
       tags,
     },
   });
 }
-
-//prev Config
-// export const client = createClient({
-//   projectId,
-//   dataset,
-//   apiVersion,
-//   useCdn: process.env.NODE_ENV === "development" ? true : false, // Set to false if statically generating pages, using ISR or tag-based revalidation
-// });
-
-// // revalidate: process.env.NODE_ENV === "development" ? 30 : 3600,
-
-// export async function sanityFetch({ query, params = {}, tags }) {
-//   return client.fetch(query, params, {
-//     cache: "force-cache",
-//     next: {
-//       tags,
-//     },
-//   });

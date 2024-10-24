@@ -4,6 +4,8 @@ import Header from "@/components/layout/Header";
 
 import localFont from "next/font/local";
 
+import { SanityLive } from "@/src/sanity/lib/live";
+import { DisableDraftMode } from "@/components/studio/DisableDraftMode";
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
 
@@ -36,7 +38,6 @@ const llsub = localFont({
 });
 
 export default async function RootLayout({ children }) {
-  const draft = await draftMode();
   return (
     <html
       lang="en"
@@ -46,17 +47,15 @@ export default async function RootLayout({ children }) {
         <Header />
         <div className="flex h-full w-full flex-col items-center bg-black">
           {children}
+          <SanityLive />
         </div>
         <Footer />
-        {draft.isEnabled && (
-          <a
-            className="fixed bottom-0 right-0 m-4 bg-blue-500 p-4 text-white"
-            href="/api/draft-mode/disable"
-          >
-            Disable preview mode
-          </a>
+        {(await draftMode()).isEnabled && (
+          <>
+            <DisableDraftMode />
+            <VisualEditing />
+          </>
         )}
-        {draft.isEnabled && <VisualEditing />}
       </body>
     </html>
   );
