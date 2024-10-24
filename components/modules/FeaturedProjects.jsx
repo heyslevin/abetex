@@ -170,7 +170,7 @@ export default function FeaturedProjects({ data }) {
                                   height={
                                     getImageDimensions(image.imageUrl).height
                                   }
-                                  className="h-full object-cover"
+                                  className="w-full object-cover"
                                   placeholder="blur"
                                   blurDataURL={image.blurDataURL}
                                 />
