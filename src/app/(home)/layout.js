@@ -47,7 +47,7 @@ export default async function RootLayout({ children }) {
           {children}
         </div>
         <Footer />
-        {draftMode().isEnabled && (
+        {(await draftMode()).isEnabled && (
           <a
             className="fixed bottom-0 right-0 m-4 bg-blue-500 p-4 text-white"
             href="/api/draft-mode/disable"

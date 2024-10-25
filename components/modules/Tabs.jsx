@@ -61,7 +61,7 @@ export default function Tabs({ data }) {
                     <Separator className="my-4 border-t group-rdx-state-active:border-black group-rdx-state-inactive:border-gray-400" />
 
                     <section className="flex h-full w-full flex-row items-center justify-between md:group-rdx-state-active:pb-9">
-                      <h1 className="md:max-width-[90%] ml-[-2px] text-left text-2xl tracking-tight group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500 md:text-3xl">
+                      <h1 className="ml-[-2px] text-left text-2xl tracking-tight group-rdx-state-active:text-black group-rdx-state-inactive:text-neutral-500 md:max-w-[80%] md:text-3xl">
                         {tab?.heading}
                       </h1>
                       <figure className="flex size-10 items-center justify-center rounded-full bg-primary text-white">

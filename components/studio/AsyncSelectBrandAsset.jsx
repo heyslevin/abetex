@@ -11,9 +11,10 @@ const AsyncSelectBrandAsset = (props) => {
   const studioClient = useClient({ apiVersion: "2024-08-01" });
 
   function formatData(data) {
+    console.log({ footerData: data });
     return data.brandAssets?.map((asset) => {
       return {
-        title: asset.alt,
+        title: asset.name,
         value: asset.image.asset._ref,
       };
     });
