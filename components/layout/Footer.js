@@ -61,8 +61,10 @@ export default async function Footer() {
               )}
             </div>
             <div className="flex w-1/2 flex-col md:w-1/2">
-              <a href={data?.privacyPolicy?.fileUrl || "#"}>Privacy Policy</a>
-              <a href={data?.legal?.fileUrl || "#"}>Legal</a>
+              {data?.privacyPolicy && (
+                <a href={data?.privacyPolicy?.fileUrl || "#"}>Privacy Policy</a>
+              )}
+              {data?.legal && <a href={data?.legal?.fileUrl || "#"}>Legal</a>}
             </div>
           </div>
           <div className="flex w-full grow text-balance pt-12 md:w-1/2 md:pt-0">

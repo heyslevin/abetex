@@ -23,7 +23,6 @@ import { descriptionItemType } from "./objects/descriptionItemType";
 import { brandAsset } from "./objects/brandAssetType";
 
 export const schemaTypes = [
-  pageType,
   pageBuilderType,
   footerType,
   globalSettingsType,
