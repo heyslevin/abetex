@@ -48,7 +48,7 @@ export async function sanityFetch<QueryResponse>({
 
     maybeRevalidate = 0; // Do not cache in Draft Mode
   } else if (tags.length) {
-    maybeRevalidate = false; // Cache indefinitely if tags supplied
+    maybeRevalidate = 30; // Cache indefinitely if tags supplied
   }
 
   return client.fetch<QueryResponse>(query, params, {
