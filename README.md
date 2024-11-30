@@ -9,3 +9,4 @@ Testing new repo
 [] Setup new domain and sanity project
 [] Apply Styles
 [] Fix revalidation
+fixing next15
