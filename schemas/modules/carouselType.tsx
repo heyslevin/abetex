@@ -5,7 +5,7 @@ import { TITLE_DESCRIPTION } from "./lib/constants";
 export const carouselType = defineType({
   name: "carousel",
   type: "object",
-  title: "Image Carousel",
+  title: "Image Gallery",
   fieldsets: [
     { name: "settings", title: "Settings" },
     { name: "content", title: "Content" },

@@ -19,7 +19,6 @@ function ParagraphSection({ data }) {
   //
   //   };
 
-  console.log({ paragraph: data });
   return (
     <main
       id={_.kebabCase(data?.title)}

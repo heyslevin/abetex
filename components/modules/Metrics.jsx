@@ -1,5 +1,6 @@
 import _ from "lodash";
 import CircleIcon from "../utils/CircleIcon";
+import { AnimatedText } from "../fragments/AnimatedText";
 
 export default function Metrics({ data }) {
   // Data Shape
@@ -22,7 +23,7 @@ export default function Metrics({ data }) {
   return (
     <main
       id={_.kebabCase(data.title)}
-      className="justify-left font-body flex h-auto w-full scroll-mt-10 flex-col bg-secondary p-10 px-4 text-white md:px-28"
+      className="flex h-auto w-full scroll-mt-10 flex-col justify-start bg-secondary p-10 px-4 font-body text-white md:px-28"
     >
       <section className="flex flex-col">
         <figure className="mb-4 flex max-w-fit flex-row items-center justify-center gap-1 pl-1">
@@ -49,9 +50,13 @@ export default function Metrics({ data }) {
               key={metric._key}
             >
               <div>
-                <h2 className="ml-[-6px] text-5xl md:text-5xl">
+                {/* <h2 className="ml-[-6px] text-5xl md:text-5xl">
                   {metric.heading}
-                </h2>
+                </h2> */}
+                <AnimatedText
+                  text={metric.heading}
+                  className="ml-[-6px] text-5xl md:text-5xl"
+                />
                 <h3 className="ml-[-3px] text-base font-bold uppercase">
                   {metric.caption}
                 </h3>

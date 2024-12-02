@@ -49,6 +49,7 @@ import { z } from "zod";
 // Create a dynamic form
 
 export default function FormMaker({ data }) {
+  console.log({ formdata: data });
   // formSchema generator for form generator
   const { formSchema, defaultValues } = zodFormatter(data.items);
   const { toast } = useToast();
@@ -107,11 +108,14 @@ export default function FormMaker({ data }) {
         <p className="inline w-10/12 text-left text-lg text-white md:text-xl">
           {data.text}
         </p>
-
-        <button className="mt-8 flex h-11 max-w-96 shrink flex-row items-center justify-center gap-2 rounded-full bg-white text-black">
-          <p className="text-base">Schedule a Call</p>
-          <Icon name="Phone" size={20} strokeWidth={2} />
-        </button>
+        {data?.phone && (
+          <a href={`tel:${data.phone}`}>
+            <button className="mt-8 flex h-11 w-96 shrink flex-row items-center justify-center gap-2 rounded-full bg-white text-black">
+              <p className="text-base">Schedule a Call</p>
+              <Icon name="Phone" size={20} strokeWidth={2} />
+            </button>
+          </a>
+        )}
 
         <section className="flex gap-20 text-white">
           <div>

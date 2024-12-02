@@ -31,6 +31,13 @@ export const formType = defineType({
       fieldset: "content",
     }),
     defineField({
+      name: "phone",
+      title: "Phone number",
+      description: "Used for Schedule a Call Button",
+      type: "string",
+      fieldset: "content",
+    }),
+    defineField({
       name: "items",
       type: "array",
       fieldset: "content",

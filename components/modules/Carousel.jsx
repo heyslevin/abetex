@@ -18,8 +18,6 @@ function Carousel({ data }) {
   //   },
   // };
 
-  console.log({ carousel: data });
-
   const singleImage = data.images.length === 1;
 
   // Renders differently depeding on quantity of images
@@ -44,7 +42,7 @@ function Carousel({ data }) {
               key={image._key}
               width={getImageDimensions(image.imageUrl).width}
               height={getImageDimensions(image.imageUrl).height}
-              className="h-full object-cover"
+              className="h-72 object-cover md:h-[600px]"
               placeholder="blur"
               blurDataURL={image.blurDataURL}
             />
@@ -64,7 +62,7 @@ function Carousel({ data }) {
               key={image._key}
               width={getImageDimensions(image.imageUrl).width}
               height={getImageDimensions(image.imageUrl).height}
-              className="h-full object-cover"
+              className="h-96 object-cover"
               placeholder="blur"
               blurDataURL={image.blurDataURL}
             />
