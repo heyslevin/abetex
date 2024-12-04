@@ -30,10 +30,10 @@ export default async function Footer() {
 
   return (
     <main className="flex h-auto flex-col bg-primary px-4 py-10 text-white md:h-[555px] md:px-28">
-      <section className="flex w-full text-white">
+      <section className="flex w-full justify-center text-white">
         <Image
           src={selectedAsset.imageUrl}
-          className="w-full"
+          className="h-auto invert"
           width={getImageDimensions(selectedAsset.imageUrl).width}
           height={getImageDimensions(selectedAsset.imageUrl).height}
           alt={selectedAsset.alt}

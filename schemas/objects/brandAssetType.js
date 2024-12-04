@@ -11,7 +11,7 @@ export const brandAsset = defineType({
       title: "Add your SVG asset",
     }),
     defineField({
-      name: "alt",
+      name: "name",
       title: "Asset Name",
       type: "string",
       description: "Name your asset (ex. 'Logotype', 'Wordmark')",

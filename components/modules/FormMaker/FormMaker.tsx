@@ -111,7 +111,7 @@ export default function FormMaker({ data }) {
         {data?.phone && (
           <a href={`tel:${data.phone}`}>
             <button className="mt-8 flex h-11 w-96 shrink flex-row items-center justify-center gap-2 rounded-full bg-white text-black">
-              <p className="text-base">Schedule a Call</p>
+              <p className="text-base">Call us</p>
               <Icon name="Phone" size={20} strokeWidth={2} />
             </button>
           </a>
