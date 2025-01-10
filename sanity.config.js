@@ -16,8 +16,11 @@ import { patchReferenceAction } from "./src/sanity/lib/actions";
 
 import { presentationTool } from "sanity/presentation";
 import { resolve } from "./src/sanity/presentation/resolve";
+import { Zap } from "lucide-react";
+import { media } from "sanity-plugin-media";
 
 export default defineConfig({
+  icon: Zap,
   basePath: "/studio",
   projectId,
   dataset,
@@ -26,6 +29,9 @@ export default defineConfig({
     types: (prevTypes) => {
       return [...prevTypes, ...schemaTypes];
     },
+  },
+  scheduledPublishing: {
+    enabled: false,
   },
   plugins: [
     structureTool({
@@ -41,7 +47,8 @@ export default defineConfig({
     }),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({ defaultApiVersion: apiVersion }),
+    // visionTool({ defaultApiVersion: apiVersion }),
+    media(),
   ],
   document: {
     actions: (prev, context) => {

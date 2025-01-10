@@ -8,9 +8,13 @@ export const myStructure = (S, context) =>
       // Remove Singletons from list
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["globalSettings", "footer", "header", "project"].includes(
-            listItem.getId(),
-          ),
+          ![
+            "globalSettings",
+            "footer",
+            "header",
+            "project",
+            "media.tag",
+          ].includes(listItem.getId()),
       ),
       S.divider(),
 

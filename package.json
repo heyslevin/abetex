@@ -43,6 +43,7 @@
     "react-hook-form": "^7.52.2",
     "resend": "^4.0.0",
     "sanity": "^3.57.0",
+    "sanity-plugin-media": "^2.3.2",
     "sanity-plugin-prefixed-slug": "^2.0.0",
     "server-only": "^0.0.1",
     "styled-components": "^6.1.12",
