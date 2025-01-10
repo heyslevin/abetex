@@ -163,3 +163,7 @@ export const GLOBAL_SETTINGS_QUERY = groq`
   }[0]
 
 `;
+export const CONTACT_EMAIL_QUERY = groq`
+*[_type == "globalSettings"][0].contactEmail
+
+`;

@@ -2,6 +2,7 @@ import MyPrefixedSlug from "@/components/studio/MyPrefixedSlug";
 import { DocumentTextIcon, StarFilledIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 import { TITLE_DESCRIPTION } from "./lib/constants";
+import { Star } from "lucide-react";
 
 export const heroType = defineType({
   name: "hero",
@@ -28,7 +29,7 @@ export const heroType = defineType({
       fieldset: "settings",
       hidden: true,
       options: {
-        source: (doc, context) => context.parent.title,
+        source: "title",
       },
     }),
     defineField({
@@ -63,7 +64,7 @@ export const heroType = defineType({
       fieldset: "content",
     }),
   ],
-  icon: StarFilledIcon,
+  icon: () => <Star size={16} />,
   preview: {
     select: {
       title: "title",

@@ -5,6 +5,8 @@ import { TITLE_DESCRIPTION } from "./lib/constants";
 export const formType = defineType({
   name: "form",
   type: "object",
+  description:
+    "Note: You can change the email recipient for the form in Global Settings",
   fieldsets: [
     { name: "settings", title: "Settings" },
     { name: "content", title: "Content" },
@@ -29,6 +31,24 @@ export const formType = defineType({
       rows: 3,
       description: "Optional text below header",
       fieldset: "content",
+    }),
+    defineField({
+      name: "contactInfo",
+      description: "Contact information below Call Us Button",
+      type: "object",
+      fieldset: "content",
+      fields: [
+        defineField({
+          name: "email",
+          title: "Email",
+          type: "string",
+        }),
+        defineField({
+          name: "phone",
+          title: "Phone number",
+          type: "string",
+        }),
+      ],
     }),
     defineField({
       name: "phone",

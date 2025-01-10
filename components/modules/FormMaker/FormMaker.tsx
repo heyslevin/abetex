@@ -118,14 +118,18 @@ export default function FormMaker({ data }) {
         )}
 
         <section className="flex gap-20 text-white">
-          <div>
-            <h3>Contact</h3>
-            <a className="text-gray-300">+52 (81) 1936 6130</a>
-          </div>
-          <div>
-            <h3>Email</h3>
-            <a className="text-gray-300">info@abetex.com</a>
-          </div>
+          {data?.contactInfo?.phone && (
+            <div>
+              <h3>Contact</h3>
+              <a className="text-gray-300">{data.contactInfo.phone}</a>
+            </div>
+          )}
+          {data?.contactInfo?.email && (
+            <div>
+              <h3>Email</h3>
+              <a className="text-gray-300">{data.contactInfo.email}</a>
+            </div>
+          )}
         </section>
       </section>
       <section className="md:w-1/2">

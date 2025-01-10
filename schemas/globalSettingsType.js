@@ -105,6 +105,12 @@ export const globalSettingsType = defineType({
         },
       ],
     }),
+    defineField({
+      name: "contactEmail",
+      description: "This is the email that receives contact form submissions",
+      type: "string",
+      validation: (Rule) => Rule.email(),
+    }),
   ],
   icon: Settings,
 });

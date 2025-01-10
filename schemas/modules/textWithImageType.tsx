@@ -1,6 +1,7 @@
 import { MasterDetailIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 import { TITLE_DESCRIPTION } from "./lib/constants";
+import { BookImage } from "lucide-react";
 
 export const textWithImageType = defineType({
   name: "textWithImage",
@@ -69,7 +70,7 @@ export const textWithImageType = defineType({
       ],
     }),
   ],
-  icon: MasterDetailIcon,
+  icon: () => <BookImage size={16} />,
   preview: {
     select: {
       title: "title",
